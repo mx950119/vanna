@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Site Title-->
+		<title>万纳风控管理系统-导出报告</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="utf-8">
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+		<!-- Stylesheets-->
+		<link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css"/>
+	</head>
+	<style>
+		body {
+			font-family: "微软雅黑";
+		}
+		.section label {
+			margin-bottom:15px;
+		}
+	</style>
+
+	<body class="dashboard-page">
+		<div id="main">
+			<header class="navbar undefined navbar-fixed-top">
+				<div class="navbar-branding dark bg-info">
+					<a href="index.html" class="navbar-brand text-uppercase"><img src="assets/img/logos/index-logo.png"/></a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>				
+				<ul class="nav navbar-nav navbar-right">
+					<li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+					<li class="dropdown menu-merge">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+						<ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+							<li class="list-group-item">
+								<a href="account.html" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> 分配账号</a>
+							</li>
+							<li class="list-group-item">
+								<a href="data.html" class="animated animated-short fadeInUp"><span class="fa fa-th"></span> 数据管理</a>
+							</li>
+							<li class="list-group-item">
+								<a href="fund.html" class="animated animated-short fadeInUp"><span class="fa fa-th-list"></span> 基金列表</a>
+							</li>
+							<li class="list-group-item">
+								<a href="threshold.html" class="animated animated-short fadeInUp"><span class="fa fa-signal"></span> 设置风险临界值</a>
+							</li>
+							
+							<li class="list-group-item">
+								<a href="export.html" class="animated animated-short fadeInUp"><span class="fa fa-share"></span> 导出报告</a>
+							</li>
+							<li class="list-group-item">
+								<a href="" class="animated animated-short fadeInUp"><span class="fa fa-paint-brush"></span> 修改头像</a>
+							</li>
+							<li class="list-group-item">
+								<a href="modify-password.html" class="animated animated-short fadeInUp"><span class="fa fa-lock"></span> 修改密码</a>
+							</li>
+							
+							<li class="dropdown-footer">
+								<a href="login.html"><span class="fa fa-power-off pr5"></span> Logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</header>
+			<aside id="sidebar_left" class="nano nano-light affix">
+				<!-- Start: Sidebar Left Content-->
+				<div class="sidebar-left-content nano-content">
+					<ul class="nav sidebar-menu">
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-diamond"></span><span class="sidebar-title">风控管理</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-chain"></span>投资组合<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="future-seod.html">大宗商品期货</a>
+										</li>
+										<li>
+											<a href="stock.html">股票</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-bar-chart-o"></span>收益风险报表<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="earnings-report.html">收益报表</a>
+										</li>
+										<li>
+											<a href="var-correlation.html">风险价值及相关</a>
+										</li>
+										<li>
+											<a href="simulated-position-test.html">模拟仓位测试</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="stress-test.html"><span class="fa fa-dashboard"></span>压力环境测试</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-magic"></span><span class="sidebar-title">客户定制</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#"><span class="fa fa-bank"></span>银行</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-money"></span>基金</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-desktop"></span>券商</a>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-cubes"></span>大宗商品交易商<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="seasonal-seod.html">大宗商品期货季节性季风管理</a>
+										</li>
+										<li>
+											<a href="pricing-risk-hedging.html">石油和天然气存储设施定价及风险对冲</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- sidebar bullets-->
+						<li class="sidebar-label pt35"></li>
+						<li class="sidebar-proj">
+							<a href=""><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">实时计算</span></a>
+						</li>
+						<li class="sidebar-proj active">
+							<a href="export.html"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">导出报告</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="data.html"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">数据管理</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="baike.html"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">万纳百科</span></a>
+						</li>
+						<div class="sidebar-toggle-mini mt20">
+							<a href="#"><span class="fa fa-sign-out"></span></a>
+						</div>
+					</ul>
+					<!-- Start: Sidebar Collapse Button-->
+					
+				</div>
+			</aside>
+			<!-- Start: Content-Wrapper-->
+			<section id="content_wrapper">
+				<header id="topbar" class="alt">
+					<div class="topbar-left">
+						<ol class="breadcrumb">
+							<li class="crumb-icon">
+								<a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+							</li>
+							<li class="crumb-link">个人中心</li>
+							<li class="crumb-link"><a>导出报告</a></li>
+						</ol>
+					</div>
+				</header>
+				<section id="content" class="table-layout">
+					<div class="tray tray-center">
+						<h3 style="margin-left:20px;">导出报告</h3>
+						<div class="admin-form theme-primary">
+							<div class="panel heading-border panel-primary">
+								<div class="panel-body bg-light">
+									<form id="form-ui" method="post" action="">
+										<div class="section" style="margin:50px auto;width:280px;">
+											<label class="option option-primary">
+												<input name="checked" value="0" checked="" type="checkbox">
+												<span class="checkbox"></span>收益风险报表-收益报表
+											</label>
+											<label class="option option-primary">
+												<input name="checked" value="1" checked="" type="checkbox">
+												<span class="checkbox"></span>收益风险报表-风险价值及相关
+											</label>
+											<label class="option option-primary">
+												<input name="checked" value="2" checked="" type="checkbox">
+												<span class="checkbox"></span>压力环境测试(95%风险价值)
+											</label>
+											<label class="option option-primary">
+												<input name="checked" value="3" checked="" type="checkbox">
+												<span class="checkbox"></span>压力环境测试(99%风险价值)
+											</label>
+											<label class="option option-primary">
+												<input name="checked" value="4" checked="" type="checkbox">
+												<span class="checkbox"></span>压力环境测试(95%预期收益不足)
+											</label>
+											<label class="option option-primary">
+												<input name="checked" value="5" checked="" type="checkbox">
+												<span class="checkbox"></span>压力环境测试(99%预期收益不足)
+											</label>
+											<label class="option option-primary">
+												<input name="checked" value="6" checked="" type="checkbox">
+												<span class="checkbox"></span>大宗商品季节性风险管理(30天)
+											</label>
+											<label class="option option-primary">
+												<input name="checked" value="7" checked="" type="checkbox">
+												<span class="checkbox"></span>大宗商品季节性风险管理(60天)
+											</label>
+										</div>
+										<div class="text-center" style="margin-bottom:30px;">
+											<button class="button btn-primary" type="button">导出报告</button>
+										</div>
+									</form>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			</div>
+			<!-- core scripts-->
+			<script src="plugins/core.min.js"></script>
+			<!-- Theme Javascript-->
+			<script src="assets/js/utility/utility.js"></script>
+			<script src="assets/js/demo/demo.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!-- Widget Javascript-->
+			<script src="assets/js/demo/widgets.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function() {
+					Demo.init();
+					Core.init();
+				});
+			</script>
+	</body>
+
+</html>

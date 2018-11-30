@@ -1,0 +1,22 @@
+#msg{
+    height: 150px;
+    text-align: center;
+    position: fixed;
+    top: 60%;
+    left: 7%;
+    margin-top: -1rem;
+    line-height: 150px;
+    width: 100%;
+    font-size: 16px;
+    font-family: "微软雅黑";
+}
+#msg span{
+    color: #fff;
+    background: rgba(52,152,219,0.8);
+    height: 150px;
+    width: 300px;
+    display: inline-block;
+    padding: 0 3rem;
+    border-radius: 5px;
+    box-shadow: 5px 5px 10px #888888;
+}

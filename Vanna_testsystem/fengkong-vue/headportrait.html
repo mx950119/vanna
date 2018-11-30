@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Site Title-->
+    <title>万纳风控管理系统-分配账号</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <meta charset="utf-8">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css" />
+    <link rel="stylesheet" type="text/css" href="assets/js/controller/alert.css" />
+    <script type="text/javascript" src="assets/js/controller/alert.js"></script>
+</head>
+<style>
+body {
+    font-family: "微软雅黑";
+}
+
+.col-md-1 {
+    margin: 0;
+    padding: 0;
+    width: 4%;
+    margin-top: 15px;
+}
+
+.col-md-3 {
+    margin: 0;
+    padding: 0;
+    margin-left: 25px;
+}
+
+.accordion-toggle {
+    max-width: 250px;
+}
+
+[v-cloak] {
+    display: none;
+}
+</style>
+
+<body class="dashboard-page">
+    <div id="main">
+        <header class="navbar undefined navbar-fixed-top">
+            <div class="navbar-branding dark bg-info">
+                <a href="index.html" class="navbar-brand text-uppercase"><img src="assets/img/logos/index-logo.png" /></a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>
+            <ul class="nav navbar-nav navbar-right">
+                <li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+                <li class="dropdown menu-merge">
+                    <a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+                    <ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+                        <li class="list-group-item">
+                            <a href="account.html" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> 分配账号</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="data.html" class="animated animated-short fadeInUp"><span class="fa fa-th"></span> 数据管理</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="fund.html" class="animated animated-short fadeInUp"><span class="fa fa-th-list"></span> 基金列表</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="threshold.html" class="animated animated-short fadeInUp"><span class="fa fa-signal"></span> 设置风险临界值</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="export.html" class="animated animated-short fadeInUp"><span class="fa fa-share"></span> 导出报告</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="headportrait.html" class="animated animated-short fadeInUp"><span class="fa fa-paint-brush"></span> 修改头像</a>
+                        </li>
+                        <li class="list-group-item">
+                            <a href="modify-password.html" class="animated animated-short fadeInUp"><span class="fa fa-lock" style="width: 21px;"></span> 修改密码</a>
+                        </li>
+                        <li class="dropdown-footer">
+                            <a href="login.html"><span class="fa fa-power-off pr5"></span> Logout</a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </header>
+        <aside id="sidebar_left" class="nano nano-light affix">
+            <!-- Start: Sidebar Left Content-->
+            <div class="sidebar-left-content nano-content">
+                <ul class="nav sidebar-menu">
+                    <li>
+                        <a href="#" class="accordion-toggle"><span class="fa fa-diamond"></span><span class="sidebar-title">风控管理</span><span class="caret"></span></a>
+                        <ul class="nav sub-nav">
+                            <li>
+                                <a href="#" class="accordion-toggle"><span class="fa fa-chain"></span>投资组合<span class="caret"></span></a>
+                                <ul class="nav sub-nav">
+                                    <li>
+                                        <a href="future-seod.html">大宗商品期货</a>
+                                    </li>
+                                    <li>
+                                        <a href="stock.html">股票</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="#" class="accordion-toggle"><span class="fa fa-bar-chart-o"></span>收益风险报表<span class="caret"></span></a>
+                                <ul class="nav sub-nav">
+                                    <li>
+                                        <a href="earnings-report.html">收益报表</a>
+                                    </li>
+                                    <li>
+                                        <a href="var-correlation.html">风险价值及相关</a>
+                                    </li>
+                                    <li>
+                                        <a href="simulated-position.html">模拟仓位测试</a>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <a href="stress-test.html"><span class="fa fa-dashboard"></span>压力环境测试</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <a href="#" class="accordion-toggle"><span class="fa fa-magic"></span><span class="sidebar-title">客户定制</span><span class="caret"></span></a>
+                        <ul class="nav sub-nav">
+                            <li>
+                                <a href="#"><span class="fa fa-bank"></span>银行</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fa fa-money"></span>基金</a>
+                            </li>
+                            <li>
+                                <a href="#"><span class="fa fa-desktop"></span>券商</a>
+                            </li>
+                            <li>
+                                <a href="#" class="accordion-toggle"><span class="fa fa-cubes"></span>大宗商品交易商<span class="caret"></span></a>
+                                <ul class="nav sub-nav">
+                                    <li>
+                                        <a href="seasonal-seod.html">大宗商品期货季节性季风管理</a>
+                                    </li>
+                                    <li>
+                                        <a href="pricing-risk-hedging.html">石油和天然气存储设施定价及风险对冲</a>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <!-- sidebar bullets-->
+                    <li class="sidebar-label pt35"></li>
+                    <li class="sidebar-proj">
+                        <a href=""><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">实时计算</span></a>
+                    </li>
+                    <li class="sidebar-proj">
+                        <a href="export.html"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">导出报告</span></a>
+                    </li>
+                    <li class="sidebar-proj">
+                        <a href="data.html"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">数据管理</span></a>
+                    </li>
+                    <li class="sidebar-proj">
+                        <a href="baike.html"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">万纳百科</span></a>
+                    </li>
+                </ul>
+                <!-- Start: Sidebar Collapse Button-->
+                <div class="sidebar-toggle-mini">
+                    <a href="#"><span class="fa fa-sign-out"></span></a>
+                </div>
+            </div>
+        </aside>
+        <section id="content_wrapper">
+            <!-- Start: Topbar-Dropdown-->
+            <div id="topbar-dropmenu" class="alt">
+                <div class="topbar-menu row">
+                    <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-primary light"><span class="glyphicon glyphicon-inbox text-muted"></span><span class="metro-title">Messages</span></a></div>
+                    <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-info light"><span class="glyphicon glyphicon-user text-muted"></span><span class="metro-title">Users</span></a></div>
+                    <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-success light"><span class="glyphicon glyphicon-headphones text-muted"></span><span class="metro-title">Support</span></a></div>
+                    <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-system light"><span class="glyphicon glyphicon-facetime-video text-muted"></span><span class="metro-title">Videos</span></a></div>
+                    <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-warning light"><span class="fa fa-gears text-muted"></span><span class="metro-title">Settings</span></a></div>
+                    <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-alert light"><span class="glyphicon glyphicon-picture text-muted"></span><span class="metro-title">Pictures</span></a></div>
+                </div>
+            </div>
+            <!-- Start: Topbar-->
+            <!-- Begin: Content-->
+            <section id="content" class="table-layout animated fadeIn">
+                <!-- begin: .tray-center-->
+                <div class="tray tray-center">
+                    <div class="mw800 center-block">
+                        <div id="spy1" class="panel mt20">
+                            <div class="panel-heading"><span class="panel-icon"><i class="fa fa-crop"></i></span><span class="panel-title">预览头像</span></div>
+                            <div class="panel-body pn of-h">
+                                <div class="row table-layout table-clear-xs">
+                                    <div class="col-xs-12 col-sm-7">
+                                        <div class="img-container pv10"><img src="assets/img/stock/1.jpg"></div>
+                                    </div>
+                                    <div class="col-xs-12 col-sm-5 bg-light br-l br-grey va-t pv10">
+                                        <div>
+                                            <div class="docs-toggles">
+                                                <!-- <h3 class="page-header">Toggles:</h3>-->
+                                                <div data-toggle="buttons" class="btn-group btn-group-justified">
+                                                    <label data-method="setAspectRatio" data-option="1.7777777777777777" title="Set Aspect Ratio" class="pn p7 btn btn-primary active">
+                                                        <input id="aspestRatio1" name="aspestRatio" value="1.7777777777777777" type="radio" class="sr-only"><span data-toggle="tooltip" title="16:9" class="docs-tooltip">16:9</span>
+                                                    </label>
+                                                    <label data-method="setAspectRatio" data-option="1.3333333333333333" title="Set Aspect Ratio" class="pn p7 btn btn-primary">
+                                                        <input id="aspestRatio2" name="aspestRatio" value="1.3333333333333333" type="radio" class="sr-only"><span data-toggle="tooltip" title="4:3" class="docs-tooltip">4:3</span>
+                                                    </label>
+                                                    <label data-method="setAspectRatio" data-option="1" title="Set Aspect Ratio" class="pn p7 btn btn-primary">
+                                                        <input id="aspestRatio3" name="aspestRatio" value="1" type="radio" class="sr-only"><span data-toggle="tooltip" title="1:1" class="docs-tooltip">1:1</span>
+                                                    </label>
+                                                    <label data-method="setAspectRatio" data-option="0.6666666666666666" title="Set Aspect Ratio" class="pn p7 btn btn-primary">
+                                                        <input id="aspestRatio4" name="aspestRatio" value="0.6666666666666666" type="radio" class="sr-only"><span data-toggle="tooltip" title="2:3" class="docs-tooltip">2:3</span>
+                                                    </label>
+                                                    <label data-method="setAspectRatio" data-option="NaN" title="Set Aspect Ratio" class="pn p7 btn btn-primary">
+                                                        <input id="aspestRatio5" name="aspestRatio" value="NaN" type="radio" class="sr-only"><span data-toggle="tooltip" title="自由比例" class="docs-tooltip">Free</span>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="clearfix">
+                                            <div class="img-preview preview-lg"><img src="assets/img/stock/1.jpg"></div>
+                                            <div class="img-preview preview-md"><img src="assets/img/stock/1.jpg"></div>
+                                            <div class="img-preview preview-sm"><img src="assets/img/stock/1.jpg"></div>
+                                            <div class="img-preview preview-xs"><img src="assets/img/stock/1.jpg"></div>
+                                        </div>
+                                        <div>
+                                            <div class="docs-toggles">
+                                                <div class="dropdown dropup docs-options">
+                                                    <button data-method="getCroppedCanvas" id="toggleOptions" type="button" data-toggle="dropdown" aria-expanded="true" class="btn btn-primary btn-block dropdown-toggle">上传头像</button>
+                                                </div>
+                                                <!-- /.dropdown-->
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="panel-footer">
+                                <div class="docs-buttons">
+                                    <div class="btn-group">
+                                        <button data-method="reset" type="button" title="Reset" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="重置尺寸" class="docs-tooltip"><span class="fa fa-refresh"></span></span>
+                                        </button>
+                                        <label for="inputImage" title="Upload image file" class="btn btn-primary btn-sm btn-upload">
+                                            <input id="inputImage" name="file" type="file" accept="image/*" class="sr-only"><span data-toggle="tooltip" title="上传文件" class="docs-tooltip"><span class="fa fa-upload"></span></span>
+                                        </label>
+                                        <button data-method="zoom" data-option="0.1" type="button" title="Zoom In" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="放大" class="docs-tooltip"><span class="fa fa-search-plus"></span></span>
+                                        </button>
+                                        <button data-method="zoom" data-option="-0.1" type="button" title="Zoom Out" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="缩小" class="docs-tooltip"><span class="fa fa-search-minus"></span></span>
+                                        </button>
+                                        <button data-method="rotate" data-option="-45" type="button" title="Rotate Left" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="逆时针旋转45度" class="docs-tooltip"><span class="fa fa-rotate-left"></span></span>
+                                        </button>
+                                        <button data-method="rotate" data-option="45" type="button" title="Rotate Right" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="顺时针旋转45度" class="docs-tooltip"><span class="fa fa-rotate-right"></span></span>
+                                        </button>
+                                    </div>
+                                    <!-- Show the cropped image in modal-->
+                                    <div id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1" class="modal fade docs-cropped">
+                                        <div class="modal-dialog">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <button data-dismiss="modal" type="button" aria-hidden="true" class="close">×</button>
+                                                    <h4 id="getCroppedCanvasTitle" class="modal-title">Cropped</h4>
+                                                </div>
+                                                <div class="modal-body"></div>
+                                                <!--
+                          <div class="modal-footer">
+                          <button class="btn btn-primary" data-dismiss="modal" type="button">Close</button>
+                          </div>
+                          -->
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <!-- /.modal-->
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- begin: .tray-left-->
+            </section>
+        </section>
+        <!-- Start: Right Sidebar-->
+        <aside id="sidebar_right" class="nano affix">
+            <!-- Start: Sidebar Right Content-->
+            <div class="sidebar-right-content nano-content">
+                <div class="tab-block sidebar-block br-n">
+                    <ul class="nav nav-tabs tabs-border nav-justified hidden">
+                        <li class="active"><a href="#sidebar-right-tab1" data-toggle="tab">Tab 1</a></li>
+                        <li><a href="#sidebar-right-tab2" data-toggle="tab">Tab 2</a></li>
+                        <li><a href="#sidebar-right-tab3" data-toggle="tab">Tab 3</a></li>
+                    </ul>
+                    <div class="tab-content br-n">
+                        <div id="sidebar-right-tab1" class="tab-pane active">
+                            <h5 class="title-divider text-muted mb20">Server Statistics<span class="pull-right">2013<i class="fa fa-caret-down ml5"></i></span></h5>
+                            <div class="progress mh5">
+                                <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 44%" class="progress-bar progress-bar-primary"><span class="fs11">DB Request</span></div>
+                            </div>
+                            <div class="progress mh5">
+                                <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 84%" class="progress-bar progress-bar-info"><span class="fs11 text-left">Server Load</span></div>
+                            </div>
+                            <div class="progress mh5">
+                                <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 61%" class="progress-bar progress-bar-warning"><span class="fs11 text-left">Server Connections</span></div>
+                            </div>
+                            <h5 class="title-divider text-muted mt30 mb10">Traffic Margins</h5>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <h3 class="text-primary mn pl5">132</h3>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <h3 class="text-success-dark mn"><i class="fa fa-caret-up"></i> 13.2%</h3>
+                                </div>
+                            </div>
+                            <h5 class="title-divider text-muted mt25 mb10">Database Request</h5>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <h3 class="text-primary mn pl5">212</h3>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <h3 class="text-success-dark mn"><i class="fa fa-caret-up"></i> 25.6%</h3>
+                                </div>
+                            </div>
+                            <h5 class="title-divider text-muted mt25 mb10">Server Response</h5>
+                            <div class="row">
+                                <div class="col-xs-5">
+                                    <h3 class="text-primary mn pl5">82.5</h3>
+                                </div>
+                                <div class="col-xs-7 text-right">
+                                    <h3 class="text-danger mn"><i class="fa fa-caret-down"></i> 17.9%</h3>
+                                </div>
+                            </div>
+                            <h5 class="title-divider text-muted mt40 mb20">Server Statistics<span class="pull-right text-primary fw600">USA</span></h5>
+                        </div>
+                        <div id="sidebar-right-tab2" class="tab-pane"></div>
+                        <div id="sidebar-right-tab3" class="tab-pane"></div>
+                    </div>
+                </div>
+            </div>
+        </aside>
+    </div>
+    <!-- core scripts-->
+    <script src="plugins/core.min.js"></script>
+    <!-- Theme Javascript-->
+    <script src="assets/js/utility/utility.js"></script>
+    <script src="assets/js/demo/demo.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script src="assets/js/controller/headportrait.js"></script>
+    <script type="text/javascript">
+
+    </script>
+</body>
+
+</html>

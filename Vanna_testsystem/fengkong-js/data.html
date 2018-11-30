@@ -1,0 +1,543 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Site Title-->
+		<title>万纳风控管理系统-数据管理</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="utf-8">
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+		<!-- Stylesheets-->
+		<link rel="stylesheet" type="text/css" href="plugins/css/fullcalendar.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,600,700%7CMontserrat:400,700">
+		<link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<style>
+		body {
+			font-family: "微软雅黑";
+		}
+		
+		#top_nav {
+			width: auto;
+		}
+		
+		#top_nav li {}
+		
+		#top_nav li a {
+			width: 150px;
+			font-family: "微软雅黑";
+			font-size: 20px;
+			text-align: center;
+			color: #FFFFFF;
+			line-height: 35px;
+		}
+		.ui-datepicker-trigger {
+			display: none;
+		}
+	</style>
+
+	<body class="dashboard-page">
+		<div id="main">
+			<header class="navbar undefined">
+				<div class="navbar-branding dark bg-info">
+					<a href="index.html" class="navbar-brand text-uppercase"><img src="assets/img/logos/index-logo.png" /></a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+					<li class="dropdown menu-merge">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+						<ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+							<li class="list-group-item">
+								<a href="account.html" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> 分配账号</a>
+							</li>
+							<li class="list-group-item">
+								<a href="data.html" class="animated animated-short fadeInUp"><span class="fa fa-th"></span> 数据管理</a>
+							</li>
+							<li class="list-group-item">
+								<a href="fund.html" class="animated animated-short fadeInUp"><span class="fa fa-th-list"></span> 基金列表</a>
+							</li>
+							<li class="list-group-item">
+								<a href="threshold.html" class="animated animated-short fadeInUp"><span class="fa fa-signal"></span> 设置风险临界值</a>
+							</li>
+							
+							<li class="list-group-item">
+								<a href="export.html" class="animated animated-short fadeInUp"><span class="fa fa-share"></span> 导出报告</a>
+							</li>
+							<li class="list-group-item">
+								<a href="" class="animated animated-short fadeInUp"><span class="fa fa-paint-brush"></span> 修改头像</a>
+							</li>
+							<li class="list-group-item">
+								<a href="modify-password.html" class="animated animated-short fadeInUp"><span class="fa fa-lock"></span> 修改密码</a>
+							</li>
+							
+							<li class="dropdown-footer">
+								<a href="login.html"><span class="fa fa-power-off pr5"></span> Logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</header>
+			<aside id="sidebar_left" class="nano nano-light affix">
+				<!-- Start: Sidebar Left Content-->
+				<div class="sidebar-left-content nano-content">
+					<!-- Start: Sidebar Header-->
+					<header class="sidebar-header">
+						<!-- Sidebar Widget - Search (hidden)-->
+						<div class="sidebar-widget search-widget hidden">
+							<div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span>
+								<input id="sidebar-search" type="text" placeholder="Search..." class="form-control" />
+							</div>
+						</div>
+					</header>
+					<ul class="nav sidebar-menu">
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-diamond"></span><span class="sidebar-title">风控管理</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-chain"></span>投资组合<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="future-seod.html">大宗商品期货</a>
+										</li>
+										<li>
+											<a href="stock.html">股票</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-bar-chart-o"></span>收益风险报表<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="earnings-report.html">收益报表</a>
+										</li>
+										<li>
+											<a href="var-correlation.html">风险价值及相关</a>
+										</li>
+										<li>
+											<a href="simulated-position-test.html">模拟仓位测试</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="stress-test.html"><span class="fa fa-dashboard"></span>压力环境测试</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-magic"></span><span class="sidebar-title">客户定制</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#"><span class="fa fa-bank"></span>银行</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-money"></span>基金</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-desktop"></span>券商</a>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-cubes"></span>大宗商品交易商<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="seasonal-seod.html">大宗商品期货季节性季风管理</a>
+										</li>
+										<li>
+											<a href="pricing-risk-hedging.html">石油和天然气存储设施定价及风险对冲</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- sidebar bullets-->
+						<li class="sidebar-label pt35"></li>
+						<li class="sidebar-proj">
+							<a href=""><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">实时计算</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="export.html"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">导出报告</span></a>
+						</li>
+						<li class="sidebar-proj active">
+							<a href="data.html"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">数据管理</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="baike.html"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">万纳百科</span></a>
+						</li>
+					</ul>
+					<!-- Start: Sidebar Collapse Button-->
+					<div class="sidebar-toggle-mini">
+						<a href="#"><span class="fa fa-sign-out"></span></a>
+					</div>
+				</div>
+			</aside>
+			<!-- Start: Content-Wrapper-->
+			<div id="app">
+			<section id="content_wrapper">
+				<!-- Start: Topbar-->
+				<header id="topbar" class="alt">
+					<div class="topbar-left" style="font-family:Microsoft YaHei">
+						<ol class="breadcrumb">
+							<li class="crumb-icon">
+								<a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+							</li>
+							<li class="crumb-link">首页</li>
+							<li class="crumb-trail">个人中心</li>
+							<li class="crumb-link">
+								<a>数据管理</a>
+							</li>
+						</ol>
+					</div>
+				</header>
+				<!-- Begin: Content-->
+
+				<!-- begin: .tray-center-->
+				<section id="content" class="table-layout">
+					<div class="tray tray-center" style="height: 883px;">
+
+						<h3 style="margin-left:20px;">数据管理</h3>
+						<div class="tray-inner" v-if="hasPrivilegesToShowCreate">
+							<div class="admin-form theme-primary">
+								<div class="panel heading-border panel-primary">
+									<div class="panel-body bg-light">
+										<div class="admin-form mw2000 center-block theme-primary" style="text-align: center;">
+											<form id="admin-form" class="col-lg-12" method="post" action="/" novalidate="novalidate">
+												<div class="panel-body bg-light " style="margin-top: 50px;">
+													<div class="section col-md-4">
+														<label class="field select">
+                        										<select v-model="clientPos.assetClass" id="language" name="language">
+                        											<option v-for="type in assetClass" :value="type">{{type}}</option>
+										                          <!-- <option value="">交易品种类型</option>
+										                          <option value="EN">股票</option>
+										                          <option value="FR">期货</option> -->
+										                        </select><i class="arrow double"></i>
+										                   </label>
+													</div>
+													<div class="col-md-4">
+														<label class="field">
+														  <input v-model="clientPos.tickerCode" type="text" name="lastname" placeholder="交易品代码" class="gui-input">
+														</label>
+													</div>
+													<div class="col-md-4">
+														<label class="field">
+														  <input type="text" name="lastname" placeholder="交易品名称" class="gui-input">
+														</label>
+													</div>
+												</div>
+												<div class="panel-body bg-light">
+													<div class="section col-md-4">
+														<label class="field select">
+                        										<select id="language" name="language" v-model="clientPos.posnType">
+										                          <option v-for="type in posnType" :value="type">{{type}}</option>
+										                        </select><i class="arrow double"></i>
+										                   </label>
+													</div>
+													<div class="col-md-4">
+														<label class="field">
+														  <input v-model="clientPos.posn" type="text" name="lastname" placeholder="持仓量" class="gui-input">
+														</label>
+													</div>
+													<div class="col-md-4">
+														<label class="field">
+														  <input v-model="clientPos.unitCode" type="text" name="lastname" placeholder="平均成本" class="gui-input">
+														</label>
+													</div>
+												</div>
+												<div class="panel-body bg-light" style="margin-bottom: 25px;">
+													<div class="col-md-4">
+														<label class="field">
+														  <input v-model="clientPos.dailyPnl" type="text" name="lastname" placeholder="日盈亏" class="gui-input">
+														</label>
+													</div>
+													<div class="col-md-4">
+														<label class="field">
+														  <input v-model="clientPos.mtdPnl" type="text" name="lastname" placeholder="月盈亏" class="gui-input">
+														</label>
+													</div>
+													<div class="col-md-4">
+														<label class="field">
+														  <input v-model="clientPos.ytdPnl" type="text" name="lastname" placeholder="年盈亏" class="gui-input">
+														</label>
+													</div>
+												</div>
+												<div class="panel-body bg-light" style="margin-bottom: 25px;">
+												<div class="section col-md-4">
+														<label class="field select">
+                        										<select id="language" name="language" v-model="clientPos.fundId" @change="getBookId">
+										                          <option v-for="type in fundId" :value="type.fundId">{{type.fundName}}</option>
+										                        </select><i class="arrow double"></i>
+										                   </label>
+													</div>
+													<div class="section col-md-4">
+														<label class="field select">
+                        										<select id="language" name="language" v-model="clientPos.bookId">
+										                          <option v-for="type in bookId" :value="type.fundId">{{type.fundName}}</option>
+										                        </select><i class="arrow double"></i>
+										                   </label>
+													</div>
+													<!-- 
+													<div class="col-md-4">
+														<label class="field">
+														  <input v-model="clientPos.fundId" type="text" name="lastname" placeholder="基金" class="gui-input">
+														</label>
+													</div>
+													<div class="col-md-4">
+														<label class="field">
+														  <input v-model="clientPos.bookId" type="text" name="lastname" placeholder="子基金" class="gui-input">
+														</label>
+													</div> -->
+													<div class="col-md-4">
+													<label class="field">
+														  <input  v-model="clientPos.ovm" type="text" name="lastname" placeholder="管理资金规模" class="gui-input">
+														</label>
+													</div>
+												</div>
+												
+												<button v-if="status==1" @click="updateClientPosition" type="button" class="button btn-primary mb20">更新</button>
+												<button v-else @click="saveClientPosition" type="button" class="button btn-primary mb20">建仓</button>
+
+											</form>
+										</div>
+
+									</div>
+								</div>
+							</div>
+						</div>
+						<section id="content" class="table-layout" style="margin-top: 25px;">
+							<!-- begin: .tray-center-->
+							<div class="tray tray-center" style="height: 830px;padding: 0px 25px 0px 0px;">
+								<!-- dashboard tiles-->
+								<div class="row">
+
+								</div>
+								<!-- dashboard metric chart-->
+
+								<!-- recent activity table-->
+								<div class="panel mb25 mt5" >
+									<div class="panel-body pn">
+										<div class="table-responsive of-y-a">
+											<table class="table admin-form theme-warning tc-checkbox-1 fs13">
+												<thead>
+													<tr class="bg-light">
+														<th>建仓日期</th>
+														<th>交易品代码</th>
+														<th>交易品名称</th>
+														<th>交易员</th>
+														<th>持仓量</th>
+														<th class="text-right">产品状态</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr v-for="item in clientPositionList">
+														<td class="w100">{{item.date}}</td>
+														<td>{{item.tickerCode}}</td>
+														<td>{{item.tickerName}}</td>
+														<td>{{item.traderName}}</td>
+														<td>{{item.posn}}</td>
+														<td class="text-right">
+															<operation-btn :item="item" :token="token" @requeryclientposition="queryClientPosition" @editclientposition="renderClientPosition"></operation-btn>
+															
+														</td>
+													</tr>
+													
+												</tbody>
+
+											</table>
+										</div>
+									</div>
+								</div>
+								<!-- info traffic panels-->
+
+							</div>
+							<!-- begin: .tray-right-->
+							<aside data-tray-height="match" class="tray tray-right tray290 pn " style="height: 605px;">
+								<!-- store activity timeline-->
+								<div class="admin-form" style="padding: 0 15px;">
+									<h4> 交易品搜索</h4>
+									<hr class="short">
+									<div class="section mb15">
+										<label for="order-id" class="field prepend-icon">
+                  <input id="order-id" type="text" name="order-id" placeholder="交易品名称 #" class="gui-input">
+                  <label for="order-id" class="field-icon"><i class="fa fa-tag"></i></label>
+										</label>
+									</div>
+									
+									<h5><small>交易品日期</small></h5>
+									<div class="section row">
+										<div class="col-md-6">
+
+											<label for="date1" class="field prepend-icon">
+                    <date-picker labelid="date1" :dateshowed="queryparam.startDate" @selectedhandler="datechanged"></date-picker>
+                    <label for="date1" class="field-icon"><i class="fa fa-calendar"></i></label>
+											</label>
+<!-- 
+                    <label for="date1" class="field prepend-icon">
+                    <input id="date1" type="text" name="date1" placeholder="01/01/15" class="gui-input">
+                    <label for="date1" class="field-icon"><i class="fa fa-calendar"></i></label>
+											</label> -->
+										</div>
+										<div class="col-md-6">
+											<label for="date2" class="field prepend-icon">
+                    <date-picker labelid="date2" :dateshowed="queryparam.endDate" @selectedhandler="datechanged"></date-picker>
+                    <label for="date2" class="field-icon"><i class="fa fa-calendar"></i></label>
+											</label>
+										</div>
+									</div>
+									<h5><small>搜索类型</small></h5>
+									<div class="section mb15">
+										<label class="field select">
+                  <select v-model="queryparam.assetClass" id="filter-categories" name="filter-categories" class="empty">
+                  	<option v-for="type in assetClass" :value="type">{{type}}</option>
+                   <!--  <option value="0" selected="selected">交易品种类型</option>
+                    <option value="1">Electronics</option>
+                    <option value="2">Software</option> -->
+                  </select><i class="arrow double"></i>
+                </label>
+									</div>
+									<h5><small>交易员搜索</small></h5>
+									<div class="section">
+										<label class="field select">
+                  <select id="filter-customers" name="filter-customers" class="empty">
+                    <option value="0" selected="selected">交易员</option>
+                    <option value="1">Michael</option>
+                    <option value="2">David</option>
+                    <option value="3">Sara</option>
+                    <option value="4">Tasha</option>
+                  </select><i class="arrow double"></i>
+                </label>
+									</div>
+									<hr class="short">
+									<div class="section">
+										<button type="button" @click="queryClientPosition" class="btn btn-default btn-sm ph25">Search</button>
+										<label class="field option ml15">
+                  <input type="checkbox" name="info"><span class="checkbox"></span><span class="text-muted">Save Search</span>
+                </label>
+									</div>
+								</div>
+							</aside>
+					</div>
+					</section>
+					<div class="tray-inner">
+
+						<!-- begin: .tray-right-->
+						<aside data-tray-height="match" class="tray tray-right tray270 pn hidden">
+							<!-- store activity timeline-->
+							<ol class="timeline-list pl5 mt5">
+								<li class="timeline-item">
+									<div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+									<div class="timeline-desc"><b>Michael</b> Added a new item to his store:
+										<a href="#">Ipod</a>
+									</div>
+									<div class="timeline-date">1:25am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+									<div class="timeline-desc"><b>Sara</b> Added a new item to his store:
+										<a href="#">Notebook</a>
+									</div>
+									<div class="timeline-date">3:05am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-success"><span class="fa fa-usd"></span></div>
+									<div class="timeline-desc"><b>Admin</b> created a new invoice for:
+										<a href="#">Software</a>
+									</div>
+									<div class="timeline-date">4:15am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-warning"><span class="fa fa-pencil"></span></div>
+									<div class="timeline-desc"><b>Laura</b> edited her work experience</div>
+									<div class="timeline-date">5:25am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-success"><span class="fa fa-usd"></span></div>
+									<div class="timeline-desc"><b>Admin</b> created a new invoice for:
+										<a href="#">Apple Inc.</a>
+									</div>
+									<div class="timeline-date">7:45am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+									<div class="timeline-desc"><b>Michael</b> Added a new item to his store:
+										<a href="#">Ipod</a>
+									</div>
+									<div class="timeline-date">8:25am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+									<div class="timeline-desc"><b>Sara</b> Added a new item to his store:
+										<a href="#">Watch</a>
+									</div>
+									<div class="timeline-date">9:35am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-system"><span class="fa fa-fire"></span></div>
+									<div class="timeline-desc"><b>Admin</b> created a new invoice for:
+										<a href="#">Software</a>
+									</div>
+									<div class="timeline-date">4:15am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-warning"><span class="fa fa-pencil"></span></div>
+									<div class="timeline-desc"><b>Laura</b> edited her work experience</div>
+									<div class="timeline-date">5:25am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-success"><span class="fa fa-usd"></span></div>
+									<div class="timeline-desc"><b>Admin</b> created a new invoice for:
+										<a href="#">Software</a>
+									</div>
+									<div class="timeline-date">4:15am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-warning"><span class="fa fa-pencil"></span></div>
+									<div class="timeline-desc"><b>Laura</b> edited her work experience</div>
+									<div class="timeline-date">5:25am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-success"><span class="fa fa-usd"></span></div>
+									<div class="timeline-desc"><b>Admin</b> created a new invoice for:
+										<a href="#">Apple Inc.</a>
+									</div>
+									<div class="timeline-date">7:45am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+									<div class="timeline-desc"><b>Michael</b> Added a new item to his store:
+										<a href="#">Ipod</a>
+									</div>
+									<div class="timeline-date">8:25am</div>
+								</li>
+								<li class="timeline-item">
+									<div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+									<div class="timeline-desc"><b>Sara</b> Added a new item to his store:
+										<a href="#">Watch</a>
+									</div>
+									<div class="timeline-date">9:3</div>
+								</li>
+							</ol>
+						</aside>
+				</section>
+			</section>
+			</div>
+		
+			</div>
+			<!-- core scripts-->
+			<script src="plugins/core.min.js"></script>
+			<script src="assets/js/utility/vue.js"></script>
+			<!-- Theme Javascript-->
+			<script src="assets/js/utility/utility.js"></script>
+			<script src="assets/js/demo/demo.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!-- Widget Javascript-->
+			<script src="assets/js/demo/widgets.js"></script>
+			<script src="assets/js/controller/data.js"></script>
+
+	</body>
+
+</html>

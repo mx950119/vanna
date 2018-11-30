@@ -1,0 +1,346 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Site Title-->
+		<title>万纳风控管理系统-风险临界值设置</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="utf-8">
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+		<!-- Stylesheets-->
+		<link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css"/>
+		<link rel="stylesheet" type="text/css" href="assets/js/controller/alert.css" />
+		<script type="text/javascript" src="assets/js/controller/alert.js"></script>
+	</head>
+	<style>
+		body {
+			font-family: "微软雅黑";
+		}
+		.table-layout .panel p {
+			padding:10px 20px;
+			font-size:16px;
+		}
+		.panel-body li .panel-item {
+			border:1px solid #ddd;
+			background:#f5f5f5;
+			margin-bottom:10px;
+			color:#898989;
+		}
+		.panel-body li .btn-group {
+			position:absolute;
+			top:5px;
+			right:15px;
+		}
+		.panel-item span {
+			margin-right:10px;
+		}
+		.sub-ul {
+			margin-left:30px;
+		}
+		.col-md-1{
+			margin: 0;
+			padding: 0;
+			width: 4%;
+			margin-top: 15px;
+			text-align: center;
+		}
+		.col-md-3{
+			margin: 0;
+			padding: 0;
+			margin-left: 25px;
+		}
+		.accordion-toggle{
+			max-width: 250px;
+		}
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+
+	<body class="dashboard-page">
+		<div id="main">
+			<header class="navbar undefined navbar-fixed-top">
+				<div class="navbar-branding dark bg-info">
+					<a href="index.html" class="navbar-brand text-uppercase"><img src="assets/img/logos/index-logo.png"/></a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>				
+				<ul class="nav navbar-nav navbar-right">
+					<li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+					<li class="dropdown menu-merge">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+							<ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+							<li class="list-group-item">
+								<a href="account.html" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> 分配账号</a>
+							</li>
+							<li class="list-group-item">
+								<a href="data.html" class="animated animated-short fadeInUp"><span class="fa fa-th"></span> 数据管理</a>
+							</li>
+							<li class="list-group-item">
+								<a href="fund.html" class="animated animated-short fadeInUp"><span class="fa fa-th-list"></span> 基金列表</a>
+							</li>
+							<li class="list-group-item">
+								<a href="threshold.html" class="animated animated-short fadeInUp"><span class="fa fa-signal"></span> 设置风险临界值</a>
+							</li>
+							
+							<li class="list-group-item">
+								<a href="export.html" class="animated animated-short fadeInUp"><span class="fa fa-share"></span> 导出报告</a>
+							</li>
+							<li class="list-group-item">
+								<a href="" class="animated animated-short fadeInUp"><span class="fa fa-paint-brush"></span> 修改头像</a>
+							</li>
+							<li class="list-group-item">
+								<a href="modify-password.html" class="animated animated-short fadeInUp"><span class="fa fa-lock" style="width: 21px;"></span>修改密码</a>
+							</li>
+							
+							<li class="dropdown-footer">
+								<a href="login.html"><span class="fa fa-power-off pr5"></span> Logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</header>
+			<aside id="sidebar_left" class="nano nano-light affix">
+				<!-- Start: Sidebar Left Content-->
+				<div class="sidebar-left-content nano-content">
+					<!-- Start: Sidebar Header-->
+					<header class="sidebar-header">
+						<!-- Sidebar Widget - Search (hidden)-->
+						<div class="sidebar-widget search-widget hidden">
+							<div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span>
+								<input id="sidebar-search" type="text" placeholder="Search..." class="form-control" />
+							</div>
+						</div>
+					</header>
+					<ul class="nav sidebar-menu">
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-diamond"></span><span class="sidebar-title">风控管理</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-chain"></span>投资组合<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="future-seod.html">大宗商品期货</a>
+										</li>
+										<li>
+											<a href="stock.html">股票</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-bar-chart-o"></span>收益风险报表<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="earnings-report.html">收益报表</a>
+										</li>
+										<li>
+											<a href="var-correlation.html">风险价值及相关</a>
+										</li>
+										<li>
+											<a href="simulated-position.html">模拟仓位测试</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="stress-test.html"><span class="fa fa-dashboard"></span>压力环境测试</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-magic"></span><span class="sidebar-title">客户定制</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#"><span class="fa fa-bank"></span>银行</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-money"></span>基金</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-desktop"></span>券商</a>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-cubes"></span>大宗商品交易商<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="seasonal-seod.html">大宗商品期货季节性季风管理</a>
+										</li>
+										<li>
+											<a href="pricing-risk-hedging.html">石油和天然气存储设施定价及风险对冲</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- sidebar bullets-->
+						<li class="sidebar-label pt35"></li>
+						<li class="sidebar-proj">
+							<a href=""><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">实时计算</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="export.html"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">导出报告</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="data.htm"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">数据管理</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="baike.html"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">万纳百科</span></a>
+						</li>
+					</ul>
+					<!-- Start: Sidebar Collapse Button-->
+					<div class="sidebar-toggle-mini">
+						<a href="#"><span class="fa fa-sign-out"></span></a>
+					</div>
+				</div>
+			</aside>
+			<!-- Start: Content-Wrapper-->
+			<div id="app" v-cloak>
+			<section id="content_wrapper">
+				<header id="topbar" class="alt">
+					<div class="topbar-left">
+						<ol class="breadcrumb">
+							<li class="crumb-icon">
+								<a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+							</li>
+							<li class="crumb-link">个人中心</li>
+							<li class="crumb-link"><a>风险临界值设置</a></li>
+						</ol>
+					</div>
+				</header>
+				<section id="content" class="table-layout">
+					<div class="tray tray-center">
+						<h3 style="margin-left:20px;">风险临界值设置</h3>
+						<div class="admin-form theme-primary">
+							<div class="panel heading-border panel-primary">
+								<div class="panel-body bg-light">
+									<form id="form-ui" method="post">
+										<div class="panel-body p25 pb5">
+											<div id="tab1_1" class="tab-pane active">
+												<div class="section row">
+												  <div class="col-md-3">
+													<label for="cardmonth" class="field select">
+													  <select @change="getListTrader" id="cardmonth" name="cardmonth" v-model="teamIdSelected">
+													  <option v-for="team in teamList" :value="team.teamId">{{team.teamName}}</option>
+													  </select><i class="arrow double"></i>
+													</label>
+												  </div>
+												  <div class="col-md-1">
+												  	<span class="text-danger">*</span>
+												  </div>
+												  <div class="col-md-3">
+													<label class="field">
+													  <input v-model="varThreshold" type="text" name="lastname" placeholder="请输入VaR风险临界值金额" class="gui-input">
+													</label>
+												  </div>
+												  <div class="col-md-1">
+												  	<span class="text-danger">*</span>
+												  </div>
+												  <div class="col-md-3">
+													<label class="field">
+													  <input v-model="varPercentum" type="text" name="lastname" placeholder="请输入VaR风险临界值百分比" class="gui-input">
+													</label>
+												  </div>
+												  <div class="col-md-1">
+												  	<span class="text-danger">*</span>
+												  </div>
+												</div>
+												<div class="section row">
+												  <div class="col-md-3">
+													<label for="trader" class="field select">
+													  <select id="trader" name="trader" v-model="traderIdSelected">
+													  <option v-for="trader in traderList" :value="trader.clientId">{{trader.realName}}</option>
+													  </select><i class="arrow double"></i>
+													</label>
+												  </div>
+												  <div class="col-md-1">
+												  	<span class="text-danger">*</span>
+												  </div>
+												  <div class="col-md-3">
+													<label class="field">
+													  <input v-model="esThreshold" type="text" name="lastname" placeholder="请输入ES风险临界值金额" class="gui-input">
+													</label>
+												  </div>
+												  <div class="col-md-1">
+												  	<span class="text-danger">*</span>
+												  </div>
+												  <div class="col-md-3">
+													<label class="field">
+													  <input v-model="esPercentum" type="text" name="lastname" placeholder="请输入ES风险临界值百分比" class="gui-input">
+													</label>
+												  </div>
+												  <div class="col-md-1">
+												  	<span class="text-danger">*</span>
+												  </div>
+												</div>
+											</div>
+										</div>
+										<div v-if="threholdIdSelected" class="text-center" style="margin-bottom:30px;">
+											<button @click="updateThreshold" class="button btn-primary" type="button">更新</button>
+										</div>
+										<div v-else class="text-center" style="margin-bottom:30px;">
+											<button @click="saveThreshold" class="button btn-primary" type="button">保存</button>
+										</div>
+										
+									</form>
+								</div>
+							</div>
+						</div>
+						
+						<div class="panel">
+							<p>风险临界值列表</p>
+							<div class="panel-body">
+								<div class="table-responsive">
+								  <table class="table admin-form theme-warning tc-checkbox-1 fs13">
+									<thead>
+									  <tr class="bg-light">
+										<th class="text-center" width="25%">成员</th>
+										<th width="15%">VaR临界值(金额)</th>
+										<th width="15%">VaR临界值(百分比)</th>
+										<th width="15%">ES临界值(金额)</th>
+										<th width="15%">ES临界值(百分比)</th>
+										<th>操作</th>
+									  </tr>
+									</thead>
+									<tbody>
+									  <tr v-for="threhold in thresholdList">
+										<td>{{threhold.clientName}}</td>
+										<td>{{threhold.varThreshold}}</td>
+										<td>{{threhold.varPercentum}}</td>
+										<td>{{threhold.esThreshold}}</td>
+										<td>{{threhold.esPercentum}}</td>
+										<td>{{threhold.thresholdId}}</td>
+										<td>
+											<operation-btn :threhold="threhold" :token="token" @modify="renderThreshold"></operation-btn>
+										 <!--  <div class="btn-group text-right">
+											<button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-info br2 btn-xs fs12 dropdown-toggle">操作<span class="caret ml15"></span></button>
+											<ul role="menu" class="dropdown-menu">
+											  <li><a href="#">修改</a></li>
+											  <li><a href="#">删除</a></li>
+											</ul>
+										  </div> -->
+										</td>
+									  </tr>
+									</tbody>
+								</table>
+							</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			</div>
+			</div>
+			<!-- core scripts-->
+			<script src="plugins/core.min.js"></script>
+
+			<script src="assets/js/utility/vue.js"></script>
+
+			<!-- Theme Javascript-->
+			<script src="assets/js/utility/utility.js"></script>
+			<script src="assets/js/demo/demo.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!-- Widget Javascript-->
+			<script src="assets/js/demo/widgets.js"></script>
+			<script src="assets/js/controller/threshold.js"></script>
+	</body>
+
+</html>

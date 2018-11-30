@@ -1,0 +1,280 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Site Title-->
+		<title>万纳风控管理系统-万纳百科</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="utf-8">
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+		<!-- Stylesheets-->
+		<link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css"/>
+	</head>
+	<style>
+		body {
+			font-family: "微软雅黑";
+		}
+		.detail-content {
+			padding:20px;
+			font-size:14px;
+		}
+		.detail-content p  {
+			line-height:25px;
+		}
+		.detail-content p span {
+			margin-right:10px;
+		}
+		section aside ul li span {
+			margin-left:10px;
+		}
+	</style>
+
+	<body class="dashboard-page">
+		<div id="main">
+			<header class="navbar undefined  navbar-fixed-top">
+				<div class="navbar-branding dark bg-info">
+					<a href="index.html" class="navbar-brand text-uppercase"><img src="assets/img/logos/index-logo.png"/></a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>				
+				<ul class="nav navbar-nav navbar-right">
+					<li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+					<li class="dropdown menu-merge">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+						<ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+							<li class="list-group-item">
+								<a href="account.html" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> 分配账号</a>
+							</li>
+							<li class="list-group-item">
+								<a href="data.html" class="animated animated-short fadeInUp"><span class="fa fa-th"></span> 数据管理</a>
+							</li>
+							<li class="list-group-item">
+								<a href="fund.html" class="animated animated-short fadeInUp"><span class="fa fa-th-list"></span> 基金列表</a>
+							</li>
+							<li class="list-group-item">
+								<a href="threshold.html" class="animated animated-short fadeInUp"><span class="fa fa-signal"></span> 设置风险临界值</a>
+							</li>
+							
+							<li class="list-group-item">
+								<a href="export.html" class="animated animated-short fadeInUp"><span class="fa fa-share"></span> 导出报告</a>
+							</li>
+							<li class="list-group-item">
+								<a href="" class="animated animated-short fadeInUp"><span class="fa fa-paint-brush"></span> 修改头像</a>
+							</li>
+							<li class="list-group-item">
+								<a href="modify-password.html" class="animated animated-short fadeInUp"><span class="fa fa-lock"></span> 修改密码</a>
+							</li>
+							
+							<li class="dropdown-footer">
+								<a href="login.html"><span class="fa fa-power-off pr5"></span> Logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</header>
+			<aside id="sidebar_left" class="nano nano-light affix">
+				<!-- Start: Sidebar Left Content-->
+				<div class="sidebar-left-content nano-content">
+					<!-- Start: Sidebar Header-->
+					<header class="sidebar-header">
+						<!-- Sidebar Widget - Search (hidden)-->
+						<div class="sidebar-widget search-widget hidden">
+							<div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span>
+								<input id="sidebar-search" type="text" placeholder="Search..." class="form-control" />
+							</div>
+						</div>
+					</header>
+					<ul class="nav sidebar-menu">
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-diamond"></span><span class="sidebar-title">风控管理</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-chain"></span>投资组合<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="future-seod.html">大宗商品期货</a>
+										</li>
+										<li>
+											<a href="stock.html">股票</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-bar-chart-o"></span>收益风险报表<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="earnings-report.html">收益报表</a>
+										</li>
+										<li>
+											<a href="var-correlation.html">风险价值及相关</a>
+										</li>
+										<li>
+											<a href="simulated-position.html">模拟仓位测试</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="stress-test.html"><span class="fa fa-dashboard"></span>压力环境测试</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-magic"></span><span class="sidebar-title">客户定制</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#"><span class="fa fa-bank"></span>银行</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-money"></span>基金</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-desktop"></span>券商</a>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-cubes"></span>大宗商品交易商<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="seasonal-seod.html">大宗商品期货季节性季风管理</a>
+										</li>
+										<li>
+											<a href="pricing-risk-hedging.html">石油和天然气存储设施定价及风险对冲</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- sidebar bullets-->
+						<li class="sidebar-label pt35"></li>
+						<li class="sidebar-proj">
+							<a href=""><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">实时计算</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="export.html"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">导出报告</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="data.html"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">数据管理</span></a>
+						</li>
+						<li class="sidebar-proj active">
+							<a href="baike.html"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">万纳百科</span></a>
+						</li>
+						<div class="sidebar-toggle-mini mt20">
+							<a href="#"><span class="fa fa-sign-out"></span></a>
+						</div>
+					</ul>
+					<!-- Start: Sidebar Collapse Button-->
+					
+				</div>
+			</aside>
+			<!-- Start: Content-Wrapper-->
+			<section id="content_wrapper">
+				<header id="topbar" class="alt">
+					<div class="topbar-left">
+						<ol class="breadcrumb">
+							<li class="crumb-icon">
+								<a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+							</li>
+							<li class="crumb-link"><a>万纳百科</a></li>
+						</ol>
+					</div>
+				</header>
+				<h3 style="margin:0 0 20px 30px;">万纳百科</h3>
+				<section id="content" class="table-layout">
+					<aside class="tray tray-left tray250" data-tray-height="match">
+						<div id="nav-spy">
+							<ul data-offset-top="200" class="nav tray-nav">
+								<li class="active"><a onclick="loadUrl('var.html',this)">VaR方法<span class="fa fa-arrow-left text-info"></span></a></li>
+								<li><a onclick="loadUrl('sharp.html',this)">夏普比率</a></li>
+								<li><a onclick="loadUrl('market-risk.html',this)">市场风险</a></li>
+								<li><a onclick="loadUrl('history-moni.html',this)">历史模拟法</a></li>
+								<li><a onclick="loadUrl('monte-carlo.html',this)">蒙特卡罗方法</a></li>
+								<li><a onclick="loadUrl('beta.html',this)">贝塔系数</a></li>
+								<li><a onclick="loadUrl('delta.html',this)">Delta值</a></li>
+								<li><a onclick="loadUrl('gamma.html',this)">Gamma值</a></li>
+								<li><a onclick="loadUrl('vega.html',this)">Vega值</a></li>
+								<li><a onclick="loadUrl('theta.html',this)">Theta值</a></li>
+								<li><a onclick="loadUrl('confidence.html',this)">置信水平</a></li>
+								<li><a onclick="loadUrl('duration.html',this)">久期分析</a></li>
+								<li><a onclick="loadUrl('covariance.html',this)">协方差</a></li>
+								<li><a onclick="loadUrl('stress.html',this)">压力测试</a></li>
+								<li><a onclick="loadUrl('scene.html',this)">情景分析</a></li>
+								<li><a onclick="loadUrl('volatility.html',this)">波动率</a></li>
+								<li><a onclick="loadUrl('standard-deviation.html',this)">标准差</a></li>
+								<li><a onclick="loadUrl('risk-exposure.html',this)">风险敞口</a></li>
+								<li><a onclick="loadUrl('ratio.html',this)">损益比</a></li>
+							  </ul>
+						</div>
+					</aside>
+					<div class="tray tray-center">
+						<div class="panel" id="content-panel">
+							<div class="detail-content">
+								<h3>VaR方法</h3>
+								<p><span class="fa fa-hand-o-right"></span><strong>VaR方法M</strong>(Value at Risk，简称VaR)，称为风险价值模型，也称受险价值方法、在险价值方法</p>
+								<p><span class="fa fa-hand-o-right"></span><strong>VaR的定义</strong></p>
+								<p>VaR(Value at Risk)按字面解释就是“在险价值”，其含义指：在市场正常波动下，某一金融资产或证券组合的最大可能损失。更为确切的是指，在一定概率水平（置信度）下，某一金融资产或证券组合价值在未来特定时期内的最大可能损失。</p>
+								<p><span class="fa fa-hand-o-right"></span><strong>VaR的表示公式</strong></p>
+								<p>用公式表示为：</br>
+						　　		P(ΔPΔt≤VaR)=a</br>
+						　　		字母含义如下：</br>
+						　　		P——资产价值损失小于可能损失上限的概率，即英文的Probability。</br>
+						　　		ΔP——某一金融资产在一定持有期Δt的价值损失额。</br>
+						　　		VaR——给定置信水平a下的在险价值，即可能的损失上限。</br>
+						　　		a——给定的置信水平</br>
+									VaR从统计的意义上讲，本身是个数字，是指面临“正常”的市场波动时“处于风险状态的价值”。即在给定的置信水平和一定的持有期限内，预期的最大损失量(可以是绝对值，也可以是相对值)。例如，某一投资公司持有的证券组合在未来24小时内，置信度为95%，在证券市场正常波动的情况下，VaR值为520万元，其含义是指，该公司的证券组合在一天内(24小时)，由于市场价格变化而带来的最大损失超过520万元的概率为5%，平均20个交易日才可能出现一次这种情况。或者说有95%的把握判断该投资公司在下一个交易日内的损失在520万元以内。5%的几率反映了金融资产管理者的风险厌恶程度，可根据不同的投资者对风险的偏好程度和承受能力来确定。</br>
+								</p>
+								<p><span class="fa fa-hand-o-right"></span><strong>VaR的计算系数</strong></p>
+								<p>由上述定义出发，要确定一个金融机构或资产组合的VaR值或建立VaR的模型，必须首先确定以下三个系数：一是持有期间的长短；二是置信区间的大小；三是观察期间。</br>
+						　　1、持有期。持有期△t，即确定计算在哪一段时间内的持有资产的最大损失值，也就是明确风险管理者关心资产在一天内一周内还是一个月内的风险价值。持有期的选择应依据所持有资产的特点来确定比如对于一些流动性很强的交易头寸往往需以每日为周期计算风险收益和VaR值，如G30小组在1993年的衍生产品的实践和规则中就建议对场外OTC衍生工具以每日为周期计算其VaR，而对一些期限较长的头寸如养老基金和其他投资基金则可以以每月为周期。</br>
+						　　从银行总体的风险管理看持有期长短的选择取决于资产组合调整的频度及进行相应头寸清算的可能速率。巴塞尔委员会在这方面采取了比较保守和稳健的姿态，要求银行以两周即10个营业日为持有期限。</br>
+						　　2、置信水平α。一般来说对置信区间的选择在一定程度上反映了金融机构对风险的不同偏好。选择较大的置信水平意味着其对风险比较厌恶，希望能得到把握性较大的预测结果，希望模型对于极端事件的预测准确性较高。根据各自的风险偏好不同，选择的置信区间也各不相同。比如J.P. Morgan与美洲银行选择95％，花旗银行选择95.4％，大通曼哈顿选择97.5％，Bankers Trust选择99％。作为金融监管部门的巴塞尔委员会则要求采用99％的置信区间，这与其稳健的风格是一致的。</br>
+						　　3、第三个系数是观察期间(Observation Period)。观察期间是对给定持有期限的回报的波动性和关联性考察的整体时间长度，是整个数据选取的时间范围，有时又称数据窗口(Data Window)。例如选择对某资产组合在未来6个月，或是1年的观察期间内，考察其每周回报率的波动性(风险) 。这种选择要在历史数据的可能性和市场发生结构性变化的危险之间进行权衡。为克服商业循环等周期性变化的影响，历史数据越长越好，但是时间越长，收购兼并等市场结构性变化的可能性越大，历史数据因而越难以反映现实和未来的情况。巴塞尔银行监管委员会目前要求的观察期间为1年。</br>
+						　　综上所述，VaR实质是在一定置信水平下经过某段持有期资产价值损失的单边临界值，在实际应用时它体现为作为临界点的金额数目。</br>
+								</p>
+								<p><span class="fa fa-hand-o-right"></span><strong>VaR的特点</strong></p>
+								<p>第一，可以用来简单明了表示市场风险的大小，没有任何技术色彩，没有任何专业背景的投资者和管理者都可以通过VaR值对金融风险进行评判；</br>
+						　　	第二，可以事前计算风险，不像以往风险管理的方法都是在事后衡量风险大小；</br>
+						　　	第三，不仅能计算单个金融工具的风险。还能计算由多个金融工具组成的投资组合风险，这是传统金融风险管理所不能做到的。</br>
+								</p>
+								<p><span class="fa fa-hand-o-right"></span><strong>VaR在风险管理的应用</strong></p><p>VaR的应用主要体现在：</br>
+						　　第一，用于风险控制。目前已有超过1000家的银行、保险公司、投资基金、养老金基金及非金融公司采用VaR方法作为金融衍生工具风险管理的手段。利用VaR方法进行风险控制，可以使每个交易员或交易单位都能确切地明了他们在进行有多大风险的金融交易，并可以为每个交易员或交易单位设置VaR限额，以防止过度投机行为的出现。如果执行严格的VaR管理，一些金融交易的重大亏损也许就可以完全避免。</br>
+						　　第二，用于业绩评估。在金融投资中，高收益总是伴随着高风险，交易员可能不惜冒巨大的风险去追逐巨额利润。公司出于稳健经营的需要，必须对交易员可能的过度投机行为进行限制。所以，有必要引入考虑风险因素的业绩评价指标。</br>
+						　　第三，估算风险性资本（Risk－based capital）。以VaR来估算投资者面临市场风险时所需的适量资本，风险资本的要求是BIS对于金融监管的基本要求。VaR值被视为投资者所面临的最大可接受（可承担）的损失金额，若发生时须以自有资本来支付，防止公司发生无法支付的情况。</br>
+							1、 VaR模型测量风险简洁明了，统一了风险计量标准，管理者和投资者较容易理解掌握。</br>
+						　　风险的测量是建立在概率论与数理统计的基础之上，既具有很强的科学性，又表现出方法操作上的简便性。同时，VaR 改变了在不同金融市场缺乏表示风险统一度量, 使不同术语(例如基点现值、现有头寸等) 有统一比较标准, 使不同行业的人在探讨其市场风险时有共同的语言。</br>
+						　　另外，有了统一标准后，金融机构可以定期测算VaR值并予以公布，增强了市场透明度，有助于提高投资者对市场的把握程度，增强投资者的投资信心，稳定金融市场。</br>
+						　　2、可以事前计算, 降低市场风险。</br>
+						　　不像以往风险管理的方法都是在事后衡量风险大小，不仅能计算单个金融工具的风险, 还能计算由多个金融工具组成的投资组合风险。综合考虑风险与收益因素,选择承担相同的风险能带来最大收益的组合，具有较高的经营业绩。</br>
+						　　3、确定必要资本及提供监管依据。</br>
+						　　VaR为确定抵御市场风险的必要资本量确定了科学的依据, 使金融机构资本安排建立在精确的风险价值基础上, 也为金融监管机构监控银行的资本充足率提供了科学、统一、公平的标准。VaR 适用于综合衡量包括利率风险、汇率风险、股票风险以及商品价格风险和衍生金融工具风险在内的各种市场风险。因此, 这使得金融机构可以用一个具体的指标数值(VaR) 就可以概括地反映整个金融机构或投资组合的风险状况, 大大方便了金融机构各业务部门对有关风险信息的交流, 也方便了机构最高管理层随时掌握机构的整体风险状况, 因而非常有利于金融机构对风险的统一管理。同时, 监管部门也得以对该金融机构的市场风险资本充足率提出统一要求。</br>
+								</p>					
+							</p>
+						</div>
+						</div>
+					</div>
+				</div>
+			</section>
+			</div>
+			<!-- core scripts-->
+			<script src="plugins/core.min.js"></script>
+			<!-- Theme Javascript-->
+			<script src="assets/js/utility/utility.js"></script>
+			<script src="assets/js/demo/demo.js"></script>
+			<script src="assets/js/main.js"></script>
+			<!-- Widget Javascript-->
+			<script src="assets/js/demo/widgets.js"></script>
+			<script type="text/javascript">
+				jQuery(document).ready(function() {
+					Demo.init();
+					Core.init();
+				});
+				function loadUrl(name,obj) {
+					$('#content-panel').load('baike/'+name);
+					$('section aside ul li').removeClass("active");
+					$(obj).parent("li").addClass("active");
+					$('section aside ul li a span').remove();
+					$(obj).append("<span class='fa fa-arrow-left text-info'></span>");
+				}
+			</script>
+	</body>
+
+</html>

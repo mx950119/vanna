@@ -1,0 +1,595 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Site Title-->
+		<title>万纳风控管理系统-模拟仓位测试</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="utf-8">
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+		<!-- Stylesheets-->
+		<link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css" />
+	</head>
+	<style>
+		body {
+			font-family: "微软雅黑";
+		}
+		
+		.section label {
+			margin-bottom: 15px;
+		}
+		
+		.bg-light {
+			background-color: white;
+		}
+	</style>
+
+	<body class="dashboard-page">
+		<div id="main">
+			<header class="navbar undefined navbar-fixed-top">
+				<div class="navbar-branding dark bg-info">
+					<a href="index.html" class="navbar-brand text-uppercase"><img src="assets/img/logos/index-logo.png" /></a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+					<li class="dropdown menu-merge">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+						<ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+							<li class="list-group-item">
+								<a href="accout.html" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> 分配账号</a>
+							</li>
+							<li class="list-group-item">
+								<a href="data.html" class="animated animated-short fadeInUp"><span class="fa fa-th"></span> 数据管理</a>
+							</li>
+							<li class="list-group-item">
+								<a href="fund.html" class="animated animated-short fadeInUp"><span class="fa fa-th-list"></span> 基金列表</a>
+							</li>
+							<li class="list-group-item">
+								<a href="threshold.html" class="animated animated-short fadeInUp"><span class="fa fa-signal"></span> 设置风险临界值</a>
+							</li>
+							
+							<li class="list-group-item">
+								<a href="export.html" class="animated animated-short fadeInUp"><span class="fa fa-share"></span> 导出报告</a>
+							</li>
+							<li class="list-group-item">
+								<a href="" class="animated animated-short fadeInUp"><span class="fa fa-paint-brush"></span> 修改头像</a>
+							</li>
+							<li class="list-group-item">
+								<a href="modify-password.html" class="animated animated-short fadeInUp"><span class="fa fa-lock"></span> 修改密码</a>
+							</li>
+							
+							<li class="dropdown-footer">
+								<a href="login.html"><span class="fa fa-power-off pr5"></span> Logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</header>
+			<aside id="sidebar_left" class="nano nano-light affix">
+				<!-- Start: Sidebar Left Content-->
+				<div class="sidebar-left-content nano-content">
+					<ul class="nav sidebar-menu">
+						<li>
+							<a href="#" class="accordion-toggle menu-open"><span class="fa fa-diamond"></span><span class="sidebar-title">风控管理</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-chain"></span>投资组合<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="future-seod.html">大宗商品期货</a>
+										</li>
+										<li>
+											<a href="stock.html">股票</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle menu-open"><span class="fa fa-bar-chart-o"></span>收益风险报表<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="earnings-report.html">收益报表</a>
+										</li>
+										<li>
+											<a href="var-correlation.html">风险价值及相关</a>
+										</li>
+										<li class="active">
+											<a href="simulated-position-test.html">模拟仓位测试</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="stress-test.html"><span class="fa fa-dashboard"></span>压力环境测试</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-magic"></span><span class="sidebar-title">客户定制</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#"><span class="fa fa-bank"></span>银行</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-money"></span>基金</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-desktop"></span>券商</a>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-cubes"></span>大宗商品交易商<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="seasonal-seod.html">大宗商品期货季节性季风管理</a>
+										</li>
+										<li>
+											<a href="pricing-risk-hedging.html">石油和天然气存储设施定价及风险对冲</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- sidebar bullets-->
+						<li class="sidebar-label pt35"></li>
+						<li class="sidebar-proj">
+							<a href=""><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">实时计算</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="export.html"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">导出报告</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="data.html"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">数据管理</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="baike.html"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">万纳百科</span></a>
+						</li>
+						<!-- Start: Sidebar Collapse Button-->
+						<div class="sidebar-toggle-mini mt20">
+							<a href="#"><span class="fa fa-sign-out"></span></a>
+						</div>
+					</ul>
+				</div>
+			</aside>
+        <!-- Start: Content-Wrapper-->
+        
+            <section id="content_wrapper">
+                <!-- Start: Topbar-->
+                <header id="topbar" class="alt">
+                    <div class="topbar-left" style="font-family:Microsoft YaHei">
+                        <ol class="breadcrumb">
+                            <li class="crumb-icon">
+                                <a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+                            </li>
+                            <li class="crumb-link">风控管理</li>
+                            <li class="crumb-trail">收益风险报表</li>
+                            <li class="crumb-link">
+                                <a href="#" style="font-size: 14px;">模拟仓位测试</a>
+                            </li>
+                        </ol>
+                    </div>
+                </header>
+                <section id="content" class="table-layout">
+                    <div class="tray tray-center">
+                        <div id="app">
+                        <h3 style="margin-left:20px;">个人建仓</h3>
+                        <div class="tray-inner row" style="background: #FAFAFA;padding-bottom: 25px;">
+                            <div class="admin-form theme-primary">
+                                <div class="panel heading-border panel-primary">
+                                    <div class="tray-inner">
+                                        <div class="admin-form mw2000 center-block theme-primary" style="text-align: center;">
+                                            <form id="admin-form" class="col-lg-12" method="post" action="/" novalidate="novalidate">
+                                                <div class="panel-body" style="margin-top: 50px;">
+                                                    <div class="section col-md-4">
+                                                        <label class="field select">
+                                                            <select id="language" name="language" v-model="simulationPos.assetClassStr">
+                                                                <option v-for="type in assetClass" :value="type">{{type}}</option>
+                                                                <!-- <option value="">交易品种</option>
+                                                                <option value="EN">股票</option>
+                                                                <option value="EN">期货</option> -->
+                                                            </select><i class="arrow double"></i>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="tickerCode" class="field prepend-icon">
+                                                            <input id="tickerCode" type="text" name="tickerCode" placeholder="交易品代码" class="gui-input" v-model="simulationPos.tickerCode">
+                                                            <label for="tickerCode" class="field-icon"></label>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="productName" class="field prepend-icon">
+                                                            <input id="productName" type="text" name="productName" placeholder="交易品名称" class="gui-input" v-model="simulationPos.productName">
+                                                            <label for="productName" class="field-icon"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <div class="panel-body">
+                                                    <div class="section col-md-4">
+                                                        <label class="field select">
+                                                            <select id="language" name="language" v-model="simulationPos.posnTypeStr">
+                                                                <option v-for="type in posnType" :value="type">{{type}}</option>
+                                                               <!--  <option value="">仓位类型</option>
+                                                                <option value="EN">交易</option>
+                                                                <option value="EN">对冲</option> -->
+                                                            </select><i class="arrow double"></i>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="daima" class="field prepend-icon">
+                                                            <input id="daima" type="text" name="daima" placeholder="持仓量" class="gui-input" v-model="simulationPos.posn">
+                                                            <label for="daima" class="field-icon"></label>
+                                                        </label>
+                                                    </div>
+                                                    <div class="col-md-4">
+                                                        <label for="curUser" class="field prepend-icon">
+                                                            <input id="curUser" type="text" name="nacurUserme" placeholder="" class="gui-input" v-model="simulationPos.curUser">
+                                                            <label for="curUser" class="field-icon"></label>
+                                                        </label>
+                                                    </div>
+                                                </div>
+                                                <button type="button" class="button btn-primary"  @click="submitSimulationPos">添加到列表</button>
+                                            </form>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                                    
+
+                        <div id="spy3" class="tray-inner" style="margin-top: 25px;padding: 25px;">
+
+                            
+                            <div class="panel-heading">
+                                <span class="fs18 text-shady-lady">模拟仓位列表</span>
+                                <div class="btn-group pull-right" style="padding-top: 15px;">
+
+                                    <button type="button" class="btn btn-xs btn-system" style="margin-right: 5px;" @click="exportexcel"><span class="mr10 icon fa fa-cloud-upload"></span>导出模板</button>
+                                    <button type="button" class="btn btn-xs btn-system" id="uploadfilebtn"><span class="mr10 icon fa fa-cloud-upload"></span>uploadfile</button>
+
+                                    <!-- <button  type="button" class="btn btn-xs btn-system"><span class="mr10 icon fa fa-cloud-upload"></span>上传数据</button> -->
+                                </div>
+                            </div>
+                            <div class="panel-body pn">
+                                <div class="table-responsive of-y-a">
+                                    <table class="table admin-form theme-warning tc-checkbox-1 fs13">
+                                        <thead>
+                                            <tr>
+                                                <th class="text-left">交易品种类型</th>
+                                                <th>交易品代码</th>
+                                                <th>交易品名称</th>
+                                                <th>仓位类型</th>
+                                                <th>持仓量</th>
+                                                <th class="text-right">状态</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr v-for="list in positionListOfPage">
+                                                <td class="text-left">{{list.assetClass}}</td>
+                                                <td>{{list.tickerCode}}</td>
+                                                <td>{{list.productName}}</td>
+                                                <td>{{list.posnType}}</td>
+                                                <td>{{list.Posn}}</td>
+                                                <td class="text-right">
+                                                    <operation-button :posid="list.Id"></operation-button>
+                                                   <!--  <operation-button></operation-button>
+                                                    <div class="btn-group">
+                                                        <button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-success br2 btn-xs fs12 dropdown-toggle">操作<span class="caret ml15"></span></button>
+                                                        <ul role="menu" class="dropdown-menu">
+                                                            <li>
+                                                                <a>编辑</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>删除</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td> -->
+                                            </tr>
+                                            <!-- <tr>
+                                                <td class="text-left">大宗商品期货</td>
+                                                <td>IF1803</td>
+                                                <td>橡胶1808</td>
+                                                <td>交易</td>
+                                                <td>296</td>
+                                                <td class="text-right">
+                                                    <div class="btn-group">
+                                                        <button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-success br2 btn-xs fs12 dropdown-toggle">操作<span class="caret ml15"></span></button>
+                                                        <ul role="menu" class="dropdown-menu">
+                                                            <li>
+                                                                <a>编辑</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>删除</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left">大宗商品期货</td>
+                                                <td>IF1803</td>
+                                                <td>橡胶1808</td>
+                                                <td>交易</td>
+                                                <td>296</td>
+                                                <td class="text-right">
+                                                    <div class="btn-group">
+                                                        <button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-success br2 btn-xs fs12 dropdown-toggle">操作<span class="caret ml15"></span></button>
+                                                        <ul role="menu" class="dropdown-menu">
+                                                            <li>
+                                                                <a>编辑</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>删除</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left">大宗商品期货</td>
+                                                <td>IF1803</td>
+                                                <td>橡胶1808</td>
+                                                <td>交易</td>
+                                                <td>296</td>
+                                                <td class="text-right">
+                                                    <div class="btn-group">
+                                                        <button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-success br2 btn-xs fs12 dropdown-toggle">操作<span class="caret ml15"></span></button>
+                                                        <ul role="menu" class="dropdown-menu">
+                                                            <li>
+                                                                <a>编辑</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>删除</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left">大宗商品期货</td>
+                                                <td>IF1803</td>
+                                                <td>橡胶1808</td>
+                                                <td>交易</td>
+                                                <td>296</td>
+                                                <td class="text-right">
+                                                    <div class="btn-group">
+                                                        <button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-success br2 btn-xs fs12 dropdown-toggle">操作<span class="caret ml15"></span></button>
+                                                        <ul role="menu" class="dropdown-menu">
+                                                            <li>
+                                                                <a>编辑</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>删除</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left">大宗商品期货</td>
+                                                <td>IF1803</td>
+                                                <td>橡胶1808</td>
+                                                <td>交易</td>
+                                                <td>296</td>
+                                                <td class="text-right">
+                                                    <div class="btn-group">
+                                                        <button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-success br2 btn-xs fs12 dropdown-toggle">操作<span class="caret ml15"></span></button>
+                                                        <ul role="menu" class="dropdown-menu">
+                                                            <li>
+                                                                <a>编辑</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>删除</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr>
+                                            <tr>
+                                                <td class="text-left">大宗商品期货</td>
+                                                <td>IF1803</td>
+                                                <td>橡胶1808</td>
+                                                <td>交易</td>
+                                                <td>296</td>
+                                                <td class="text-right">
+                                                    <div class="btn-group">
+                                                        <button type="button" data-toggle="dropdown" aria-expanded="false" class="btn btn-success br2 btn-xs fs12 dropdown-toggle">操作<span class="caret ml15"></span></button>
+                                                        <ul role="menu" class="dropdown-menu">
+                                                            <li>
+                                                                <a>编辑</a>
+                                                            </li>
+                                                            <li>
+                                                                <a>删除</a>
+                                                            </li>
+                                                        </ul>
+                                                    </div>
+                                                </td>
+                                            </tr> -->
+                                        </tbody>
+                                    </table>
+                                    <td colspan="5">
+                                        <nav class="text-right">
+                                            <vue-pagination :config="pagination" @activepagechanged="renderList"></vue-pagination>
+                                        </nav>
+                                    </td>
+                                    <div id="source-button" class="btn btn-primary btn-xs" style="display: none;">&lt; &gt;</div>
+                                    <div class="panel-body bg-light admin-form" style="margin-top: 25px;text-align: center;">
+                                        <button type="submit" class="button btn-primary">计算</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                        <div class="tray-inner" style="margin-top: 25px;padding: 15px 0 0 25px;">
+                            <header id="topbar" class="alt">
+                                <div class="topbar-left" style="margin-left: -30px;color: #333333;">
+                                    <h1 class="mn">计算结果</h1>
+                                </div>
+                            </header>
+                            <div class="panel">
+                                <h3 class="mtn mb20 fw400" style="color:#a8a3ad">1D计算结果</h3>
+                                <div class="panel-body pn">
+                                    <div class="row table-layout table-clear-sm">
+                                        <div class="col-md-8 va-m">
+                                            <div id="1dh" style="width: 100%; height: 220px; margin: 0 auto" data-highcharts-chart="0">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 br-l pn">
+                                            <div class="admin-form ml20">
+                                                <!-- Panel Break Smart Widget-->
+                                                <div class="smart-widget sm-right smr-50">
+                                                    <label class="field">
+                                                        <h3 class="mtn mb16 fw400" style="color:#a8a3ad">1D计算结果</h3>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <table class="table mbn tc-med-1 tc-bold-last ml20">
+                                                <thead>
+                                                    <tr>
+                                                        <th>场景</th>
+                                                        <th>值</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-info fs14 mr10"></span>1D 95%风险价值</td>
+                                                        <td class="text-left">120</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-primary fs14 mr10"></span>1D 99%风险价值</td>
+                                                        <td class="text-left">110</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-success fs14 mr10"></span>1D 95%预期收益不足</td>
+                                                        <td class="text-left">90</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-warning fs14 mr10"></span>1D 99%预期收益不足</td>
+                                                        <td class="text-left">100</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="panel">
+                                <h3 class="mtn mb20 fw400" style="color:#a8a3ad">5D计算结果</h3>
+                                <div class="panel-body pn">
+                                    <div class="row table-layout table-clear-sm">
+                                        <div class="col-md-8 va-m">
+                                            <div id="5dh" style="width: 100%; height: 220px; margin: 0 auto" data-highcharts-chart="0">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 br-l pn">
+                                            <div class="admin-form ml20">
+                                                <!-- Panel Break Smart Widget-->
+                                                <div class="smart-widget sm-right smr-50">
+                                                    <label class="field">
+                                                        <h3 class="mtn mb16 fw400" style="color:#a8a3ad">5D计算结果</h3>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <table class="table mbn tc-med-1 tc-bold-last ml20">
+                                                <thead>
+                                                    <tr>
+                                                        <th>场景</th>
+                                                        <th>值</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-info fs14 mr10"></span>5D 95%风险价值</td>
+                                                        <td class="text-left">120</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-primary fs14 mr10"></span>5D 99%风险价值</td>
+                                                        <td class="text-left">110</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-success fs14 mr10"></span>5D 95%预期收益不足</td>
+                                                        <td class="text-left">90</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-warning fs14 mr10"></span>5D 99%预期收益不足</td>
+                                                        <td class="text-left">100</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                            <div class="panel">
+                                <h3 class="mtn mb20 fw400" style="color:#a8a3ad">10D计算结果</h3>
+                                <div class="panel-body pn">
+                                    <div class="row table-layout table-clear-sm">
+                                        <div class="col-md-8 va-m">
+                                            <div id="10dh" style="width: 100%; height: 220px; margin: 0 auto" data-highcharts-chart="0">
+                                            </div>
+                                        </div>
+                                        <div class="col-md-6 br-l pn">
+                                            <div class="admin-form">
+                                                <!-- Panel Break Smart Widget-->
+                                                <div class="smart-widget sm-right smr-50 ml20">
+                                                    <label class="field">
+                                                        <h3 class="mtn mb16 fw400" style="color:#a8a3ad">10D计算结果</h3>
+                                                    </label>
+                                                </div>
+                                            </div>
+                                            <table class="table mbn tc-med-1 tc-bold-last ml20">
+                                                <thead>
+                                                    <tr>
+                                                        <th>场景</th>
+                                                        <th>值</th>
+                                                    </tr>
+                                                </thead>
+                                                <tbody>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-info fs14 mr10"></span>10D 95%风险价值</td>
+                                                        <td class="text-left">100</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-primary fs14 mr10"></span>10D 99%风险价值</td>
+                                                        <td class="text-left">120</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-success fs14 mr10"></span>10D 95%预期收益不足</td>
+                                                        <td class="text-left">80</td>
+                                                    </tr>
+                                                    <tr>
+                                                        <td><span class="fa fa-circle text-warning fs14 mr10"></span>10D 99%预期收益不足</td>
+                                                        <td class="text-left">90</td>
+                                                    </tr>
+                                                </tbody>
+                                            </table>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <hr />
+                        </div>
+                    </div>
+    </div>
+    </section>
+    </div>
+    <!-- core scripts-->
+    <script src="plugins/core.min.js"></script>
+    <script src="assets/js/demo/js/highcharts.src.js"></script>
+    <script src="assets/js/demo/js//highcharts-more.js"></script>
+    <script src="assets/js/demo/js/modules/exporting.js"></script>
+    <script src="assets/js/utility/vue.js"></script>
+    <script src="assets/js/utility/multiselect/bootstrap-multiselect.js"></script>
+    <script src="assets/js/utility/jquery.uploadfile.js"></script>
+    <!-- Theme Javascript-->
+    <script src="assets/js/utility/utility.js"></script>
+    <script src="assets/js/demo/demo.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- Widget Javascript-->
+    <script src="assets/js/demo/widgets.js"></script>
+    <script src="assets/js/controller/simulatedposition.js"></script>
+</body>
+
+</html>

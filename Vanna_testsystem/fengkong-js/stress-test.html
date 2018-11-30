@@ -1,0 +1,387 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Site Title-->
+		<title>万纳风控管理系统-压力环境测试</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="utf-8">
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+		<!-- Stylesheets-->
+		<link rel="stylesheet" type="text/css" href="plugins/css/fullcalendar.min.css">
+		<link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+		<!--<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,600,700%7CMontserrat:400,700">-->
+		<link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+		<![endif]-->
+	</head>
+	<style>
+		body {
+			height: 2500px;
+			font-family: "微软雅黑";
+		}
+		
+		.tray-inner {
+			margin-bottom: 20px;
+			padding: 10px 25px 30px 10px;
+		}
+		
+		.panel-heading {
+			height: auto;
+			padding:0 10px;
+		}
+		
+		.bg-light {
+			background: transparent;
+		}
+		
+		#top_nav {
+			width: auto;
+		}
+		
+		#top_nav li {}
+		
+		#top_nav li a {
+			width: 150px;
+			font-family: "微软雅黑";
+			font-size: 20px;
+			text-align: center;
+			color: #FFFFFF;
+			line-height: 35px;
+		}
+		
+		.flex-column-reverse-before-md {
+			background: #FAFAFA;
+			height: 300px;
+		}
+		
+		.pull-right {
+			margin: 15px 5px 0 0;
+		}
+		/*add*/
+		#topbar.alt .breadcrumb {
+			font-size: 16px;
+		}
+		.p5-20 {
+			padding:5px 20px !important;
+		}
+	</style>
+
+	<body class="dashboard-page">
+		<div id="main">
+			<header class="navbar undefined navbar-fixed-top">
+				<div class="navbar-branding dark bg-info">
+					<a href="index.html" class="navbar-brand text-uppercase"><img src="assets/img/logos/index-logo.png" /></a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+					<li class="dropdown menu-merge">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+						<ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+							<li class="list-group-item">
+								<a href="account.html" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> 分配账号</a>
+							</li>
+							<li class="list-group-item">
+								<a href="data.html" class="animated animated-short fadeInUp"><span class="fa fa-th"></span> 数据管理</a>
+							</li>
+							<li class="list-group-item">
+								<a href="fund.html" class="animated animated-short fadeInUp"><span class="fa fa-th-list"></span> 基金列表</a>
+							</li>
+							<li class="list-group-item">
+								<a href="threshold.html" class="animated animated-short fadeInUp"><span class="fa fa-signal"></span> 设置风险临界值</a>
+							</li>
+							
+							<li class="list-group-item">
+								<a href="export.html" class="animated animated-short fadeInUp"><span class="fa fa-share"></span> 导出报告</a>
+							</li>
+							<li class="list-group-item">
+								<a href="" class="animated animated-short fadeInUp"><span class="fa fa-paint-brush"></span> 修改头像</a>
+							</li>
+							<li class="list-group-item">
+								<a href="modify-password.html" class="animated animated-short fadeInUp"><span class="fa fa-lock"></span> 修改密码</a>
+							</li>
+							
+							<li class="dropdown-footer">
+								<a href="login.html"><span class="fa fa-power-off pr5"></span> Logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</header>
+			<aside id="sidebar_left" class="nano nano-light affix">
+				<!-- Start: Sidebar Left Content-->
+				<div class="sidebar-left-content nano-content">
+					<ul class="nav sidebar-menu">
+						<li>
+							<a href="#" class="accordion-toggle menu-open"><span class="fa fa-diamond"></span><span class="sidebar-title">风控管理</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-chain"></span>投资组合<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="future-seod.html">大宗商品期货</a>
+										</li>
+										<li>
+											<a href="stock.html">股票</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-bar-chart-o"></span>收益风险报表<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="earnings-report.html">收益报表</a>
+										</li>
+										<li>
+											<a href="var-correlation.html">风险价值及相关</a>
+										</li>
+										<li>
+											<a href="simulated-position.html">模拟仓位测试</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a class="menu-open active" href="stress-test.html"><span class="fa fa-dashboard"></span>压力环境测试</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-magic"></span><span class="sidebar-title">客户定制</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#"><span class="fa fa-bank"></span>银行</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-money"></span>基金</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-desktop"></span>券商</a>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-cubes"></span>大宗商品交易商<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="seasonal-seod.html">大宗商品期货季节性季风管理</a>
+										</li>
+										<li>
+											<a href="pricing-risk-hedging.html">石油和天然气存储设施定价及风险对冲</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- sidebar bullets-->
+						<li class="sidebar-label pt35"></li>
+						<li class="sidebar-proj">
+							<a href=""><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">实时计算</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="export.html"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">导出报告</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="data.html"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">数据管理</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="baike.html"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">万纳百科</span></a>
+						</li>
+						<!-- Start: Sidebar Collapse Button-->
+						<div class="sidebar-toggle-mini mt20">
+							<a href="#"><span class="fa fa-sign-out"></span></a>
+						</div>
+					</ul>
+					
+				</div>
+			</aside>
+			<!-- Start: Content-Wrapper-->
+			<div id="app">
+			<section id="content_wrapper">
+				<!-- Start: Topbar-Dropdown-->
+				<div id="topbar-dropmenu" class="alt">
+					<div class="topbar-menu row">
+						<div class="col-xs-4 col-sm-2">
+							<a href="#" class="metro-tile bg-primary light"><span class="glyphicon glyphicon-inbox text-muted"></span><span class="metro-title">Messages</span></a>
+						</div>
+						<div class="col-xs-4 col-sm-2">
+							<a href="#" class="metro-tile bg-info light"><span class="glyphicon glyphicon-user text-muted"></span><span class="metro-title">Users</span></a>
+						</div>
+						<div class="col-xs-4 col-sm-2">
+							<a href="#" class="metro-tile bg-success light"><span class="glyphicon glyphicon-headphones text-muted"></span><span class="metro-title">Support</span></a>
+						</div>
+						<div class="col-xs-4 col-sm-2">
+							<a href="#" class="metro-tile bg-system light"><span class="glyphicon glyphicon-facetime-video text-muted"></span><span class="metro-title">Videos</span></a>
+						</div>
+						<div class="col-xs-4 col-sm-2">
+							<a href="#" class="metro-tile bg-warning light"><span class="fa fa-gears text-muted"></span><span class="metro-title">Settings</span></a>
+						</div>
+						<div class="col-xs-4 col-sm-2">
+							<a href="#" class="metro-tile bg-alert light"><span class="glyphicon glyphicon-picture text-muted"></span><span class="metro-title">Pictures</span></a>
+						</div>
+					</div>
+				</div>
+				<!-- Start: Topbar-->
+				<header id="topbar" class="alt">
+					<div class="topbar-left" style="font-family:Microsoft YaHei">
+						<ol class="breadcrumb">
+							<li class="crumb-icon">
+								<a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+							</li>
+							<li class="crumb-link">风控管理</li>
+							<li class="crumb-link">
+								<a>压力环境测试</a>
+							</li>
+						</ol>
+					</div>
+				</header>
+				<!-- Begin: Content-->
+				<section id="content" class="table-layout animated fadeIn">
+					<!-- begin: .tray-center-->
+
+					<div class="tray tray-center">
+						<div class="tray-inner panel-heading" style="text-align: left;padding-left:25px;overflow: inherit;">
+							<div class="ib mr30">
+								<span class="fs16 text-shady-lady">净资产值：</span>
+								</br>
+								<h2 class=" fs36 ib mn ">{{netAsset}}</h2>
+							</div>
+							<span class="fs15 text-shady-lady">{{date}}</span>
+							<div class="mt-20 pull-sm-right">
+								<var-picker @varselectedhandler="varoptionschanged"></var-picker>
+								<day-picker :curdayoption="dayParam" @dayselectedhandler="dayoptionschanged"></day-picker>
+								<per-picker @perselectedhandler="peroptionschanged"></per-picker>
+							</div>
+						</div>
+						<div class="tray-inner" style="padding-bottom:1px;">
+							<div id="p5" class="panel">
+								<div class="panel-heading">
+									<h3 class="ib mn mr20">常规场景</h3><span class="fs15 text-shady-lady">{{perParam}}%风险价值</span>
+								</div>
+								<div class="panel-body pn">
+									<div class="row table-layout table-clear-sm">
+										<div class="col-md-6 va-m">
+											<div id="high-column-l1" style="width: 100%; height: 300px; margin: 0 auto" data-highcharts-chart="0">
+												
+												
+											</div>
+										</div>
+										<div class="col-md-6 br-l pn" style="vertical-align:top;">
+											<div style="height:45px;line-height:45px;color:#A8A3AD;font-size:20px;padding-left:20px;">
+												常规场景{{perParam}}%风险价值表
+											</div>
+											<table class="table pl10">
+												<thead>
+													<tr class="" style="background:#FBFBFB;">
+														<th style="padding-left:25px;font-size:16px;">常规场景</th>
+														<th style="padding-right:75px;font-size:16px;text-align:right;">{{perParam}}%风险价值</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr  is="stress-component" v-for="(data, index) in generalResult" :item="data"></tr>
+													
+												</tbody>
+											</table>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						<div class="tray-inner" style="padding-bottom:1px;">
+							<div id="pchart3" class="panel">
+								<div class="panel-heading">
+									<h3 class="ib mn mr20">压力测试</h3><span class="fs15 text-shady-lady">{{perParam}}%风险价值</span>
+								</div>
+								<div class="panel-menu hidden">
+									<div data-chart-id="#high-line" class="chart-legend">
+										<button type="button" data-chart-id="0" class="legend-item btn btn-sm btn-primary mr10">Data 1</button>
+										<button type="button" data-chart-id="1" class="legend-item btn btn-info btn-sm">Data 2</button>
+									</div>
+								</div>
+								<div class="panel-body pn">
+									<div id="high-line-l2" style="width: 100%; height: 385px; margin: 0 auto" data-highcharts-chart="3">
+										
+									</div>
+									
+								</div>
+							</div>
+						</div>
+						<div class="tray-inner" style="padding-left:0;padding-right:0;padding-top:5px;padding-bottom:5px;">
+							<div class="panel-heading"><span class="fs20 text-shady-lady pl15">压力测试{{perParam}}%风险价值表</span></div>
+							<div class="pt5 bg-light">
+										<div class="table-responsive">
+											<table data-chart-id="#high-line" class="table table-hover">
+												<thead>
+													<tr style="background:#FBFBFB;">
+														<th class="w400 fs16 pl40">压力测试</th>
+														<th class="w150 fs16">1D</th>
+														<th class="w150 fs16">5D</th>
+														<th class="w150 fs16">10D</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr v-for="(name, index) in scenarioResultStressTest.scenarioNames">
+														<td class="fs16 pl40"><span class="fa fa-circle text-warning fs14 mr15"></span>{{name}}</td>
+														<td v-for="v in scenarioResultStressTest[name] ">{{v}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+						</div>
+						<div class="tray-inner" style="padding-bottom:5px;">
+							<div class="panel-body">
+								<div class="panel-heading">
+									<h3 class="ib mn mr20">重大历史事件重演</h3><span class="fs15 text-shady-lady">{{perParam}}%风险值</span>
+								</div>
+                				<div id="high-column2-l3" style="width: 100%; height: 430px; margin: 0 auto" ></div>
+              				</div>
+						</div>
+						<div class="tray-inner" style="padding:0;">
+							<div class="panel-heading"><span class="fs18 text-shady-lady">重大历史事件重演{{perParam}}%</span></div>
+							<div class="pt5 bg-light br-t">
+										<div class="table-responsive">
+											<table data-chart-id="#high-line" class="table table-hover">
+												<thead>
+													<tr class="bg-light">
+														<th class="w400 pl25">重大历史事件重演</th>
+														<th class="w150">1D</th>
+														<th class="w150">5D</th>
+														<th class="w150">10D</th>
+													</tr>
+												</thead>
+												<tbody>
+													<tr v-for="(name, index) in scenarioResultHistroyEvent.scenarioNames">
+														<td class="fs15 pl25"><span class="flag-xs flag-us mr10 va-b"></span>{{name}}</td>
+														<td v-for="v in scenarioResultHistroyEvent[name] ">{{v}}</td>
+													</tr>
+												</tbody>
+											</table>
+										</div>
+									</div>
+						</div>
+					</div>
+				</section>
+			</section>
+		</div>
+		</div>
+		<!-- core scripts-->
+		<script src="plugins/core.min.js"></script>
+
+		<script src="assets/js/demo/js/highcharts.src.js"></script>
+		<script src="assets/js/demo/js//highcharts-more.js"></script>
+		<script src="assets/js/demo/js/modules/exporting.js"></script>
+		<script src="assets/js/utility/vue.js"></script>
+		<script src="assets/js/utility/multiselect/bootstrap-multiselect.js"></script>
+
+		<!-- Theme Javascript-->
+		<script src="assets/js/utility/utility.js"></script>
+		<script src="assets/js/demo/demo.js"></script>
+		<script src="assets/js/main.js"></script>
+		<!-- Widget Javascript-->
+		<script src="assets/js/components.js"></script>
+		<script src="assets/js/controller/stresstest.js"></script>
+	</body>
+
+</html>

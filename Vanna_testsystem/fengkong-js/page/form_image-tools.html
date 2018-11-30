@@ -1,0 +1,983 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Monster Dashboard</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,600,700%7CMontserrat:400,700">
+    <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body data-spy="scroll" data-target="#nav-spy" data-offset="400" class="form-image-tools-page">
+    <!-- Start: Theme Preview Pane-->
+    <div id="skin-toolbox" class="bg-white">
+      <div class="panel">
+        <div class="panel-heading"><span class="panel-icon"><i class="fa fa-gear text-primary"></i></span><span class="panel-title"> Theme Options</span></div>
+        <div class="panel-body pn">
+          <ul role="tablist" class="nav nav-list nav-list-sm pl15 pt10">
+            <li class="active"><a href="#toolbox-header" role="tab" data-toggle="tab">Navbar</a></li>
+            <li><a href="#toolbox-sidebar" role="tab" data-toggle="tab">Sidebar</a></li>
+            <li><a href="#toolbox-settings" role="tab" data-toggle="tab">Misc</a></li>
+          </ul>
+          <div class="tab-content p20 ptn pb15">
+            <div id="toolbox-header" role="tabpanel" class="tab-pane active">
+              <form id="toolbox-header-skin">
+                <h4 class="mv20">Header Skins</h4>
+                <div class="skin-toolbox-swatches">
+                  <div class="checkbox-custom checkbox-disabled fill mb5">
+                    <input id="headerSkin8" type="radio" name="headerSkin" checked="" value="">
+                    <label for="headerSkin8">Light</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-primary mb5">
+                    <input id="headerSkin1" type="radio" name="headerSkin" value="bg-primary">
+                    <label for="headerSkin1">Primary</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-info mb5">
+                    <input id="headerSkin3" type="radio" name="headerSkin" value="bg-info">
+                    <label for="headerSkin3">Info</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-warning mb5">
+                    <input id="headerSkin4" type="radio" name="headerSkin" value="bg-warning">
+                    <label for="headerSkin4">Warning</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-danger mb5">
+                    <input id="headerSkin5" type="radio" name="headerSkin" value="bg-danger">
+                    <label for="headerSkin5">Danger</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-alert mb5">
+                    <input id="headerSkin6" type="radio" name="headerSkin" value="bg-alert">
+                    <label for="headerSkin6">Alert</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-system mb5">
+                    <input id="headerSkin7" type="radio" name="headerSkin" value="bg-system">
+                    <label for="headerSkin7">System</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-success mb5">
+                    <input id="headerSkin2" type="radio" name="headerSkin" value="bg-success">
+                    <label for="headerSkin2">Success</label>
+                  </div>
+                  <div class="checkbox-custom fill mb5">
+                    <input id="headerSkin9" type="radio" name="headerSkin" value="bg-dark">
+                    <label for="headerSkin9">Dark</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div id="toolbox-sidebar" role="tabpanel" class="tab-pane">
+              <form id="toolbox-sidebar-skin">
+                <h4 class="mv20">Sidebar Skins</h4>
+                <div class="skin-toolbox-swatches">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="sidebarSkin3" type="radio" name="sidebarSkin" checked="" value="">
+                    <label for="sidebarSkin3">Dark</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-disabled mb5">
+                    <input id="sidebarSkin1" type="radio" name="sidebarSkin" value="sidebar-light">
+                    <label for="sidebarSkin1">Light</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-light mb5">
+                    <input id="sidebarSkin2" type="radio" name="sidebarSkin" value="sidebar-light light">
+                    <label for="sidebarSkin2">Lighter</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div id="toolbox-settings" role="tabpanel" class="tab-pane">
+              <form id="toolbox-settings-misc">
+                <h4 class="mv20 mtn">Layout Options</h4>
+                <div class="form-group">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="header-option" type="checkbox" checked="">
+                    <label for="header-option">Fixed Header</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="sidebar-option" type="checkbox" checked="">
+                    <label for="sidebar-option">Fixed Sidebar</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="breadcrumb-option" type="checkbox">
+                    <label for="breadcrumb-option">Fixed Breadcrumbs</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="breadcrumb-hidden" type="checkbox">
+                    <label for="breadcrumb-hidden">Hide Breadcrumbs</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="form-group mn br-t p15"><a id="clearLocalStorage" href="#" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- Start: Main-->
+    <div id="main">
+      <!-- Page Header-->
+      <!--
+      ---------------------------------------------------------------+
+      ".navbar" Helper Classes:
+      -------------------------------------------------------------------+
+      * Positioning Classes:
+      '.navbar-static-top' - Static top positioned navbar
+      '.navbar-static-top' - Fixed top positioned navbar
+      * Available Skin Classes:
+      .bg-dark    .bg-primary   .bg-success
+      .bg-info    .bg-warning   .bg-danger
+      .bg-alert   .bg-system
+      -------------------------------------------------------------------+
+      Example: <header class="navbar navbar-fixed-top bg-primary">
+      Results: Fixed top navbar with primary background
+      -----------------------------------------------------------------
+      -->
+      <!-- Start: Header-->
+      <header class="navbar undefined">
+        <div class="navbar-branding"><a href="index.html" class="navbar-brand text-uppercase">BluefireAdmin</a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>
+        <ul class="nav navbar-nav navbar-left"></ul>
+        <form role="search" class="navbar-form navbar-left navbar-search alt"><span class="hide visible-md-inline-block visible-lg-inline-block fa fa-search fs18"></span>
+          <div class="form-group">
+            <input type="text" placeholder="Search..." class="form-control">
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+          <li class="dropdown menu-merge"><a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+            <ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+              <li class="dropdown-header clearfix">
+                <div class="pull-left ml10">
+                  <select id="user-status">
+                    <optgroup label="Current Status:">
+                      <option value="1-1">Away</option>
+                      <option value="1-2">Offline</option>
+                      <option value="1-3" selected="selected">Online</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="pull-right mr10">
+                  <select id="user-role">
+                    <optgroup label="Logged in As:">
+                      <option value="1-1">Client</option>
+                      <option value="1-2">Editor</option>
+                      <option value="1-3" selected="selected">Admin</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </li>
+              <li class="list-group-item"><a href="#" class="animated animated-short fadeInUp"><span class="fa fa-envelope"></span> Messages<span class="label label-warning">2</span></a></li>
+              <li class="list-group-item"><a href="#" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> Friends<span class="label label-warning">6</span></a></li>
+              <li class="list-group-item"><a href="#" class="animated animated-short fadeInUp"><span class="fa fa-bell"></span> Notifications</a></li>
+              <li class="list-group-item"><a href="#" class="animated animated-short fadeInUp"><span class="fa fa-gear"></span> Settings</a></li>
+              <li class="dropdown-footer"><a href="pages_login.html"><span class="fa fa-power-off pr5"></span> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </header>
+      <!-- Start: Sidebar-->
+      <aside id="sidebar_left" class="nano nano-light affix">
+        <!-- Start: Sidebar Left Content-->
+        <div class="sidebar-left-content nano-content">
+          <!-- Start: Sidebar Header-->
+          <header class="sidebar-header">
+            <!-- Sidebar Widget - Search (hidden)-->
+            <div class="sidebar-widget search-widget hidden">
+              <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input id="sidebar-search" type="text" placeholder="Search..." class="form-control"/>
+              </div>
+            </div>
+          </header>
+          <ul class="nav sidebar-menu">
+            <li class="sidebar-label pt35"></li>
+            <li><a href="pages_calendar.html"><span class="fa fa-calendar"></span><span class="sidebar-title">Calendar</span></a>
+            </li>
+            <li><a href="documentation/"><span class="fa fa-file-text-o"></span><span class="sidebar-title">Documentation</span></a>
+            </li>
+            <li><a href="index.html"><span class="fa fa-home"></span><span class="sidebar-title">Dashboard</span></a>
+            </li>
+            <li class="sidebar-label pt35"></li>
+            <li><a href="#" class="accordion-toggle"><span class="glyphicon glyphicon-fire"></span><span class="sidebar-title">Admin Plugins</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="admin_plugins-modals.html"><span class="glyphicon glyphicon-modal-window"></span>Admin Modals</a>
+                </li>
+                <li><a href="admin_plugins-dock.html"><span class="glyphicon glyphicon-equalizer"></span>Admin Dock</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="glyphicon glyphicon-check"></span><span class="sidebar-title">Admin Forms</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="admin_forms-elements.html"><span class="glyphicon glyphicon-shopping-cart"></span>Admin Elements</a>
+                </li>
+                <li><a href="admin_forms-widgets.html"><span class="glyphicon glyphicon-calendar"></span>Admin Widgets</a>
+                </li>
+                <li><a href="admin_forms-layouts.html"><span class="fa fa-desktop"></span>Admin Layouts</a>
+                </li>
+                <li><a href="admin_forms-wizard.html"><span class="fa fa-clipboard"></span>Admin Wizard</a>
+                </li>
+                <li><a href="admin_forms-validation.html"><span class="glyphicon glyphicon-check"></span>Admin Validation</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-columns"></span><span class="sidebar-title">Admin Layouts</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-arrows-h"></span>Sidebars<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_sidebar-left-static.html">Left Static</a></li>
+                    <li><a href="layout_sidebar-left-fixed.html">Left Fixed</a></li>
+                    <li><a href="layout_sidebar-left-widgets.html">Left Widgets</a></li>
+                    <li><a href="layout_sidebar-left-minified.html">Left Minified</a></li>
+                    <li><a href="layout_sidebar-left-light.html">Left White</a></li>
+                    <li><a href="layout_sidebar-right-static.html">Right Static</a></li>
+                    <li><a href="layout_sidebar-right-fixed.html">Right Fixed</a></li>
+                    <li><a href="layout_sidebar-right-menu.html">Right w/Menu</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-arrows-v"></span>Navbar<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_navbar-static.html">Navbar Static</a></li>
+                    <li><a href="layout_navbar-fixed.html">Navbar Fixed</a></li>
+                    <li><a href="layout_navbar-menus.html">Navbar Menus</a></li>
+                    <li><a href="layout_navbar-contextual.html">Contextual Example</a></li>
+                    <li><a href="layout_navbar-search-alt.html">Search Alt Style</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-hand-o-up"></span>Topbar<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_topbar.html">Default Style</a></li>
+                    <li><a href="layout_topbar-menu.html">Default w/Menu</a></li>
+                    <li><a href="layout_topbar-alt.html">Alternate Style</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-arrows-v"></span>Content Body<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_content-blank.html">Blank Starter</a></li>
+                    <li><a href="layout_content-fixed.html">Fixed Window</a></li>
+                    <li><a href="layout_content-heading.html">Content Heading</a></li>
+                    <li><a href="layout_content-tabs.html">Content Tabs</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-pause"></span>Content Trays<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_tray-left.html">Tray Left Static</a></li>
+                    <li><a href="layout_tray-left-fixed.html">Tray Left Fixed</a></li>
+                    <li><a href="layout_tray-right.html">Tray Right Static</a></li>
+                    <li><a href="layout_tray-both.html">Left + Right Static</a></li>
+                    <li><a href="layout_tray-both-fixed.html">Left + Right Fixed</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-plus-square-o"></span>Boxed Layout<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_boxed.html">Default</a></li>
+                    <li><a href="layout_boxed-horizontal.html">Horizontal Menu</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-arrow-circle-o-up"></span>Horizontal Menu<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_horizontal-sm.html">Small Size</a></li>
+                    <li><a href="layout_horizontal-md.html">Medium Size</a></li>
+                    <li><a href="layout_horizontal-lg.html">Large Size</a></li>
+                    <li><a href="layout_horizontal-light.html">Light Skin</a></li>
+                    <li><a href="layout_horizontal-topbar.html">With Topbar</a></li>
+                    <li><a href="layout_horizontal-topbar-alt.html">With Alt Topbar</a></li>
+                    <li><a href="layout_horizontal-collapsed.html">Collapsed onLoad</a></li>
+                    <li><a href="layout_horizontal-boxed.html">In Boxed Layout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-label pt35"></li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-bar-chart"></span><span class="sidebar-title">Information Panels</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="widgets_tile.html"><span class="fa fa-arrows-h"></span>Tile Widgets</a>
+                </li>
+                <li><a href="widgets_panel.html"><span class="fa fa-arrows-h"></span>Panel Widgets</a>
+                </li>
+                <li><a href="widgets_scroller.html"><span class="fa fa-arrows-h"></span>Scroller Widgets</a>
+                </li>
+                <li><a href="widgets_data.html"><span class="fa fa-arrows-h"></span>Admin Widgets</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-shopping-basket"></span><span class="sidebar-title">Ecommerce</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="ecommerce_dashboard.html"><span class="glyphicon glyphicon-shopping-cart"></span>Dashboard</a>
+                </li>
+                <li><a href="ecommerce_products.html"><span class="glyphicon glyphicon-tags"></span>Products</a>
+                </li>
+                <li><a href="ecommerce_orders.html"><span class="fa fa-money"></span>Orders</a>
+                </li>
+                <li><a href="ecommerce_customers.html"><span class="fa fa-users"></span>Customers</a>
+                </li>
+                <li><a href="ecommerce_settings.html"><span class="fa fa-gears"></span>Store Settings</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-label pt35"></li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-diamond"></span><span class="sidebar-title">UI Elements</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="ui_alerts.html"><span class="fa fa-warning"></span>Alerts</a>
+                </li>
+                <li><a href="ui_animations.html"><span class="fa fa-spinner"></span>Animations</a>
+                </li>
+                <li><a href="ui_buttons.html"><span class="fa fa-plus-square-o"></span>Buttons</a>
+                </li>
+                <li><a href="ui_typography.html"><span class="fa fa-text-width"></span>Typography</a>
+                </li>
+                <li><a href="ui_portlets.html"><span class="fa fa-archive"></span>Portlets</a>
+                </li>
+                <li><a href="ui_progress-bars.html"><span class="fa fa-bars"></span>Progress Bars</a>
+                </li>
+                <li><a href="ui_tabs.html"><span class="fa fa-toggle-off"></span>Tabs</a>
+                </li>
+                <li><a href="ui_icons.html"><span class="fa fa-hand-o-right"></span>Icons</a>
+                </li>
+                <li><a href="ui_grid.html"><span class="fa fa-th-large"></span>Grid</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle menu-open"><span class="fa fa-navicon"></span><span class="sidebar-title">Form Elements</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="form_inputs.html"><span class="fa fa-magic"></span>Basic Inputs</a>
+                </li>
+                <li><a href="form_plugins.html"><span class="fa fa-bell-o"></span>Plugin Inputs</a>
+                </li>
+                <li><a href="form_editors.html"><span class="fa fa-clipboard"></span>Editors</a>
+                </li>
+                <li><a href="form_treeview.html"><span class="fa fa-tree"></span>Treeview</a>
+                </li>
+                <li><a href="form_nestable.html"><span class="fa fa-tasks"></span>Nestable</a>
+                </li>
+                <li class="active"><a href="form_image-tools.html"><span class="fa fa-file-image-o"></span>Image Tools</a>
+                </li>
+                <li><a href="form_uploaders.html"><span class="fa fa-cloud-upload"></span>Uploaders</a>
+                </li>
+                <li><a href="form_notifications.html"><span class="fa fa-bell-o"></span>Notifications</a>
+                </li>
+                <li><a href="form_content-sliders.html"><span class="fa fa-exchange"></span>Content Sliders</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-cog"></span><span class="sidebar-title">Plugins</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="#" class="accordion-toggle"><span class="glyphicon glyphicon-globe"></span>Maps<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="maps_basic.html">Basic Maps</a></li>
+                    <li><a href="maps_vector.html">Vector Maps</a></li>
+                    <li><a href="maps_full.html">Full Map</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-area-chart"></span>Charts<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="charts_highcharts.html">Highcharts</a></li>
+                    <li><a href="charts_d3.html">D3 Charts</a></li>
+                    <li><a href="charts_flot.html">Flot Charts</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-table"></span>Tables<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="tables_basic.html">Basic Tables</a></li>
+                    <li><a href="tables_footable.html">FooTables</a></li>
+                    <li><a href="tables_pricing.html">Pricing Tables</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-flask"></span>Misc<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="misc_tour.html">Site Tour</a></li>
+                    <li><a href="misc_timeout.html">Session Timeout</a></li>
+                    <li><a href="misc_nprogress.html">Page Progress Loader</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-paste"></span><span class="sidebar-title">Pages</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-gears"></span>Utility<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="pages_confirmation.html">Confirmation</a></li>
+                    <li><a href="pages_login.html">Login</a></li>
+                    <li><a href="pages_login(alt).html">Login Alt</a></li>
+                    <li><a href="pages_register.html">Register</a></li>
+                    <li><a href="pages_register(alt).html">Register Alt</a></li>
+                    <li><a href="pages_screenlock.html">Screenlock</a></li>
+                    <li><a href="pages_screenlock(alt).html">Screenlock Alt</a></li>
+                    <li><a href="pages_forgotpw.html">Forgot Password</a></li>
+                    <li><a href="pages_forgotpw(alt).html">Forgot Pass Alt</a></li>
+                    <li><a href="pages_coming-soon.html">Coming Soon</a></li>
+                    <li><a href="pages_404.html">404 Error</a></li>
+                    <li><a href="pages_500.html">500 Error</a></li>
+                    <li><a href="pages_404(alt).html">404 Error Alt</a></li>
+                    <li><a href="pages_500(alt).html">500 Error Alt</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-desktop"></span>Basic<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="pages_search-results.html">Search Results</a></li>
+                    <li><a href="pages_profile.html">Profile</a></li>
+                    <li><a href="pages_timeline.html">Timeline Split</a></li>
+                    <li><a href="pages_timeline-single.html">Timeline Single</a></li>
+                    <li><a href="pages_faq.html">FAQ Page</a></li>
+                    <li><a href="pages_calendar.html">Calendar</a></li>
+                    <li><a href="pages_messages.html">Messages</a></li>
+                    <li><a href="pages_messages(alt).html">Messages Alt</a></li>
+                    <li><a href="pages_gallery.html">Gallery</a></li>
+                    <li><a href="pages_invoice.html">Printable Invoice</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <!-- sidebar bullets-->
+            <li class="sidebar-label pt35"></li>
+            <li class="sidebar-proj"><a href="#projectOne"><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">Executive Meeting</span></a></li>
+            <li class="sidebar-proj"><a href="#projectTwo"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">HelpDesk Redesign</span></a></li>
+            <li class="sidebar-proj"><a href="#projectTwo"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">Sony Board Meeting</span></a></li>
+            <li class="sidebar-proj"><a href="#projectThree"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">Apple Tech Conference</span></a></li>
+          </ul>
+          <!-- Start: Sidebar Collapse Button-->
+          <div class="sidebar-toggle-mini"><a href="#"><span class="fa fa-sign-out"></span></a></div>
+        </div>
+      </aside>
+      <!-- Start: Content-Wrapper-->
+      <section id="content_wrapper">
+        <!-- Start: Topbar-Dropdown-->
+        <div id="topbar-dropmenu" class="alt">
+          <div class="topbar-menu row">
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-primary light"><span class="glyphicon glyphicon-inbox text-muted"></span><span class="metro-title">Messages</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-info light"><span class="glyphicon glyphicon-user text-muted"></span><span class="metro-title">Users</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-success light"><span class="glyphicon glyphicon-headphones text-muted"></span><span class="metro-title">Support</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-system light"><span class="glyphicon glyphicon-facetime-video text-muted"></span><span class="metro-title">Videos</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-warning light"><span class="fa fa-gears text-muted"></span><span class="metro-title">Settings</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-alert light"><span class="glyphicon glyphicon-picture text-muted"></span><span class="metro-title">Pictures</span></a></div>
+          </div>
+        </div>
+        <!-- Start: Topbar-->
+        <header id="topbar" class="alt">
+          <div class="topbar-left">
+            <ol class="breadcrumb">
+              <li class="crumb-active"><a href="index.html">Dashboard</a></li>
+              <li class="crumb-icon"><a href="index.html"><span class="glyphicon glyphicon-home"></span></a></li>
+              <li class="crumb-link"><a href="index.html">Home</a></li>
+              <li class="crumb-trail">Dashboard</li>
+            </ol>
+          </div>
+          <div class="topbar-right">
+            <div class="ib topbar-dropdown">
+              <label for="topbar-multiple" class="control-label pr10 fs15 text-muted">Reporting Period</label>
+              <select id="topbar-multiple" class="hidden">
+                <optgroup label="Filter By:">
+                  <option value="1-1">Last 30 Days</option>
+                  <option value="1-2" selected="selected">Last 60 Days</option>
+                  <option value="1-3">Last Year</option>
+                </optgroup>
+              </select>
+            </div>
+            <div id="toggle_sidemenu_r" class="ml15 ib va-m"><a href="#" class="pl5"><i class="fa fa-sign-in fs22 text-primary"></i><span class="badge badge-hero badge-danger">3</span></a></div>
+          </div>
+        </header>
+        <!-- Begin: Content-->
+        <section id="content" class="table-layout animated fadeIn">
+          <!-- begin: .tray-center-->
+          <div class="tray tray-center">
+            <div class="mw800 center-block">
+              <div id="spy1" class="panel mt20">
+                <div class="panel-heading"><span class="panel-icon"><i class="fa fa-crop"></i></span><span class="panel-title"> Image Cropping Utility</span></div>
+                <div class="panel-body pn of-h">
+                  <div class="row table-layout table-clear-xs">
+                    <div class="col-xs-12 col-sm-7">
+                      <div class="img-container pv10"><img src="assets/img/stock/1.jpg"></div>
+                    </div>
+                    <div class="col-xs-12 col-sm-5 bg-light br-l br-grey va-t pv10">
+                      <div>
+                        <div class="docs-toggles">
+                          <!-- <h3 class="page-header">Toggles:</h3>-->
+                          <div data-toggle="buttons" class="btn-group btn-group-justified">
+                            <label data-method="setAspectRatio" data-option="1.7777777777777777" title="Set Aspect Ratio" class="pn p7 btn btn-primary active">
+                              <input id="aspestRatio1" name="aspestRatio" value="1.7777777777777777" type="radio" class="sr-only"><span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, 16 / 9)" class="docs-tooltip">16:9</span>
+                            </label>
+                            <label data-method="setAspectRatio" data-option="1.3333333333333333" title="Set Aspect Ratio" class="pn p7 btn btn-primary">
+                              <input id="aspestRatio2" name="aspestRatio" value="1.3333333333333333" type="radio" class="sr-only"><span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, 4 / 3)" class="docs-tooltip">4:3</span>
+                            </label>
+                            <label data-method="setAspectRatio" data-option="1" title="Set Aspect Ratio" class="pn p7 btn btn-primary">
+                              <input id="aspestRatio3" name="aspestRatio" value="1" type="radio" class="sr-only"><span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, 1 / 1)" class="docs-tooltip">1:1</span>
+                            </label>
+                            <label data-method="setAspectRatio" data-option="0.6666666666666666" title="Set Aspect Ratio" class="pn p7 btn btn-primary">
+                              <input id="aspestRatio4" name="aspestRatio" value="0.6666666666666666" type="radio" class="sr-only"><span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, 2 / 3)" class="docs-tooltip">2:3</span>
+                            </label>
+                            <label data-method="setAspectRatio" data-option="NaN" title="Set Aspect Ratio" class="pn p7 btn btn-primary">
+                              <input id="aspestRatio5" name="aspestRatio" value="NaN" type="radio" class="sr-only"><span data-toggle="tooltip" title="$().cropper(&quot;setAspectRatio&quot;, NaN)" class="docs-tooltip">Free</span>
+                            </label>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="clearfix">
+                        <div class="img-preview preview-lg"><img src="assets/img/stock/1.jpg"></div>
+                        <div class="img-preview preview-md"><img src="assets/img/stock/1.jpg"></div>
+                        <div class="img-preview preview-sm"><img src="assets/img/stock/1.jpg"></div>
+                        <div class="img-preview preview-xs"><img src="assets/img/stock/1.jpg"></div>
+                      </div>
+                      <div>
+                        <div class="docs-toggles">
+                          <div class="dropdown dropup docs-options">
+                            <button id="toggleOptions" type="button" data-toggle="dropdown" aria-expanded="true" class="btn btn-primary btn-block dropdown-toggle">Toggle Options<span class="caret"></span></button>
+                            <ul role="menu" aria-labelledby="toggleOptions" class="dropdown-menu">
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="strict" checked=""> strict
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="responsive" checked=""> responsive
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="checkImageOrigin" checked=""> checkImageOrigin
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="modal" checked=""> modal
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="guides" checked=""> guides
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="highlight" checked=""> highlight
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="background" checked=""> background
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="autoCrop" checked=""> autoCrop
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="dragCrop" checked=""> dragCrop
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="movable" checked=""> movable
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="resizable" checked=""> resizable
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="rotatable" checked=""> rotatable
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="zoomable" checked=""> zoomable
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="touchDragZoom" checked=""> touchDragZoom
+                                </label>
+                              </li>
+                              <li role="presentation">
+                                <label class="checkbox-inline">
+                                  <input type="checkbox" name="option" value="mouseWheelZoom" checked=""> mouseWheelZoom
+                                </label>
+                              </li>
+                            </ul>
+                          </div>
+                          <!-- /.dropdown-->
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="panel-footer">
+                  <div class="docs-buttons">
+                    <div class="btn-group">
+                      <button data-method="setDragMode" data-option="move" type="button" title="Move" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;setDragMode&quot;, &quot;move&quot;)" class="docs-tooltip"><span class="fa fa-arrows"></span></span></button>
+                      <button data-method="setDragMode" data-option="crop" type="button" title="Crop" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;setDragMode&quot;, &quot;crop&quot;)" class="docs-tooltip"><span class="fa fa-crop"></span></span></button>
+                      <button data-method="zoom" data-option="0.1" type="button" title="Zoom In" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, 0.1)" class="docs-tooltip"><span class="fa fa-search-plus"></span></span></button>
+                      <button data-method="zoom" data-option="-0.1" type="button" title="Zoom Out" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;zoom&quot;, -0.1)" class="docs-tooltip"><span class="fa fa-search-minus"></span></span></button>
+                      <button data-method="rotate" data-option="-45" type="button" title="Rotate Left" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, -45)" class="docs-tooltip"><span class="fa fa-rotate-left"></span></span></button>
+                      <button data-method="rotate" data-option="45" type="button" title="Rotate Right" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;rotate&quot;, 45)" class="docs-tooltip"><span class="fa fa-rotate-right"></span></span></button>
+                    </div>
+                    <div class="btn-group">
+                      <button data-method="disable" type="button" title="Disable" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;disable&quot;)" class="docs-tooltip"><span class="fa fa-lock"></span></span></button>
+                      <button data-method="enable" type="button" title="Enable" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;enable&quot;)" class="docs-tooltip"><span class="fa fa-unlock"></span></span></button>
+                      <button data-method="clear" type="button" title="Clear" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;clear&quot;)" class="docs-tooltip"><span class="fa fa-remove"></span></span></button>
+                      <button data-method="reset" type="button" title="Reset" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;reset&quot;)" class="docs-tooltip"><span class="fa fa-refresh"></span></span></button>
+                      <label for="inputImage" title="Upload image file" class="btn btn-primary btn-sm btn-upload">
+                        <input id="inputImage" name="file" type="file" accept="image/*" class="sr-only"><span data-toggle="tooltip" title="Import image with Blob URLs" class="docs-tooltip"><span class="fa fa-upload"></span></span>
+                      </label>
+                      <button data-method="destroy" type="button" title="Destroy" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;destroy&quot;)" class="docs-tooltip"><span class="fa fa-power-off"></span></span></button>
+                    </div>
+                    <div class="btn-group btn-group-crop">
+                      <button data-method="getCroppedCanvas" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;getCroppedCanvas&quot;)" class="docs-tooltip">Get Cropped Canvas</span></button>
+                      <button data-method="getCroppedCanvas" data-option="{ &quot;width&quot;: 160, &quot;height&quot;: 90 }" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;getCroppedCanvas&quot;, { &quot;width&quot;: 160, &quot;height&quot;: 90 })" class="docs-tooltip">160 × 90</span></button>
+                      <button data-method="getCroppedCanvas" data-option="{ &quot;width&quot;: 320, &quot;height&quot;: 180 }" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;getCroppedCanvas&quot;, { &quot;width&quot;: 320, &quot;height&quot;: 180 })" class="docs-tooltip">320 × 180</span></button>
+                    </div>
+                    <!-- Show the cropped image in modal-->
+                    <div id="getCroppedCanvasModal" aria-hidden="true" aria-labelledby="getCroppedCanvasTitle" role="dialog" tabindex="-1" class="modal fade docs-cropped">
+                      <div class="modal-dialog">
+                        <div class="modal-content">
+                          <div class="modal-header">
+                            <button data-dismiss="modal" type="button" aria-hidden="true" class="close">×</button>
+                            <h4 id="getCroppedCanvasTitle" class="modal-title">Cropped</h4>
+                          </div>
+                          <div class="modal-body"></div>
+                          <!--
+                          <div class="modal-footer">
+                          <button class="btn btn-primary" data-dismiss="modal" type="button">Close</button>
+                          </div>
+                          -->
+                        </div>
+                      </div>
+                    </div>
+                    <!-- /.modal-->
+                    <button data-method="getData" data-option="" data-target="#putData" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;getData&quot;)" class="docs-tooltip">Get Data</span></button>
+                    <button data-method="getImageData" data-option="" data-target="#putData" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;getImageData&quot;)" class="docs-tooltip">Get Image Data</span></button>
+                    <button data-method="getCanvasData" data-option="" data-target="#putData" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;getCanvasData&quot;)" class="docs-tooltip">Get Canvas Data</span></button>
+                    <button data-method="setCanvasData" data-target="#putData" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;setCanvasData&quot;, data)" class="docs-tooltip">Set Canvas Data</span></button>
+                    <button data-method="getCropBoxData" data-option="" data-target="#putData" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;getCropBoxData&quot;)" class="docs-tooltip">Get Crop Box Data</span></button>
+                    <button data-method="setCropBoxData" data-target="#putData" type="button" class="btn btn-primary btn-sm"><span data-toggle="tooltip" title="$().cropper(&quot;setCropBoxData&quot;, data)" class="docs-tooltip">Set Crop Box Data</span></button>
+                    <input id="putData" type="text" placeholder="Get data to here or set data with this value" class="form-control mt5">
+                  </div>
+                </div>
+              </div>
+              <div id="spy2" class="panel mt50">
+                <div class="panel-heading"><span class="panel-icon"><i class="fa fa-upload"></i></span><span class="panel-title"> Image Upload & Preview</span></div>
+                <div class="panel-body">
+                  <div data-provides="fileupload" class="fileupload fileupload-new">
+                    <div class="fileupload-preview thumbnail mb20"><img data-src="holder.js/100%x195" alt="holder"></div>
+                    <div class="row">
+                      <div class="col-xs-7 pr5">
+                        <input id="name2" type="text" name="name2" placeholder="Img Keywords" class="form-control text-center event-name br-light bg-light">
+                        <label for="name2" class="field-icon"></label>
+                      </div>
+                      <div class="col-xs-5"><span class="btn btn-system btn-file btn-block h-45 br-n"><span class="fileupload-new">Select</span><span class="fileupload-exists">Change</span>
+                          <input type="file"></span></div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <div id="spy3" class="panel mt50">
+                <div class="panel-heading"><span class="panel-icon"><i class="fa fa-search"></i></span><span class="panel-title"> Image Zoom Utility</span></div>
+                <div class="panel-menu p10">
+                  <!-- zoom style switcher(demo code)-->
+                  <div class="btn-group zoom-switcher btn-group-justified"><a href="#" type="button" opt="1" class="btn btn-default active">Porthole</a><a href="#" type="button" opt="2" class="btn btn-default">InnerZoom</a><a href="#" type="button" opt="3" class="btn btn-default">Attached</a></div>
+                </div>
+                <div class="panel-body p10">
+                  <!-- zoomable image--><img id="zoom_demo" src="assets/img/stock/3.jpg" data-zoom-image="assets/img/stock/3.jpg" class="img-responsive">
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- begin: .tray-left-->
+          <aside data-tray-height="match" class="tray tray-right tray320">
+            <div id="nav-spy">
+              <ul data-smoothscroll="-75" data-spy="affix" data-offset-top="200" class="nav tray-nav tray-nav-border">
+                <li class="active"><a href="#spy1"><span class="fa fa-crop fa-lg"></span>                  Image Cropper</a></li>
+                <li><a href="#spy2"><span class="fa fa-upload fa-lg"></span>                  Image Upload w/Preview</a></li>
+                <li><a href="#spy3"><span class="fa fa-search fa-lg"></span>                  Image Zoom Utility</a></li>
+              </ul>
+            </div>
+          </aside>
+        </section>
+      </section>
+      <!-- Start: Right Sidebar-->
+      <aside id="sidebar_right" class="nano affix">
+        <!-- Start: Sidebar Right Content-->
+        <div class="sidebar-right-content nano-content">
+          <div class="tab-block sidebar-block br-n">
+            <ul class="nav nav-tabs tabs-border nav-justified hidden">
+              <li class="active"><a href="#sidebar-right-tab1" data-toggle="tab">Tab 1</a></li>
+              <li><a href="#sidebar-right-tab2" data-toggle="tab">Tab 2</a></li>
+              <li><a href="#sidebar-right-tab3" data-toggle="tab">Tab 3</a></li>
+            </ul>
+            <div class="tab-content br-n">
+              <div id="sidebar-right-tab1" class="tab-pane active">
+                <h5 class="title-divider text-muted mb20">Server Statistics<span class="pull-right">2013<i class="fa fa-caret-down ml5"></i></span></h5>
+                <div class="progress mh5">
+                  <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 44%" class="progress-bar progress-bar-primary"><span class="fs11">DB Request</span></div>
+                </div>
+                <div class="progress mh5">
+                  <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 84%" class="progress-bar progress-bar-info"><span class="fs11 text-left">Server Load</span></div>
+                </div>
+                <div class="progress mh5">
+                  <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 61%" class="progress-bar progress-bar-warning"><span class="fs11 text-left">Server Connections</span></div>
+                </div>
+                <h5 class="title-divider text-muted mt30 mb10">Traffic Margins</h5>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <h3 class="text-primary mn pl5">132</h3>
+                  </div>
+                  <div class="col-xs-7 text-right">
+                    <h3 class="text-success-dark mn"><i class="fa fa-caret-up"></i> 13.2%</h3>
+                  </div>
+                </div>
+                <h5 class="title-divider text-muted mt25 mb10">Database Request</h5>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <h3 class="text-primary mn pl5">212</h3>
+                  </div>
+                  <div class="col-xs-7 text-right">
+                    <h3 class="text-success-dark mn"><i class="fa fa-caret-up"></i> 25.6%</h3>
+                  </div>
+                </div>
+                <h5 class="title-divider text-muted mt25 mb10">Server Response</h5>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <h3 class="text-primary mn pl5">82.5</h3>
+                  </div>
+                  <div class="col-xs-7 text-right">
+                    <h3 class="text-danger mn"><i class="fa fa-caret-down"></i> 17.9%</h3>
+                  </div>
+                </div>
+                <h5 class="title-divider text-muted mt40 mb20">Server Statistics<span class="pull-right text-primary fw600">USA</span></h5>
+              </div>
+              <div id="sidebar-right-tab2" class="tab-pane"></div>
+              <div id="sidebar-right-tab3" class="tab-pane"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <!-- core scripts-->
+    <script src="plugins/core.min.js"></script>
+    <!-- Theme Javascript-->
+    <script src="assets/js/utility/utility.js"></script>
+    <script src="assets/js/demo/demo.js"></script>
+    <script src="assets/js/main.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        "use strict";
+        // Init Theme Core
+        Core.init();
+        // Init Demo JS
+        Demo.init();
+        // Init Zoom Plugin
+        var zoomSelector = $('#zoom_demo');
+        zoomSelector.elevateZoom({
+          // borderColour: "#4a89dc", // Porthole border color
+          constrainType: "height",
+          constrainSize: 274,
+          zoomType: "lens",
+          lensSize: 190,
+          containLensZoom: true,
+          zoomWindowPosition: 9,
+          zoomWindowFadeIn: 400,
+          zoomWindowFadeOut: 400,
+          lensFadeIn: 300,
+          lensFadeOut: 300
+        });
+        // Zoom styles changer
+        $('.zoom-switcher').find('a').on('click', function (e) {
+          e.preventDefault();
+          // Zoom Options
+          var zoomStyle = $(this).attr('opt');
+          // ZoomStyle Switcher
+          switch (zoomStyle) {
+            case '1':
+              zoomSelector.elevateZoom({
+                constrainType: "height",
+                constrainSize: 274,
+                zoomType: "lens",
+                lensSize: 190,
+                containLensZoom: true,
+                zoomWindowPosition: 9,
+                zoomWindowFadeIn: 400,
+                zoomWindowFadeOut: 400,
+                lensFadeIn: 300,
+                lensFadeOut: 300
+              });
+              break;
+            case '2':
+              zoomSelector.elevateZoom({
+                zoomType: "inner",
+                cursor: "crosshair",
+                zoomWindowFadeIn: 400,
+                zoomWindowFadeOut: 400
+              });
+              break;
+            case '3':
+              zoomSelector.elevateZoom({
+                tint: true,
+                tintColour: '#000',
+                tintOpacity: 0.65,
+                zoomWindowPosition: 1,
+                zoomWindowFadeIn: 400,
+                zoomWindowFadeOut: 400,
+                lensFadeIn: 300,
+                lensFadeOut: 300
+              });
+              break;
+          }
+          $(this).siblings().removeClass("active");
+          $(this).addClass("active");
+        });
+        var console = window.console || {
+                          log: function () {
+                          }
+                        },
+                $alert = $('.docs-alert'),
+                $message = $alert.find('.message'),
+                showMessage = function (message, type) {
+                  $message.text(message);
+                  if (type) {
+                    $message.addClass(type);
+                  }
+                  $alert.fadeIn();
+                  setTimeout(function () {
+                    $alert.fadeOut();
+                  }, 3000);
+                };
+        // Cropper Demo
+        (function () {
+          var $image = $('.img-container > img'),
+                  $dataX = $('#dataX'),
+                  $dataY = $('#dataY'),
+                  $dataHeight = $('#dataHeight'),
+                  $dataWidth = $('#dataWidth'),
+                  $dataRotate = $('#dataRotate'),
+                  options = {
+                    aspectRatio: 16 / 9,
+                    preview: '.img-preview',
+                    crop: function (data) {
+                      $dataX.val(Math.round(data.x));
+                      $dataY.val(Math.round(data.y));
+                      $dataHeight.val(Math.round(data.height));
+                      $dataWidth.val(Math.round(data.width));
+                      $dataRotate.val(Math.round(data.rotate));
+                    }
+                  };
+          $image.on({
+            'build.cropper': function (e) {
+              console.log(e.type);
+            },
+            'built.cropper': function (e) {
+              console.log(e.type);
+            },
+            'dragstart.cropper': function (e) {
+              console.log(e.type, e.dragType);
+            },
+            'dragmove.cropper': function (e) {
+              console.log(e.type, e.dragType);
+            },
+            'dragend.cropper': function (e) {
+              console.log(e.type, e.dragType);
+            },
+            'zoomin.cropper': function (e) {
+              console.log(e.type);
+            },
+            'zoomout.cropper': function (e) {
+              console.log(e.type);
+            }
+          }).cropper(options);
+          // Methods
+          $(document.body).on('click', '[data-method]', function () {
+            var data = $(this).data(),
+                    $target,
+                    result;
+            if (data.method) {
+              data = $.extend({}, data); // Clone a new one
+              if (typeof data.target !== 'undefined') {
+                $target = $(data.target);
+                if (typeof data.option === 'undefined') {
+                  try {
+                    data.option = JSON.parse($target.val());
+                  } catch (e) {
+                    console.log(e.message);
+                  }
+                }
+              }
+              result = $image.cropper(data.method, data.option);
+              if (data.method === 'getCroppedCanvas') {
+                $('#getCroppedCanvasModal').modal().find('.modal-body').html(result);
+              }
+              if ($.isPlainObject(result) && $target) {
+                try {
+                  $target.val(JSON.stringify(result));
+                } catch (e) {
+                  console.log(e.message);
+                }
+              }
+            }
+          }).on('keydown', function (e) {
+            switch (e.which) {
+              case 37:
+                e.preventDefault();
+                $image.cropper('move', -1, 0);
+                break;
+              case 38:
+                e.preventDefault();
+                $image.cropper('move', 0, -1);
+                break;
+              case 39:
+                e.preventDefault();
+                $image.cropper('move', 1, 0);
+                break;
+              case 40:
+                e.preventDefault();
+                $image.cropper('move', 0, 1);
+                break;
+            }
+          });
+          // Import image
+          var $inputImage = $('#inputImage'),
+                  URL = window.URL || window.webkitURL,
+                  blobURL;
+          if (URL) {
+            $inputImage.change(function () {
+              var files = this.files,
+                      file;
+              if (files && files.length) {
+                file = files[0];
+                if (/^image\/\w+$/.test(file.type)) {
+                  blobURL = URL.createObjectURL(file);
+                  $image.one('built.cropper', function () {
+                    URL.revokeObjectURL(blobURL); // Revoke when load complete
+                  }).cropper('reset', true).cropper('replace', blobURL);
+                  $inputImage.val('');
+                } else {
+                  showMessage('Please choose an image file.');
+                }
+              }
+            });
+          } else {
+            $inputImage.parent().remove();
+          }
+          // Options
+          $('.docs-options :checkbox').on('change', function () {
+            var $this = $(this);
+            options[$this.val()] = $this.prop('checked');
+            $image.cropper('destroy').cropper(options);
+          });
+          // Tooltips
+          $('[data-toggle="tooltip"]').tooltip();
+        }());
+      });
+    </script>
+  </body>
+</html>

@@ -1,0 +1,1899 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Site Title-->
+    <title>Monster Dashboard</title>
+    <meta name="format-detection" content="telephone=no">
+    <meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+    <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+    <link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+    <!-- Stylesheets-->
+    <link rel="stylesheet" type="text/css" href="plugins/css/fullcalendar.min.css">
+    <link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+    <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,600,700%7CMontserrat:400,700">
+    <link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+		<!--[if lt IE 10]>
+    <div style="background: #212121; padding: 10px 0; box-shadow: 3px 3px 5px 0 rgba(0,0,0,.3); clear: both; text-align:center; position: relative; z-index:1;"><a href="http://windows.microsoft.com/en-US/internet-explorer/"><img src="images/ie8-panel/warning_bar_0000_us.jpg" border="0" height="42" width="820" alt="You are using an outdated browser. For a faster, safer browsing experience, upgrade for free today."></a></div>
+    <script src="js/html5shiv.min.js"></script>
+		<![endif]-->
+  </head>
+  <body class="dashboard-page">
+    <!--
+    -----------------------------------------------------------+
+    <body> Helper Classes:
+    ---------------------------------------------------------------+
+    '.sb-l-o' - Sets Left Sidebar to "open"
+    '.sb-l-m' - Sets Left Sidebar to "minified"
+    '.sb-l-c' - Sets Left Sidebar to "closed"
+    '.sb-r-o' - Sets Right Sidebar to "open"
+    '.sb-r-c' - Sets Right Sidebar to "closed"
+    ---------------------------------------------------------------+
+    Example: <body class="example-page sb-l-o sb-r-c">
+    Results: Sidebar left Open, Sidebar right Closed
+    -------------------------------------------------------------
+    -->
+    <!-- Start: Theme Preview Pane-->
+    <div id="skin-toolbox" class="bg-white">
+      <div class="panel">
+        <div class="panel-heading"><span class="panel-icon"><i class="fa fa-gear text-primary"></i></span><span class="panel-title"> Theme Options</span></div>
+        <div class="panel-body pn">
+          <ul role="tablist" class="nav nav-list nav-list-sm pl15 pt10">
+            <li class="active"><a href="#toolbox-header" role="tab" data-toggle="tab">Navbar</a></li>
+            <li><a href="#toolbox-sidebar" role="tab" data-toggle="tab">Sidebar</a></li>
+            <li><a href="#toolbox-settings" role="tab" data-toggle="tab">Misc</a></li>
+          </ul>
+          <div class="tab-content p20 ptn pb15">
+            <div id="toolbox-header" role="tabpanel" class="tab-pane active">
+              <form id="toolbox-header-skin">
+                <h4 class="mv20">Header Skins</h4>
+                <div class="skin-toolbox-swatches">
+                  <div class="checkbox-custom checkbox-disabled fill mb5">
+                    <input id="headerSkin8" type="radio" name="headerSkin" checked="" value="">
+                    <label for="headerSkin8">Light</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-primary mb5">
+                    <input id="headerSkin1" type="radio" name="headerSkin" value="bg-primary">
+                    <label for="headerSkin1">Primary</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-info mb5">
+                    <input id="headerSkin3" type="radio" name="headerSkin" value="bg-info">
+                    <label for="headerSkin3">Info</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-warning mb5">
+                    <input id="headerSkin4" type="radio" name="headerSkin" value="bg-warning">
+                    <label for="headerSkin4">Warning</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-danger mb5">
+                    <input id="headerSkin5" type="radio" name="headerSkin" value="bg-danger">
+                    <label for="headerSkin5">Danger</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-alert mb5">
+                    <input id="headerSkin6" type="radio" name="headerSkin" value="bg-alert">
+                    <label for="headerSkin6">Alert</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-system mb5">
+                    <input id="headerSkin7" type="radio" name="headerSkin" value="bg-system">
+                    <label for="headerSkin7">System</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-success mb5">
+                    <input id="headerSkin2" type="radio" name="headerSkin" value="bg-success">
+                    <label for="headerSkin2">Success</label>
+                  </div>
+                  <div class="checkbox-custom fill mb5">
+                    <input id="headerSkin9" type="radio" name="headerSkin" value="bg-dark">
+                    <label for="headerSkin9">Dark</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div id="toolbox-sidebar" role="tabpanel" class="tab-pane">
+              <form id="toolbox-sidebar-skin">
+                <h4 class="mv20">Sidebar Skins</h4>
+                <div class="skin-toolbox-swatches">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="sidebarSkin3" type="radio" name="sidebarSkin" checked="" value="">
+                    <label for="sidebarSkin3">Dark</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-disabled mb5">
+                    <input id="sidebarSkin1" type="radio" name="sidebarSkin" value="sidebar-light">
+                    <label for="sidebarSkin1">Light</label>
+                  </div>
+                  <div class="checkbox-custom fill checkbox-light mb5">
+                    <input id="sidebarSkin2" type="radio" name="sidebarSkin" value="sidebar-light light">
+                    <label for="sidebarSkin2">Lighter</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+            <div id="toolbox-settings" role="tabpanel" class="tab-pane">
+              <form id="toolbox-settings-misc">
+                <h4 class="mv20 mtn">Layout Options</h4>
+                <div class="form-group">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="header-option" type="checkbox" checked="">
+                    <label for="header-option">Fixed Header</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="sidebar-option" type="checkbox" checked="">
+                    <label for="sidebar-option">Fixed Sidebar</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="breadcrumb-option" type="checkbox">
+                    <label for="breadcrumb-option">Fixed Breadcrumbs</label>
+                  </div>
+                </div>
+                <div class="form-group">
+                  <div class="checkbox-custom fill mb5">
+                    <input id="breadcrumb-hidden" type="checkbox">
+                    <label for="breadcrumb-hidden">Hide Breadcrumbs</label>
+                  </div>
+                </div>
+              </form>
+            </div>
+          </div>
+          <div class="form-group mn br-t p15"><a id="clearLocalStorage" href="#" class="btn btn-primary btn-block pb10 pt10">Clear LocalStorage</a></div>
+        </div>
+      </div>
+    </div>
+    <!-- Start: Main-->
+    <div id="main">
+      <!-- Page Header-->
+      <!--
+      ---------------------------------------------------------------+
+      ".navbar" Helper Classes:
+      -------------------------------------------------------------------+
+      * Positioning Classes:
+      '.navbar-static-top' - Static top positioned navbar
+      '.navbar-static-top' - Fixed top positioned navbar
+      * Available Skin Classes:
+      .bg-dark    .bg-primary   .bg-success
+      .bg-info    .bg-warning   .bg-danger
+      .bg-alert   .bg-system
+      -------------------------------------------------------------------+
+      Example: <header class="navbar navbar-fixed-top bg-primary">
+      Results: Fixed top navbar with primary background
+      -----------------------------------------------------------------
+      -->
+      <!-- Start: Header-->
+      <header class="navbar undefined">
+        <div class="navbar-branding"><a href="index.html" class="navbar-brand text-uppercase">BluefireAdmin</a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>
+        <ul class="nav navbar-nav navbar-left"></ul>
+        <form role="search" class="navbar-form navbar-left navbar-search alt"><span class="hide visible-md-inline-block visible-lg-inline-block fa fa-search fs18"></span>
+          <div class="form-group">
+            <input type="text" placeholder="Search..." class="form-control">
+          </div>
+        </form>
+        <ul class="nav navbar-nav navbar-right">
+          <li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+          <li class="dropdown menu-merge"><a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+            <ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+              <li class="dropdown-header clearfix">
+                <div class="pull-left ml10">
+                  <select id="user-status">
+                    <optgroup label="Current Status:">
+                      <option value="1-1">Away</option>
+                      <option value="1-2">Offline</option>
+                      <option value="1-3" selected="selected">Online</option>
+                    </optgroup>
+                  </select>
+                </div>
+                <div class="pull-right mr10">
+                  <select id="user-role">
+                    <optgroup label="Logged in As:">
+                      <option value="1-1">Client</option>
+                      <option value="1-2">Editor</option>
+                      <option value="1-3" selected="selected">Admin</option>
+                    </optgroup>
+                  </select>
+                </div>
+              </li>
+              <li class="list-group-item"><a href="#" class="animated animated-short fadeInUp"><span class="fa fa-envelope"></span> Messages<span class="label label-warning">2</span></a></li>
+              <li class="list-group-item"><a href="#" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> Friends<span class="label label-warning">6</span></a></li>
+              <li class="list-group-item"><a href="#" class="animated animated-short fadeInUp"><span class="fa fa-bell"></span> Notifications</a></li>
+              <li class="list-group-item"><a href="#" class="animated animated-short fadeInUp"><span class="fa fa-gear"></span> Settings</a></li>
+              <li class="dropdown-footer"><a href="pages_login.html"><span class="fa fa-power-off pr5"></span> Logout</a></li>
+            </ul>
+          </li>
+        </ul>
+      </header>
+      <!--
+      ---------------------------------------------------------------+
+      "#sidebar_left" Helper Classes:
+      -------------------------------------------------------------------+
+      * Positioning Classes:
+      '.affix' - Sets Sidebar Left to the fixed position
+      * Available Skin Classes:
+      .sidebar-dark (default no class needed)
+      .sidebar-light
+      .sidebar-light.light
+      -------------------------------------------------------------------+
+      Example: <aside id="sidebar_left" class="affix sidebar-light">
+      Results: Fixed Left Sidebar with light/white background
+      -----------------------------------------------------------------
+      -->
+      <!-- Start: Sidebar-->
+      <aside id="sidebar_left" class="nano nano-light affix">
+        <!-- Start: Sidebar Left Content-->
+        <div class="sidebar-left-content nano-content">
+          <!-- Start: Sidebar Header-->
+          <header class="sidebar-header">
+            <!-- Sidebar Widget - Search (hidden)-->
+            <div class="sidebar-widget search-widget hidden">
+              <div class="input-group"><span class="input-group-addon"><i class="fa fa-search"></i></span>
+                <input id="sidebar-search" type="text" placeholder="Search..." class="form-control"/>
+              </div>
+            </div>
+          </header>
+          <ul class="nav sidebar-menu">
+            <li class="sidebar-label pt35"></li>
+            <li><a href="pages_calendar.html"><span class="fa fa-calendar"></span><span class="sidebar-title">Calendar</span></a>
+            </li>
+            <li><a href="documentation/"><span class="fa fa-file-text-o"></span><span class="sidebar-title">Documentation</span></a>
+            </li>
+            <li class="active"><a href="index.html"><span class="fa fa-home"></span><span class="sidebar-title">Dashboard</span></a>
+            </li>
+            <li class="sidebar-label pt35"></li>
+            <li><a href="#" class="accordion-toggle"><span class="glyphicon glyphicon-fire"></span><span class="sidebar-title">Admin Plugins</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="admin_plugins-modals.html"><span class="glyphicon glyphicon-modal-window"></span>Admin Modals</a>
+                </li>
+                <li><a href="admin_plugins-dock.html"><span class="glyphicon glyphicon-equalizer"></span>Admin Dock</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="glyphicon glyphicon-check"></span><span class="sidebar-title">Admin Forms</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="admin_forms-elements.html"><span class="glyphicon glyphicon-shopping-cart"></span>Admin Elements</a>
+                </li>
+                <li><a href="admin_forms-widgets.html"><span class="glyphicon glyphicon-calendar"></span>Admin Widgets</a>
+                </li>
+                <li><a href="admin_forms-layouts.html"><span class="fa fa-desktop"></span>Admin Layouts</a>
+                </li>
+                <li><a href="admin_forms-wizard.html"><span class="fa fa-clipboard"></span>Admin Wizard</a>
+                </li>
+                <li><a href="admin_forms-validation.html"><span class="glyphicon glyphicon-check"></span>Admin Validation</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-columns"></span><span class="sidebar-title">Admin Layouts</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-arrows-h"></span>Sidebars<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_sidebar-left-static.html">Left Static</a></li>
+                    <li><a href="layout_sidebar-left-fixed.html">Left Fixed</a></li>
+                    <li><a href="layout_sidebar-left-widgets.html">Left Widgets</a></li>
+                    <li><a href="layout_sidebar-left-minified.html">Left Minified</a></li>
+                    <li><a href="layout_sidebar-left-light.html">Left White</a></li>
+                    <li><a href="layout_sidebar-right-static.html">Right Static</a></li>
+                    <li><a href="layout_sidebar-right-fixed.html">Right Fixed</a></li>
+                    <li><a href="layout_sidebar-right-menu.html">Right w/Menu</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-arrows-v"></span>Navbar<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_navbar-static.html">Navbar Static</a></li>
+                    <li><a href="layout_navbar-fixed.html">Navbar Fixed</a></li>
+                    <li><a href="layout_navbar-menus.html">Navbar Menus</a></li>
+                    <li><a href="layout_navbar-contextual.html">Contextual Example</a></li>
+                    <li><a href="layout_navbar-search-alt.html">Search Alt Style</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-hand-o-up"></span>Topbar<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_topbar.html">Default Style</a></li>
+                    <li><a href="layout_topbar-menu.html">Default w/Menu</a></li>
+                    <li><a href="layout_topbar-alt.html">Alternate Style</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-arrows-v"></span>Content Body<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_content-blank.html">Blank Starter</a></li>
+                    <li><a href="layout_content-fixed.html">Fixed Window</a></li>
+                    <li><a href="layout_content-heading.html">Content Heading</a></li>
+                    <li><a href="layout_content-tabs.html">Content Tabs</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-pause"></span>Content Trays<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_tray-left.html">Tray Left Static</a></li>
+                    <li><a href="layout_tray-left-fixed.html">Tray Left Fixed</a></li>
+                    <li><a href="layout_tray-right.html">Tray Right Static</a></li>
+                    <li><a href="layout_tray-both.html">Left + Right Static</a></li>
+                    <li><a href="layout_tray-both-fixed.html">Left + Right Fixed</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-plus-square-o"></span>Boxed Layout<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_boxed.html">Default</a></li>
+                    <li><a href="layout_boxed-horizontal.html">Horizontal Menu</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-arrow-circle-o-up"></span>Horizontal Menu<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="layout_horizontal-sm.html">Small Size</a></li>
+                    <li><a href="layout_horizontal-md.html">Medium Size</a></li>
+                    <li><a href="layout_horizontal-lg.html">Large Size</a></li>
+                    <li><a href="layout_horizontal-light.html">Light Skin</a></li>
+                    <li><a href="layout_horizontal-topbar.html">With Topbar</a></li>
+                    <li><a href="layout_horizontal-topbar-alt.html">With Alt Topbar</a></li>
+                    <li><a href="layout_horizontal-collapsed.html">Collapsed onLoad</a></li>
+                    <li><a href="layout_horizontal-boxed.html">In Boxed Layout</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-label pt35"></li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-bar-chart"></span><span class="sidebar-title">Information Panels</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="widgets_tile.html"><span class="fa fa-arrows-h"></span>Tile Widgets</a>
+                </li>
+                <li><a href="widgets_panel.html"><span class="fa fa-arrows-h"></span>Panel Widgets</a>
+                </li>
+                <li><a href="widgets_scroller.html"><span class="fa fa-arrows-h"></span>Scroller Widgets</a>
+                </li>
+                <li><a href="widgets_data.html"><span class="fa fa-arrows-h"></span>Admin Widgets</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-shopping-basket"></span><span class="sidebar-title">Ecommerce</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="ecommerce_dashboard.html"><span class="glyphicon glyphicon-shopping-cart"></span>Dashboard</a>
+                </li>
+                <li><a href="ecommerce_products.html"><span class="glyphicon glyphicon-tags"></span>Products</a>
+                </li>
+                <li><a href="ecommerce_orders.html"><span class="fa fa-money"></span>Orders</a>
+                </li>
+                <li><a href="ecommerce_customers.html"><span class="fa fa-users"></span>Customers</a>
+                </li>
+                <li><a href="ecommerce_settings.html"><span class="fa fa-gears"></span>Store Settings</a>
+                </li>
+              </ul>
+            </li>
+            <li class="sidebar-label pt35"></li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-diamond"></span><span class="sidebar-title">UI Elements</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="ui_alerts.html"><span class="fa fa-warning"></span>Alerts</a>
+                </li>
+                <li><a href="ui_animations.html"><span class="fa fa-spinner"></span>Animations</a>
+                </li>
+                <li><a href="ui_buttons.html"><span class="fa fa-plus-square-o"></span>Buttons</a>
+                </li>
+                <li><a href="ui_typography.html"><span class="fa fa-text-width"></span>Typography</a>
+                </li>
+                <li><a href="ui_portlets.html"><span class="fa fa-archive"></span>Portlets</a>
+                </li>
+                <li><a href="ui_progress-bars.html"><span class="fa fa-bars"></span>Progress Bars</a>
+                </li>
+                <li><a href="ui_tabs.html"><span class="fa fa-toggle-off"></span>Tabs</a>
+                </li>
+                <li><a href="ui_icons.html"><span class="fa fa-hand-o-right"></span>Icons</a>
+                </li>
+                <li><a href="ui_grid.html"><span class="fa fa-th-large"></span>Grid</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-navicon"></span><span class="sidebar-title">Form Elements</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="form_inputs.html"><span class="fa fa-magic"></span>Basic Inputs</a>
+                </li>
+                <li><a href="form_plugins.html"><span class="fa fa-bell-o"></span>Plugin Inputs</a>
+                </li>
+                <li><a href="form_editors.html"><span class="fa fa-clipboard"></span>Editors</a>
+                </li>
+                <li><a href="form_treeview.html"><span class="fa fa-tree"></span>Treeview</a>
+                </li>
+                <li><a href="form_nestable.html"><span class="fa fa-tasks"></span>Nestable</a>
+                </li>
+                <li><a href="form_image-tools.html"><span class="fa fa-file-image-o"></span>Image Tools</a>
+                </li>
+                <li><a href="form_uploaders.html"><span class="fa fa-cloud-upload"></span>Uploaders</a>
+                </li>
+                <li><a href="form_notifications.html"><span class="fa fa-bell-o"></span>Notifications</a>
+                </li>
+                <li><a href="form_content-sliders.html"><span class="fa fa-exchange"></span>Content Sliders</a>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-cog"></span><span class="sidebar-title">Plugins</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="#" class="accordion-toggle"><span class="glyphicon glyphicon-globe"></span>Maps<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="maps_basic.html">Basic Maps</a></li>
+                    <li><a href="maps_vector.html">Vector Maps</a></li>
+                    <li><a href="maps_full.html">Full Map</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-area-chart"></span>Charts<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="charts_highcharts.html">Highcharts</a></li>
+                    <li><a href="charts_d3.html">D3 Charts</a></li>
+                    <li><a href="charts_flot.html">Flot Charts</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-table"></span>Tables<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="tables_basic.html">Basic Tables</a></li>
+                    <li><a href="tables_footable.html">FooTables</a></li>
+                    <li><a href="tables_pricing.html">Pricing Tables</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-flask"></span>Misc<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="misc_tour.html">Site Tour</a></li>
+                    <li><a href="misc_timeout.html">Session Timeout</a></li>
+                    <li><a href="misc_nprogress.html">Page Progress Loader</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <li><a href="#" class="accordion-toggle"><span class="fa fa-paste"></span><span class="sidebar-title">Pages</span><span class="caret"></span></a>
+              <ul class="nav sub-nav">
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-gears"></span>Utility<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="pages_confirmation.html">Confirmation</a></li>
+                    <li><a href="pages_login.html">Login</a></li>
+                    <li><a href="pages_login(alt).html">Login Alt</a></li>
+                    <li><a href="pages_register.html">Register</a></li>
+                    <li><a href="pages_register(alt).html">Register Alt</a></li>
+                    <li><a href="pages_screenlock.html">Screenlock</a></li>
+                    <li><a href="pages_screenlock(alt).html">Screenlock Alt</a></li>
+                    <li><a href="pages_forgotpw.html">Forgot Password</a></li>
+                    <li><a href="pages_forgotpw(alt).html">Forgot Pass Alt</a></li>
+                    <li><a href="pages_coming-soon.html">Coming Soon</a></li>
+                    <li><a href="pages_404.html">404 Error</a></li>
+                    <li><a href="pages_500.html">500 Error</a></li>
+                    <li><a href="pages_404(alt).html">404 Error Alt</a></li>
+                    <li><a href="pages_500(alt).html">500 Error Alt</a></li>
+                  </ul>
+                </li>
+                <li><a href="#" class="accordion-toggle"><span class="fa fa-desktop"></span>Basic<span class="caret"></span></a>
+                  <ul class="nav sub-nav">
+                    <li><a href="pages_search-results.html">Search Results</a></li>
+                    <li><a href="pages_profile.html">Profile</a></li>
+                    <li><a href="pages_timeline.html">Timeline Split</a></li>
+                    <li><a href="pages_timeline-single.html">Timeline Single</a></li>
+                    <li><a href="pages_faq.html">FAQ Page</a></li>
+                    <li><a href="pages_calendar.html">Calendar</a></li>
+                    <li><a href="pages_messages.html">Messages</a></li>
+                    <li><a href="pages_messages(alt).html">Messages Alt</a></li>
+                    <li><a href="pages_gallery.html">Gallery</a></li>
+                    <li><a href="pages_invoice.html">Printable Invoice</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </li>
+            <!-- sidebar bullets-->
+            <li class="sidebar-label pt35"></li>
+            <li class="sidebar-proj"><a href="#projectOne"><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">Executive Meeting</span></a></li>
+            <li class="sidebar-proj"><a href="#projectTwo"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">HelpDesk Redesign</span></a></li>
+            <li class="sidebar-proj"><a href="#projectTwo"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">Sony Board Meeting</span></a></li>
+            <li class="sidebar-proj"><a href="#projectThree"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">Apple Tech Conference</span></a></li>
+          </ul>
+          <!-- Start: Sidebar Collapse Button-->
+          <div class="sidebar-toggle-mini"><a href="#"><span class="fa fa-sign-out"></span></a></div>
+        </div>
+      </aside>
+      <!-- Start: Content-Wrapper-->
+      <section id="content_wrapper">
+        <!-- Start: Topbar-Dropdown-->
+        <div id="topbar-dropmenu" class="alt">
+          <div class="topbar-menu row">
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-primary light"><span class="glyphicon glyphicon-inbox text-muted"></span><span class="metro-title">Messages</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-info light"><span class="glyphicon glyphicon-user text-muted"></span><span class="metro-title">Users</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-success light"><span class="glyphicon glyphicon-headphones text-muted"></span><span class="metro-title">Support</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-system light"><span class="glyphicon glyphicon-facetime-video text-muted"></span><span class="metro-title">Videos</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-warning light"><span class="fa fa-gears text-muted"></span><span class="metro-title">Settings</span></a></div>
+            <div class="col-xs-4 col-sm-2"><a href="#" class="metro-tile bg-alert light"><span class="glyphicon glyphicon-picture text-muted"></span><span class="metro-title">Pictures</span></a></div>
+          </div>
+        </div>
+        <!-- Start: Topbar-->
+        <header id="topbar" class="alt">
+          <div class="topbar-left pull-left">
+            <h1 class="mn">Dashboard</h1><span class="text-shady-lady fs15">dashboard & statistics</span>
+          </div>
+          <div class="topbar-right">
+            <div class="ib topbar-dropdown">
+              <label for="topbar-multiple" class="control-label pr10 fs11 text-muted"></label>
+              <select id="topbar-multiple" class="hidden">
+                <optgroup label="Filter By:">
+                  <option value="1-1" selected="selected">17 January 2016 - 15 February 2016</option>
+                  <option value="1-2">Last 30 Days</option>
+                  <option value="1-3">Last Year</option>
+                </optgroup>
+              </select>
+            </div>
+          </div>
+        </header>
+        <!-- Begin: Content-->
+        <section id="content" class="table-layout animated fadeIn">
+          <!-- begin: .tray-center-->
+          <div class="tray tray-center">
+            <div class="tray-inner">
+              <div class="row flex-column-reverse-before-md">
+                <div class="col-sm-12">
+                  <div class="p30">
+                    <!-- dashboard tiles-->
+                    <h2 class="ib mn mr20">Totals</h2><span class="fs15 text-shady-lady">Last Week</span>
+                    <div class="row text-center mt35">
+                      <div class="col-sm-6 col-md-3 br-lg-r">
+                        <h2 class="mn fs47 ib pr20 monserrat">597</h2>
+                        <div class="reveal-xlg-inline-block text-center text-xlg-left">
+                          <p class="fs15 text-shady-lady mb2">New<br class="veil reveal-xlg-block"> Feedbacks
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3 br-lg-r mt-30 mt-sm-0">
+                        <h2 class="mn monserrat fs47 ib pr20">16.6M$</h2>
+                        <div class="reveal-xlg-inline-block text-center text-xlg-left">
+                          <p class="fs15 text-shady-lady mb2">Total<br class="veil reveal-xlg-block"> Profit
+                          </p>
+                        </div>
+                      </div>
+                      <div class="clearfix visible-sm-block"></div>
+                      <div class="col-sm-6 col-md-3 br-lg-r mt-30 mt-md-0">
+                        <h2 class="mn monserrat fs47 ib pr20">7.5K</h2>
+                        <div class="reveal-xlg-inline-block text-center text-xlg-left">
+                          <p class="fs15 text-shady-lady mb2">New<br class="veil reveal-xlg-block"> Orders
+                          </p>
+                        </div>
+                      </div>
+                      <div class="col-sm-6 col-md-3 mt-30 mt-md-0">
+                        <h2 class="mn monserrat fs47 ib pr20">+48%</h2>
+                        <div class="reveal-xlg-inline-block text-center text-xlg-left">
+                          <p class="fs15 text-shady-lady mb2">Brand<br class="veil reveal-xlg-block"> Popularity
+                          </p>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-sm-12">
+                  <hr class="mt-35">
+                </div>
+                <div class="col-sm-12">
+                  <!-- Admin-panels-->
+                  <div class="admin-panels">
+                    <!-- dashboard activity-->
+                    <div id="p01" class="panel mbn mt-40 mt-md-0">
+                      <div class="panel-body pbn">
+                        <div class="row">
+                          <!-- Chart Column-->
+                          <div class="col-md-6">
+                            <div class="pl30 pr40">
+                              <h2 class="ib mn mr20">Site visits</h2><span class="fs15 text-shady-lady">Weekly Stats</span>
+                              <div class="float-sm-right mt-10 mt-sm-0"><a href="#" id="ecommerce_chart1-new-data" class="btn btn-xs btn-success chart-1 active-success">New</a><a href="#" id="ecommerce_chart1-new-data-2" class="btn btn-xs btn-default ml4 chart-1">Returning</a></div>
+                              <div id="ecommerce_chart1" style="height: 380px;"></div>
+                            </div>
+                          </div>
+                          <!-- Multi Text Column-->
+                          <div class="col-md-6 mt-30 mt-md-0">
+                            <div class="pr30 pl40">
+                              <h2 class="ib mn mr20">Revenue</h2><span class="fs15 text-shady-lady">Monthly Stats</span>
+                              <div class="mt-10 mt-sm-0 pull-sm-right">
+                                <div class="btn-group">
+                                  <button type="button" data-toggle="dropdown" class="btn btn-xs btn-info dropdown-toggle">Filter range<span class="caret ml15"></span></button>
+                                  <ul role="menu" class="dropdown-menu">
+                                    <li><a id="ecommerce_chart2-new-data" href="#" class="filter-range bg-whitesmoke">Type 1</a></li>
+                                    <li><a id="ecommerce_chart2-new-data-2" href="#" class="filter-range">Type 2</a></li>
+                                    <li><a id="ecommerce_chart2-new-data-3" href="#" class="filter-range">Type 3</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                              <div id="ecommerce_chart2" style="height: 310px;" class="pt20"></div>
+                              <div class="row mt10">
+                                <div class="col-xs-6 col-sm-3 col-md-4 col-xl-3 text-space-20">
+                                  <div class="fs15 text-shady-lady">Revenue:</div>
+                                  <div class="fs23 text-outer-space monserrat">$13.274</div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-4 col-xl-3 text-space-20">
+                                  <div class="fs15 text-shady-lady">Tax:</div>
+                                  <div class="fs23 text-outer-space monserrat">$19.962</div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-4 col-xl-3 text-space-20">
+                                  <div class="fs15 text-shady-lady">Shipment:</div>
+                                  <div class="fs23 text-outer-space monserrat">$1.976</div>
+                                </div>
+                                <div class="col-xs-6 col-sm-3 col-md-12 col-xl-3 text-space-20 mt-md-15 mt-xl-0">
+                                  <div class="fs15 text-shady-lady">Orders:</div>
+                                  <div class="fs23 text-outer-space monserrat">529 479</div>
+                                </div>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="mt37">
+              <div class="row text-center text-sm-left">
+                <div class="col-lg-6 admin-grid">
+                  <div class="pl30 pr30">
+                    <h2 class="mtn">Comments</h2>
+                    <div class="box-sm box-offset-20 mt-30">
+                      <div class="box__left"><img src="assets/img/avatars/avatar-01.jpg" class="br4"></div>
+                      <div class="box__body bg-white-lilac pl20 pr10 pt15 pb10 br4 w100p">
+                        <div class="fs18 ib text-black">Gary Harvey</div>
+                        <div class="float-sm-right text-mischka text-bold monserrat fs12 mt7">15 Feb 01:12 PM</div>
+                        <p class="mt7">It is a long established fact that a reader will be distracted by the readable content of a page when looking at its layout.</p>
+                      </div>
+                    </div>
+                    <div class="mt15 clearfix">
+                      <div class="float-right list-inline">
+                        <li><a href="#" class="text-primary text-uppercase fs12 text-bold monserrat">Quick edit</a></li>
+                        <li><a href="#" class="text-primary text-uppercase fs12 text-bold monserrat">View</a></li>
+                        <li><a href="#" class="text-danger text-uppercase fs12 text-bold monserrat">Delete</a></li>
+                      </div>
+                    </div>
+                    <div class="box-sm box-offset-20 mt-60 mt-sm-30">
+                      <div class="box__left"><img src="assets/img/avatars/avatar-02.jpg" class="br4"></div>
+                      <div class="box__body bg-white-lilac pl20 pr10 pt15 pb10 br4 w100p">
+                        <div class="fs18 ib text-black">Gerald Carpenter</div>
+                        <div class="float-sm-right text-mischka text-bold monserrat fs12 mt7">15 Feb 01:12 PM</div>
+                        <p class="mt7">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                      </div>
+                    </div>
+                    <div class="box-sm box-offset-20 mt-60 mt-sm-30">
+                      <div class="box__left"><img src="assets/img/avatars/avatar-03.jpg" class="br4"></div>
+                      <div class="box__body bg-white-lilac pl20 pr10 pt15 pb10 br4 w100p">
+                        <div class="fs18 ib text-black">Ashley Green</div>
+                        <div class="float-sm-right text-mischka text-bold monserrat fs12 mt7">15 Feb 01:12 PM</div>
+                        <p class="mt7">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                      </div>
+                    </div>
+                    <div class="box-sm box-offset-20 mt-60 mt-sm-30">
+                      <div class="box__left"><img src="assets/img/avatars/avatar-04.jpg" class="br4"></div>
+                      <div class="box__body bg-white-lilac pl20 pr10 pt15 pb10 br4 w100p">
+                        <div class="fs18 ib text-black">Doris Adams</div>
+                        <div class="float-sm-right text-mischka text-bold monserrat fs12 mt7">15 Feb 01:12 PM</div>
+                        <p class="mt7">There are many variations of passages of Lorem Ipsum available, but the majority have suffered alteration.</p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <div class="p-md-11 col-lg-6 admin-grid mt-60 mt-lg-0">
+                  <div class="pl30 pr30">
+                    <h2 class="mtn">Quick actions</h2>
+                    <div class="mt-30 d-sm-flex">
+                      <div><img src="assets/img/avatars/avatar-05.jpg" class="br4"></div>
+                      <div class="pl30 pr30">
+                        <div>
+                          <div>
+                            <div class="fs18 ib text-black">Gary Harvey</div>
+                            <p class="mt7">Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-mischka text-uppercase text-bold monserrat fs12 d-sm-flex flex-direction-column mla min-w145">
+                        <div><span>3 jun</span><span class="bull bg-info"></span><span>9:30-13:00</span></div>
+                        <div class="btn-group btn-group-xs mt15 d-sm-flex"><a href="#" class="btn btn-info mw70">Approve</a><a href="#" class="btn btn-danger mw70">
+                            Reject
+                            </a></div>
+                      </div>
+                    </div>
+                    <div class="mt-60 mt-sm-30 d-sm-flex">
+                      <div><img src="assets/img/avatars/avatar-06.jpg" class="br4"></div>
+                      <div class="pl30 pr30">
+                        <div>
+                          <div>
+                            <div class="fs18 ib text-black">Gerald Carpenter</div>
+                            <p class="mt7">It has roots in a piece of classical Latin literature from 45 BC</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-mischka text-uppercase text-bold monserrat fs12 d-sm-flex flex-direction-column mla min-w145">
+                        <div><span>3 jun</span><span class="bull bg-info"></span><span>9:30-13:00</span></div>
+                        <div class="btn-group btn-group-xs mt15 d-sm-flex"><a href="#" class="btn btn-info mw70">Approve</a><a href="#" class="btn btn-danger mw70">
+                            Reject
+                            </a></div>
+                      </div>
+                    </div>
+                    <div class="mt-60 mt-sm-30 d-sm-flex">
+                      <div><img src="assets/img/avatars/avatar-07.jpg" class="br4"></div>
+                      <div class="pl30 pr30">
+                        <div>
+                          <div>
+                            <div class="fs18 ib text-black">Ashley Green</div>
+                            <p class="mt7">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-mischka text-uppercase text-bold monserrat fs12 d-sm-flex flex-direction-column mla min-w145">
+                        <div><span>3 jun</span><span class="bull bg-info"></span><span>9:30-13:00</span></div>
+                        <div class="btn-group btn-group-xs mt15 d-sm-flex"><a href="#" class="btn btn-info mw70">Approve</a><a href="#" class="btn btn-danger mw70">
+                            Reject
+                            </a></div>
+                      </div>
+                    </div>
+                    <div class="mt-60 mt-sm-30 d-sm-flex">
+                      <div><img src="assets/img/avatars/avatar-04.jpg" class="br4"></div>
+                      <div class="pl30 pr30">
+                        <div>
+                          <div>
+                            <div class="fs18 ib text-black">Doris Adams</div>
+                            <p class="mt7">All the Lorem Ipsum generators on the Internet tend to repeat.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-mischka text-uppercase text-bold monserrat fs12 d-sm-flex flex-direction-column mla min-w145">
+                        <div><span>3 jun</span><span class="bull bg-info"></span><span>9:30-13:00</span></div>
+                        <div class="btn-group btn-group-xs mt15 d-sm-flex"><a href="#" class="btn btn-info mw70">Approve</a><a href="#" class="btn btn-danger mw70">
+                            Reject
+                            </a></div>
+                      </div>
+                    </div>
+                    <div class="mt-60 mt-sm-30 d-sm-flex">
+                      <div><img src="assets/img/avatars/avatar-05.jpg" class="br4"></div>
+                      <div class="pl30 pr30">
+                        <div>
+                          <div>
+                            <div class="fs18 ib text-black">Gary Harvey</div>
+                            <p class="mt7">Contrary to popular belief, Lorem Ipsum is not simply random text.</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-mischka text-uppercase text-bold monserrat fs12 d-sm-flex flex-direction-column mla min-w145">
+                        <div><span>3 jun</span><span class="bull bg-info"></span><span>9:30-13:00</span></div>
+                        <div class="btn-group btn-group-xs mt15 d-sm-flex"><a href="#" class="btn btn-info mw70">Approve</a><a href="#" class="btn btn-danger mw70">
+                            Reject
+                            
+                            </a></div>
+                      </div>
+                    </div>
+                    <div class="mt-60 mt-sm-30 d-sm-flex">
+                      <div><img src="assets/img/avatars/avatar-09.jpg" class="br4"></div>
+                      <div class="pl30 pr30">
+                        <div>
+                          <div>
+                            <div class="fs18 ib text-black">Gerald Carpenter</div>
+                            <p class="mt7">It has roots in a piece of classical Latin literature from 45 BC</p>
+                          </div>
+                        </div>
+                      </div>
+                      <div class="text-mischka text-uppercase text-bold monserrat fs12 d-sm-flex flex-direction-column mla min-w145">
+                        <div><span>3 jun</span><span class="bull bg-info"></span><span>9:30-13:00</span></div>
+                        <div class="btn-group btn-group-xs mt15 d-sm-flex"><a href="#" class="btn btn-info mw70">Approve</a><a href="#" class="btn btn-danger mw70">Reject</a></div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <!-- Three Pane Widget-->
+                <div class="col-md-12 admin-grid">
+                  <div class="panel mbn">
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="pl30 pr30">
+                            <h2 class="ib mn mr20">Recent Activities</h2>
+                            <div class="pull-lg-right mt10 mt-lg-0">
+                              <div class="btn-group">
+                                <button type="button" data-toggle="dropdown" class="btn btn-xs btn-info dropdown-toggle">Filter by<span class="caret ml15"></span></button>
+                                <ul role="menu" class="dropdown-menu">
+                                  <li><a href="#">Type 1</a></li>
+                                  <li><a href="#">Type 2</a></li>
+                                  <li><a href="#">Type 3</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="panel-scroller scroller-xl scroller-thick scroller-blue scroller-pn pn mt30">
+                              <table class="table list-table">
+                                <tbody>
+                                  <tr>
+                                    <td><span class="icon text-success fa fa-check"></span>You have 4 pending tasks</td>
+                                    <td class="text-right">Just now</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-primary fa fa-bar-chart"></span>Finance Report for year 2013 has been released.</td>
+                                    <td class="text-right">20 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-warning fa fa-user"></span>You have 5 pending membership that requires a quick review.</td>
+                                    <td class="text-right">20 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="element-groups-sm-custom"><span class="icon text-system fa fa-shopping-basket"></span>New order received with <span class="label label-system">Reference Number: DR23923</span>
+                                      </div>
+                                    </td>
+                                    <td class="text-right">20 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-warning fa fa-user"></span>You have 5 pending membership that requires a quick review.</td>
+                                    <td class="text-right">25 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-lynch fa fa-bell"></span>Web server hardware needs to be upgraded.</td>
+                                    <td class="text-right">28 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-default fa fa-briefcase"></span>IPO Report for year 2013 has been released.</td>
+                                    <td class="text-right">33 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-success fa fa-check"></span>You have 6 pending tasks</td>
+                                    <td class="text-right">35 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-primary fa fa-bar-chart"></span>Finance Report for year 2013 has been released.</td>
+                                    <td class="text-right">40 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-success fa fa-bell"></span>Web server hardware needs to be upgraded.</td>
+                                    <td class="text-right">40 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-warning fa fa-briefcase"></span>IPO Report for year 2013 has been released.</td>
+                                    <td class="text-right">44 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-success fa fa-check"></span>You have 6 pending tasks</td>
+                                    <td class="text-right">47 min</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bar-chart"></span>Finance Report for year 2013 has been released.</td>
+                                    <td class="text-right">50 min</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><a href="#" class="mt25 btn-link">See All Records</a>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mt-30 mt-md-0">
+                          <div class="pr35 pl30">
+                            <h2 class="ib mn mr20">Tasks</h2>
+                            <div class="pull-right">
+                              <div class="btn-group">
+                                <button type="button" data-toggle="dropdown" class="btn btn-xs btn-info dropdown-toggle">More<span class="caret ml15"></span></button>
+                                <ul role="menu" class="dropdown-menu">
+                                  <li><a href="#">Task 1</a></li>
+                                  <li><a href="#">Task 2</a></li>
+                                  <li><a href="#">Task 3</a></li>
+                                </ul>
+                              </div>
+                            </div>
+                            <div class="panel-scroller scroller-xl scroller-thick scroller-blue scroller-pn pn mt30">
+                              <table class="table list-tasks">
+                                <tbody>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault3" type="checkbox">
+                                        <label for="checkboxDefault3">Hold An Interview for Marketing Manager Position</label><span class="label label-danger">MARKETING</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault4" type="checkbox">
+                                        <label for="checkboxDefault4">AirAsia Intranet System Project Internal Meeting</label><span class="label label-warning dark">AIRASIA</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault5" type="checkbox">
+                                        <label for="checkboxDefault5">Technical Management Meeting</label><span class="label label-primary dark">Company</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault6" type="checkbox">
+                                        <label for="checkboxDefault6">Kick-off Company CRM Mobile App Development 
+                                        </label><span class="label label-primary dark">INTERNAL</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault7" type="checkbox">
+                                        <label for="checkboxDefault7">Hold An Interview for Marketing Manager Position</label><span class="label label-danger">MARKETING</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault8" type="checkbox">
+                                        <label for="checkboxDefault8">AirAsia Intranet System Project Internal Meeting</label><span class="label label-warning dark">AIRASIA</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault9" type="checkbox">
+                                        <label for="checkboxDefault9">Technical Management Meeting</label><span class="label label-primary dark">Company</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault10" type="checkbox">
+                                        <label for="checkboxDefault10">Kick-off Company CRM Mobile App Development</label><span class="label label-primary dark">INTERNAL</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault11" type="checkbox">
+                                        <label for="checkboxDefault11">Hold An Interview for Marketing Manager Position</label><span class="label label-danger">MARKETING</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault12" type="checkbox">
+                                        <label for="checkboxDefault12">AirAsia Intranet System Project Internal Meeting</label><span class="label label-warning dark">AIRASIA</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault13" type="checkbox">
+                                        <label for="checkboxDefault13">Technical Management Meeting</label><span class="label label-primary dark">Company</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault14" type="checkbox">
+                                        <label for="checkboxDefault14">Kick-off Company CRM Mobile App Development</label><span class="label label-primary dark">INTERNAL</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                  <tr>
+                                    <td>
+                                      <div class="checkbox-custom checkbox-custom-thin mr5 element-groups-sm-custom">
+                                        <input id="checkboxDefault15" type="checkbox">
+                                        <label for="checkboxDefault15">Hold An Interview for Marketing Manager sition</label><span class="label label-danger">MARKETING</span>
+                                      </div>
+                                    </td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div><a href="#" class="mt25 btn-link">See All Records</a>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr>
+              <div class="row">
+                <!-- Three Pane Widget-->
+                <div class="col-md-12 admin-grid">
+                  <div class="panel">
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-md-6">
+                          <div class="pl30 pr50">
+                            <h2 class="ib mn mr20">General Stats</h2>
+                            <div class="pull-right">
+                              <div class="btn-group">
+                                <button type="button" class="btn btn-xs btn-system"><span class="mr10 icon fa fa-refresh"></span>Reload</button>
+                              </div>
+                            </div>
+                            <div class="mt50 row text-center">
+                              <div class="col-sm-4 mt-30 mt-sm-0">
+                                <div id="c1" value="55" data-circle-color="system" class="info-circle info-circle-percent"></div>
+                                <p class="fs15 text-shady-lady mt10">
+                                  Transactions
+                                  
+                                  
+                                </p>
+                              </div>
+                              <div class="col-sm-4 mt-30 mt-sm-0">
+                                <div id="c2" value="85" data-circle-color="success" class="info-circle info-circle-percent"></div>
+                                <p class="fs15 text-shady-lady mt10">
+                                  New Visits
+                                  
+                                </p>
+                              </div>
+                              <div class="col-sm-4 mt-30 mt-sm-0">
+                                <div id="c3" value="46" data-circle-color="danger" class="info-circle info-circle-percent"></div>
+                                <p class="fs15 text-shady-lady mt10">
+                                  Bounce
+                                  
+                                </p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                        <div class="col-md-6 mt-30 mt-md-0">
+                          <div class="pl30 pr30">
+                            <div>
+                              <h2 class="ib mn mr20">Server Stats</h2>
+                              <div class="pull-right">
+                                <div class="btn-group">
+                                  <button type="button" class="btn btn-xs btn-system"><span class="mr10 icon fa fa-refresh"></span>Reload</button>
+                                </div>
+                              </div>
+                            </div>
+                            <div class="row mt60 text-center">
+                              <div class="col-xs-6 col-sm-3 col-md-4 mt10 mt-md-0">
+                                <div sparkwidth="100%" data-spark-color="primary" values="5,6,4,3,5,6,4,6,7,2,4,7,5,4,6" class="inlinesparkbars"></div>
+                                <p class="fs15 text-shady-lady mt10">Network</p>
+                              </div>
+                              <div class="col-xs-6 col-sm-3 col-md-4">
+                                <div sparkwidth="100%" data-spark-color="warning" values="5,6,4,5,6,7,8,9,12,10,14,12,9,8,5" class="inlinesparkbars"></div>
+                                <p class="fs15 text-shady-lady mt10">CPU Load</p>
+                              </div>
+                              <div class="col-xs-12 col-sm-6 col-md-4 mt-30 mt-sm-0">
+                                <div id="ecommerce_chart3" style="height: 120px;"></div>
+                                <p class="fs15 text-shady-lady mt10">Load Rating</p>
+                              </div>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="mt10">
+              <div class="row">
+                <!-- Three Pane Widget-->
+                <div class="col-md-12 admin-grid">
+                  <div class="panel mtn">
+                    <div class="panel-body">
+                      <div class="row">
+                        <div class="col-md-6 mt-30 mt-md-0">
+                          <div class="pl30 pr30">
+                            <h2 class="ib mn mr20">Regional Stats</h2>
+                            <div class="clearfix mt30">
+                              <div class="pull-left">
+                                <div class="btn-group btn-group-xs d-sm-flex"><a href="#" class="btn btn-info">Users</a><a href="#" class="btn btn-gray">
+                                    Orders
+                                    </a></div>
+                              </div>
+                              <div class="pull-right">
+                                <div class="btn-group">
+                                  <button type="button" data-toggle="dropdown" class="btn btn-xs fs10 btn-info dropdown-toggle">Select region<span class="caret ml15"></span></button>
+                                  <ul role="menu" class="dropdown-menu">
+                                    <li><a href="#">Region 1</a></li>
+                                    <li><a href="#">Region 2</a></li>
+                                    <li><a href="#">Region 3</a></li>
+                                  </ul>
+                                </div>
+                              </div>
+                            </div>
+                            <div id="WidgetMap" style="width: 100%; height: 300px;" class="mt40 jvector-colors hide-jzoom"></div>
+                          </div>
+                        </div>
+                        <div class="col-md-6">
+                          <div class="pl30 pr30">
+                            <h2 class="ib mn mr20">Feed</h2>
+                            <div class="panel-scroller scroller-lg scroller-thick scroller-blue scroller-pn pn mt30">
+                              <table class="table list-table">
+                                <tbody>
+                                  <tr>
+                                    <td><span class="icon text-warning fa fa-bell"></span>Web server hardware needs to be upgraded.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                  <tr>
+                                    <td><span class="icon text-info fa fa-bullhorn"></span>New order received. Please take care of it.</td>
+                                    <td class="text-right">2 hours</td>
+                                  </tr>
+                                </tbody>
+                              </table>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              <hr class="mt25">
+              <div class="row">
+                <div class="col-md-6">
+                  <div class="pl30 pr30">
+                    <!-- Calendar Widget-->
+                    <div id="p02" class="panel panel-widget calendar-widget calendar-alt">
+                      <h2 class="mtn">Calendar</h2>
+                      <div id="calendar-widget" class="mt-35 mt-sm-0"></div>
+                    </div>
+                  </div>
+                </div>
+                <div class="col-md-6 admin-grid">
+                  <div class="pl30 pr30">
+                    <h2 class="ib mtn">Chat</h2>
+                    <div class="reveal-sm-inline-block float-sm-right mt5 ml-md-20">
+                      <form role="search" class="search-form-widget"><span class="fa fa-search fs18"></span>
+                        <div class="form-group">
+                          <input type="text" placeholder="Search..." class="form-control">
+                        </div>
+                      </form>
+                    </div>
+                    <div class="panel-scroller scroller-lg scroller-thick scroller-blue scroller-pn pn bg-alabaster mt-20 mt-md-0 text-center text-sm-left">
+                      <div class="pt25 pl20 pr15 pb20">
+                        <div class="bg-info text-white pt15 pl15 pr20 pb10 fs13 lh19 br4 ml10p triangle-after-right posr mr8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                          <div class="time text-bold monserrat fs10 opacity05 text-uppercase mt5 text-right">11:49 AM</div>
+                        </div>
+                        <div class="box-sm box-offset-10 mt-60 mt-sm-20">
+                          <div class="box__left"><img src="assets/img/avatars/avatar-09.jpg" class="br4"></div>
+                          <div class="box__body">
+                            <div class="text-black fs14 lh14">Gerald Carpenter</div>
+                            <div class="bg-white text-santas-gray br4 pt15 pl15 pr20 pb10 fs13 lh19 br4 posr mt10 triangle-after-left">Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                              <div class="time text-bold monserrat fs10 opacity05 text-uppercase mt7">11:49 AM</div>
+                            </div>
+                          </div>
+                          <div class="bg-info text-white pt15 pl15 pr20 pb10 fs13 lh19 br4 ml10p triangle-after-right posr mt-60 mt-sm-20 mr8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            <div class="time text-bold monserrat fs10 opacity05 text-uppercase mt5 text-right">11:49 AM</div>
+                          </div>
+                          <div class="box-sm box-offset-10 mt-60 mt-sm-20">
+                            <div class="box__left"><img src="assets/img/avatars/avatar-04.jpg" class="br4"></div>
+                            <div class="box__body">
+                              <div class="text-black fs14 lh14">Doris Adams</div>
+                              <div class="bg-white text-santas-gray br4 pt15 pl15 pr20 pb10 fs13 lh19 br4 posr mt10 triangle-after-left">Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                <div class="time text-bold monserrat fs10 opacity05 text-uppercase mt7">11:49 AM</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="bg-info text-white pt15 pl15 pr20 pb10 fs13 lh19 br4 ml10p triangle-after-right posr mt-60 mt-sm-20 mr8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            <div class="time text-bold monserrat fs10 opacity05 text-uppercase mt5 text-right">11:49 AM</div>
+                          </div>
+                          <div class="box-sm box-offset-10 mt-60 mt-sm-20">
+                            <div class="box__left"><img src="assets/img/avatars/avatar-05.jpg" class="br4"></div>
+                            <div class="box__body">
+                              <div class="text-black fs14 lh14">Gary Harvey</div>
+                              <div class="bg-white text-santas-gray br4 pt15 pl15 pr20 pb10 fs13 lh19 br4 posr mt10 triangle-after-left">Adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                                <div class="time text-bold monserrat fs10 opacity05 text-uppercase mt7">11:49 AM</div>
+                              </div>
+                            </div>
+                          </div>
+                          <div class="bg-info text-white pt15 pl15 pr20 pb10 fs13 lh19 br4 ml10p triangle-after-right posr mt-60 mt-sm-20 mr8">Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.
+                            <div class="time text-bold monserrat fs10 opacity05 text-uppercase mt5 text-right">11:49 AM</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                    <div class="bg-lynch br4 p5 mb30 mb-lg-0">
+                      <form action="#" class="inline-form d-flex bg-white br4">
+                        <input type="text" placeholder="Type message here">
+                        <button type="submit" class="text-white bg-info br4 br-n mla"><span class="fa fa-envelope-o fs21 pl10 pr10"></span></button>
+                      </form>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <!-- begin: .tray-right-->
+          <aside data-tray-height="match" class="tray tray-right tray270 pn hidden">
+            <!-- store activity timeline-->
+            <ol class="timeline-list pl5 mt5">
+              <li class="timeline-item">
+                <div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+                <div class="timeline-desc"><b>Michael</b> Added a new item to his store:<a href="#">Ipod</a></div>
+                <div class="timeline-date">1:25am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+                <div class="timeline-desc"><b>Sara</b> Added a new item to his store:<a href="#">Notebook</a></div>
+                <div class="timeline-date">3:05am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-success"><span class="fa fa-usd"></span></div>
+                <div class="timeline-desc"><b>Admin</b> created a new invoice for:<a href="#">Software</a></div>
+                <div class="timeline-date">4:15am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-warning"><span class="fa fa-pencil"></span></div>
+                <div class="timeline-desc"><b>Laura</b> edited her work experience</div>
+                <div class="timeline-date">5:25am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-success"><span class="fa fa-usd"></span></div>
+                <div class="timeline-desc"><b>Admin</b> created a new invoice for:<a href="#">Apple Inc.</a></div>
+                <div class="timeline-date">7:45am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+                <div class="timeline-desc"><b>Michael</b> Added a new item to his store:<a href="#">Ipod</a></div>
+                <div class="timeline-date">8:25am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+                <div class="timeline-desc"><b>Sara</b> Added a new item to his store:<a href="#">Watch</a></div>
+                <div class="timeline-date">9:35am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-system"><span class="fa fa-fire"></span></div>
+                <div class="timeline-desc"><b>Admin</b> created a new invoice for:<a href="#">Software</a></div>
+                <div class="timeline-date">4:15am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-warning"><span class="fa fa-pencil"></span></div>
+                <div class="timeline-desc"><b>Laura</b> edited her work experience</div>
+                <div class="timeline-date">5:25am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-success"><span class="fa fa-usd"></span></div>
+                <div class="timeline-desc"><b>Admin</b> created a new invoice for:<a href="#">Software</a></div>
+                <div class="timeline-date">4:15am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-warning"><span class="fa fa-pencil"></span></div>
+                <div class="timeline-desc"><b>Laura</b> edited her work experience</div>
+                <div class="timeline-date">5:25am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-success"><span class="fa fa-usd"></span></div>
+                <div class="timeline-desc"><b>Admin</b> created a new invoice for:<a href="#">Apple Inc.</a></div>
+                <div class="timeline-date">7:45am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+                <div class="timeline-desc"><b>Michael</b> Added a new item to his store:<a href="#">Ipod</a></div>
+                <div class="timeline-date">8:25am</div>
+              </li>
+              <li class="timeline-item">
+                <div class="timeline-icon bg-dark light"><span class="fa fa-tags"></span></div>
+                <div class="timeline-desc"><b>Sara</b> Added a new item to his store:<a href="#">Watch</a></div>
+                <div class="timeline-date">9:3</div>
+              </li>
+            </ol>
+          </aside>
+        </section>
+        <!-- Begin: Page Footer-->
+        <footer id="content-footer" class="affix">
+          <div class="row">
+            <div class="col-xs-6"><span class="footer-legal"><span id="copyright-year">2016</span> by TemplateMonster</span></div>
+            <div class="col-xs-6 text-right"><a href="#content" class="footer-return-top"><span class="fa fa-angle-up"></span></a></div>
+          </div>
+        </footer>
+      </section>
+      <!-- Start: Right Sidebar-->
+      <aside id="sidebar_right" class="nano affix">
+        <!-- Start: Sidebar Right Content-->
+        <div class="sidebar-right-content nano-content">
+          <div class="tab-block sidebar-block br-n">
+            <ul class="nav nav-tabs tabs-border nav-justified hidden">
+              <li class="active"><a href="#sidebar-right-tab1" data-toggle="tab">Tab 1</a></li>
+              <li><a href="#sidebar-right-tab2" data-toggle="tab">Tab 2</a></li>
+              <li><a href="#sidebar-right-tab3" data-toggle="tab">Tab 3</a></li>
+            </ul>
+            <div class="tab-content br-n">
+              <div id="sidebar-right-tab1" class="tab-pane active">
+                <h5 class="title-divider text-muted mb20">Server Statistics<a href="#"><span class="pull-right">2013<i class="fa fa-caret-down ml5"></i></span></a></h5>
+                <div class="progress mh5">
+                  <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 44%" class="progress-bar progress-bar-primary"><span class="fs11">DB Request</span></div>
+                </div>
+                <div class="progress mh5">
+                  <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 84%" class="progress-bar progress-bar-info"><span class="fs11 text-left">Server Load</span></div>
+                </div>
+                <div class="progress mh5">
+                  <div role="progressbar" aria-valuenow="45" aria-valuemin="0" aria-valuemax="100" style="width: 61%" class="progress-bar progress-bar-warning"><span class="fs11 text-left">Server Connections</span></div>
+                </div>
+                <h5 class="title-divider text-muted mt30 mb10">Traffic Margins</h5>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <h3 class="text-primary mn pl5">132</h3>
+                  </div>
+                  <div class="col-xs-7 text-right">
+                    <h3 class="text-success-dark mn"><i class="fa fa-caret-up"></i> 13.2%</h3>
+                  </div>
+                </div>
+                <h5 class="title-divider text-muted mt25 mb10">Database Request</h5>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <h3 class="text-primary mn pl5">212</h3>
+                  </div>
+                  <div class="col-xs-7 text-right">
+                    <h3 class="text-success-dark mn"><i class="fa fa-caret-up"></i> 25.6%</h3>
+                  </div>
+                </div>
+                <h5 class="title-divider text-muted mt25 mb10">Server Response</h5>
+                <div class="row">
+                  <div class="col-xs-5">
+                    <h3 class="text-primary mn pl5">82.5</h3>
+                  </div>
+                  <div class="col-xs-7 text-right">
+                    <h3 class="text-danger mn"><i class="fa fa-caret-down"></i> 17.9%</h3>
+                  </div>
+                </div>
+                <h5 class="title-divider text-muted mt40 mb20">Server Statistics<span class="pull-right text-primary fw600">USA</span></h5>
+              </div>
+              <div id="sidebar-right-tab2" class="tab-pane"></div>
+              <div id="sidebar-right-tab3" class="tab-pane"></div>
+            </div>
+          </div>
+        </div>
+      </aside>
+    </div>
+    <!-- core scripts-->
+    <script src="plugins/core.min.js"></script>
+    <!-- Theme Javascript-->
+    <script src="assets/js/utility/utility.js"></script>
+    <script src="assets/js/demo/demo.js"></script>
+    <script src="assets/js/main.js"></script>
+    <!-- Widget Javascript-->
+    <script src="assets/js/demo/widgets.js"></script>
+    <script type="text/javascript">
+      jQuery(document).ready(function () {
+        "use strict";
+        // Init Demo JS
+        Demo.init();
+        // Init Theme Core
+        Core.init();
+        demoHighCharts.init();
+        runVectorMaps();
+        $(window).trigger('resize');
+        // Init plugins for ".calendar-widget"
+        // plugins: FullCalendar
+        //
+        $('#calendar-widget').fullCalendar({
+          header: {
+            right: ' prev,next,today,month,agendaWeek,agendaDay'
+          },
+          editable: true,
+          events: [{
+            title: 'ALL Day event',
+            start: '2016-02-2',
+            end: '2016-02-2',
+            className: 'fc-event-warning'
+          },
+            {
+              title: 'ALL DAY EVENT',
+              start: '2016-03-11',
+              end: '2016-03-11',
+              className: 'fc-event-warning'
+            },
+            {
+              title: 'Sony Meeting',
+              start: '2016-05-2',
+              end: '2016-05-2',
+              className: 'fc-event-warning'
+            },
+      
+            {
+              title: 'Conference',
+              start: '2016-05-11',
+              end: '2016-05-13',
+              className: 'fc-event-info'
+            },
+      
+            {
+              title: 'LONG EVENT',
+              start: '2016-03-21',
+              end: '2016-03-23',
+              className: 'fc-event-info'
+            }
+          ],
+          eventRender: function (event, element) {
+            // create event tooltip using bootstrap tooltips
+            $(element).attr("data-original-title", event.title);
+            $(element).tooltip({
+              container: 'body',
+              delay: {
+                "show": 100,
+                "hide": 200
+              }
+            });
+            // create a tooltip auto close timer
+            $(element).on('show.bs.tooltip', function () {
+              var autoClose = setTimeout(function () {
+                $('.tooltip').fadeOut();
+              }, 3500);
+            });
+          }
+        });
+        // Init plugins for ".task-widget"
+        // plugins: Custom Functions + jQuery Sortable
+        //
+        var taskWidget = $('div.task-widget');
+        var taskItems = taskWidget.find('li.task-item');
+        var currentItems = taskWidget.find('ul.task-current');
+        var completedItems = taskWidget.find('ul.task-completed');
+        // Init jQuery Sortable on Task Widget
+        taskWidget.sortable({
+          items: taskItems, // only init sortable on list items (not labels)
+          handle: '.task-menu',
+          axis: 'y',
+          connectWith: ".task-list",
+          update: function (event, ui) {
+            var Item = ui.item;
+            var ParentList = Item.parent();
+            // If item is already checked move it to "current items list"
+            if (ParentList.hasClass('task-current')) {
+              Item.removeClass('item-checked').find('input[type="checkbox"]').prop('checked', false);
+            }
+            if (ParentList.hasClass('task-completed')) {
+              Item.addClass('item-checked').find('input[type="checkbox"]').prop('checked', true);
+            }
+          }
+        });
+        // Custom Functions to handle/assign list filter behavior
+        taskItems.on('click', function (e) {
+          e.preventDefault();
+          var This = $(this);
+          var Target = $(e.target);
+          if (Target.is('.task-menu') && Target.parents('.task-completed').length) {
+            This.remove();
+            return;
+          }
+          if (Target.parents('.task-handle').length) {
+            // If item is already checked move it to "current items list"
+            if (This.hasClass('item-checked')) {
+              This.removeClass('item-checked').find('input[type="checkbox"]').prop('checked', false);
+            }
+            // Otherwise move it to the "completed items list"
+            else {
+              This.addClass('item-checked').find('input[type="checkbox"]').prop('checked', true);
+            }
+          }
+        });
+      
+        var sparkBars = $('.inlinesparkbars');
+      
+        var sparkColors = {
+          "primary": [bgPrimary, bgPrimaryLr, bgPrimaryDr],
+          "info": [bgInfo, bgInfoLr, bgInfoDr],
+          "warning": [bgWarning, bgWarningLr, bgWarningDr],
+          "success": [bgSuccess, bgSuccessLr, bgSuccessDr],
+          "alert": [bgAlert, bgAlertLr, bgAlertDr]
+        };
+        // Init Sparkbars
+        if (sparkBars.length) {
+      
+          var sparkbarInit = function () {
+            $('.inlinesparkbars').each(function (i, e) {
+              var This = $(this);
+              var Color = sparkColors["primary"];
+              var Height = '120';
+              This.children().remove();
+              // default color is "primary"
+              // Color[0] = default shade
+              // Color[1] = light shade
+              // Color[2] = dark shade
+              //alert('hi')
+              // User assigned color and height, else default
+              var userColor = This.data('spark-color');
+              var userHeight = This.data('spark-height');
+      
+              if (userColor) {
+                Color = sparkColors[userColor];
+              }
+              if (userHeight) {
+                Height = userHeight;
+              }
+              $(e).sparkline('html', {
+                type: 'bar',
+                barWidth: 5,
+                barSpacing: 2,
+                height: Height,
+                zeroAxis: false,
+                barColor: Color[0]
+              });
+            });
+          }
+      
+          // Refresh Sparklines on Resize
+          var refreshSparkbars;
+      
+          $(window).resize(function (e) {
+            clearTimeout(refreshSparkbars);
+            refreshSparkbars = setTimeout(sparkbarInit, 500);
+          });
+      
+          sparkbarInit();
+        }
+      
+        var highColors = [bgSystem, bgSuccess, bgWarning, bgPrimary];
+        // Chart data
+        var seriesData = [{
+          name: 'Phones',
+          data: [0, 9, 17, 22, 19, 11.5, 5.2, 9, 17, 22, 19, 11.5, 5.2, 9, 17, 22, 19, 11.5, 5.2]
+        }];
+        var ecomChart = $('#ecommerce_chart1');
+        if (ecomChart.length) {
+          ecomChart.highcharts({
+            chart: {
+              type: 'areaspline',
+              marginTop: 30,
+              backgroundColor: 'transparent',
+            },
+            credits: {
+              enabled: false
+            },
+            title: {
+              text: ''
+            },
+            yAxis: {
+              title: {
+                text: ''
+              },
+              gridLineColor: '#f0f2f6',
+              gridLineWidth: 2,
+              labels: {
+                formatter: function () {
+                  return this.value;
+                },
+                style: {
+                  color: '#d1d4da',
+                  "textTransform": "uppercase",
+                  "fontSize": "12px",
+                  "letterSpacing": 0.02
+                }
+              }
+            },
+            xAxis: {
+              type: 'datetime',
+              labels: {
+                overflow: 'justify',
+                style: {
+                  color: '#d1d4da',
+                  "textTransform": "uppercase",
+                  "fontSize": "10px",
+                  "letterSpacing": 0.02
+                },
+                y: 30
+              },
+              lineWidth: 0,
+              tickWidth: 0,
+              formatter: function () {
+                return this.value; // clean, unformatted number for year
+              }
+            },
+            tooltip: {
+              valueSuffix: ' $'
+            },
+            plotOptions: {
+              areaspline: {
+                lineWidth: 1,
+                states: {
+                  hover: {
+                    lineWidth: 1
+                  }
+                },
+                marker: {
+                  enabled: false
+                },
+                pointInterval: 86400000, // one day
+                pointStart: Date.UTC(2016, 3, 31, 0, 0, 0)
+              }
+            },
+            series: [{
+              name: 'Hestavollane',
+              showInLegend: false,
+              lineColor: 'rgba(0,0,0,0)',
+              fillColor: {
+                linearGradient: {
+                  x1: 0, y1: 0,
+                  x2: 0, y2: 1
+                },
+                stops: [[0.0, '#5ddcff'],
+                  [0.5, '#5ddcff'],
+                  [1.0, '#5cbbe3']]
+              },
+              data: [0, 850, 900, 1200, 1500, 1000, 1300, 1500, 2300, 2500, 2600, 2200, 3000, 3600, 3500, 2500, 2000, 0]
+      
+            }],
+            navigation: {
+              menuItemStyle: {
+                fontSize: '10px'
+              }
+            }
+          });
+      
+      
+          $('#ecommerce_chart1-new-data').click(function (e) {
+            e.preventDefault();
+            $('.chart-1').removeClass('active-default')
+            $(this).addClass('active-success');
+      
+            var chart = $('#ecommerce_chart1').highcharts();
+            chart.series[0].setData([0, 850, 900, 1200, 1100, 1000, 1200, 1400, 2200, 2300, 2600, 2200, 2700, 3100, 3000, 2400, 2000, 0]);
+          });
+      
+          $('#ecommerce_chart1-new-data-2').click(function (e) {
+            e.preventDefault();
+            $('.chart-1').removeClass('active-success');
+            $(this).addClass('active-default');
+      
+            var chart = $('#ecommerce_chart1').highcharts();
+            chart.series[0].setData([0, 450, 800, 1300, 1600, 1200, 1100, 1500, 2300, 2400, 2500, 2500, 2800, 2300, 2100, 1500, 1300, 300]);
+          });
+        }
+      
+        var seriesData2 = [{
+          name: 'Phones',
+          data: [5.0, 9, 17, 22, 19, 11.5, 5.2, 9.5, 11.3, 15.3, 19.9, 24.6]
+        }];
+      
+        var ecomChart2 = $('#ecommerce_chart2');
+        if (ecomChart2.length) {
+          ecomChart2.highcharts({
+            chart: {
+              zoomType: 'x',
+              backgroundColor: 'transparent',
+            },
+            credits: false,
+            title: {
+              text: ''
+            },
+            yAxis: {
+              title: {
+                text: ''
+              },
+              gridLineColor: '#f0f2f6',
+              gridLineWidth: 2,
+              labels: {
+                formatter: function () {
+                  return this.value;
+                },
+                style: {
+                  color: '#d1d4da',
+                  "textTransform": "uppercase",
+                  "fontSize": "12px",
+                  "letterSpacing": 0.02
+                }
+              }
+            },
+            xAxis: {
+              type: 'datetime',
+              categories: ['Jan', 'Feb', 'Mar', 'Apr',
+                'May', 'Jun', 'Jul', 'Aug',
+                'Sep', 'Oct', 'Nov', 'Dec'
+              ],
+              tickWidth: 0,
+              lineWidth: 0,
+              labels: {
+                overflow: 'justify',
+                style: {
+                  color: '#d1d4da',
+                  "textTransform": "uppercase",
+                  "fontSize": "10px",
+                  "letterSpacing": 0.02
+                },
+                y: 30
+              }
+            },
+            legend: {
+              enabled: false
+            },
+            plotOptions: {
+              area: {
+                fillColor: {
+                  linearGradient: {
+                    x1: 0,
+                    y1: 0,
+                    x2: 0,
+                    y2: 1
+                  },
+                  stops: [
+                    [0, 'rgba(67, 199, 215, .7)'],
+                    [0.5, 'rgba(67, 199, 215, .3)'],
+                    [1, 'rgba(67, 199, 215, 0)']
+                  ]
+                },
+                marker: {
+                  radius: 6,
+                  lineWidth: 4,
+                  lineColor: '#fff'
+                },
+                lineWidth: 3,
+                threshold: null
+              }
+            },
+      
+            series: [{
+              type: 'area',
+              name: 'Orders',
+              data: [0, 1400, 900, 1200, 1500, 1000, 1300, 1500, 2900, 2500, 2600, 2200],
+              color: '#43c7d7'
+            }]
+          });
+      
+          $('#ecommerce_chart2-new-data').click(function (e) {
+            e.preventDefault();
+            $('.filter-range').removeClass('bg-whitesmoke');
+            $(this).addClass('bg-whitesmoke');
+      
+            var chart = $('#ecommerce_chart2').highcharts();
+            chart.series[0].setData([0, 1400, 900, 1200, 1500, 1000, 1300, 1500, 2900, 2500, 2600, 2200]);
+          });
+      
+          $('#ecommerce_chart2-new-data-2').click(function (e) {
+            e.preventDefault();
+            $('.filter-range').removeClass('bg-whitesmoke');
+            $(this).addClass('bg-whitesmoke');
+      
+            var chart = $('#ecommerce_chart2').highcharts();
+            chart.series[0].setData([1400, 1200, 0, 900, 1500, 1300, 1000, 2900, 1500, 2600, 2500, 2200]);
+          });
+      
+          $('#ecommerce_chart2-new-data-3').click(function (e) {
+            e.preventDefault();
+            $('.filter-range').removeClass('bg-whitesmoke');
+            $(this).addClass('bg-whitesmoke');
+      
+            var chart = $('#ecommerce_chart2').highcharts();
+            chart.series[0].setData([100, 400, 900, 1100, 1500, 1400, 1600, 1100, 2000, 2100, 1600, 2000]);
+          });
+        }
+      
+        var ecomChart3 = $('#ecommerce_chart3');
+        if (ecomChart3.length) {
+          ecomChart3.highcharts({
+            chart: {
+              zoomType: 'x',
+              backgroundColor: 'transparent',
+            },
+            credits: false,
+            title: {
+              text: ''
+            },
+            yAxis: {
+              title: {
+                text: ''
+              },
+              gridLineColor: '#f0f2f6',
+              gridLineWidth: 0,
+              tickWidth: 0,
+              lineWidth: 0,
+              labels: {
+                enabled: false
+              }
+            },
+            xAxis: {
+              labels: {
+                enabled: false
+              },
+              tickWidth: 0,
+              lineWidth: 0,
+              gridLineWidth: 0
+            },
+            legend: {
+              enabled: false
+            },
+            plotOptions: {
+              area: {
+                fillColor: {
+                  linearGradient: {
+                    x1: 0,
+                    y1: 0,
+                    x2: 0,
+                    y2: 1
+                  },
+                  stops: [
+                    [0, 'rgba(67, 199, 215, .7)'],
+                    [0.5, 'rgba(67, 199, 215, .3)'],
+                    [1, 'rgba(67, 199, 215, 0)']
+                  ]
+                },
+                marker: {
+                  radius: 3,
+                  lineWidth: 0,
+                  lineColor: '#fff'
+                },
+                lineWidth: 2,
+                threshold: null
+              }
+            },
+      
+            series: [{
+              type: 'area',
+              name: 'Orders',
+              data: [0, 1400, 900, 1200, 1500, 1000, 1300, 1500, 2900, 2500, 2600, 2200],
+              color: '#43c7d7'
+            }]
+          });
+        }
+        // Widget VectorMap
+        function runVectorMaps() {
+          // Jvector Map Plugin
+          var runJvectorMap = function () {
+            // Data set
+            var mapData = [900, 700, 350, 500];
+            // Init Jvector Map
+            $('#WidgetMap').vectorMap({
+              map: 'world_mill_en',
+              backgroundColor: 'transparent',
+              series: {
+                markers: [{
+                  attribute: 'r',
+                  scale: [3, 7],
+                  values: mapData
+                }]
+              },
+              regionStyle: {
+                initial: {
+                  fill: '#eaedf1'
+                },
+                hover: {
+                  fill: bgInfo
+                }
+              },
+            });
+            // Manual code to alter the Vector map plugin to
+            // allow for individual coloring of countries
+            var states = ['DE', 'US', 'CA', 'FR', 'HU'];
+      
+            var colors = [bgInfo, bgInfo, bgInfo, bgInfo, bgInfo];
+            var colors2 = [bgInfo, bgInfo, bgInfo, bgInfo, bgInfo];
+            $.each(states, function (i, e) {
+              $("#WidgetMap path[data-code=" + e + "]").css({
+                fill: colors[i]
+              });
+            });
+            $('#WidgetMap').find('.jvectormap-marker')
+                    .each(function (i, e) {
+                      $(e).css({
+                        fill: colors2[i],
+                        stroke: colors2[i]
+                      });
+                    });
+          }
+          if ($('#WidgetMap').length) {
+            runJvectorMap();
+          }
+        }
+      });
+    </script>
+  </body>
+</html>

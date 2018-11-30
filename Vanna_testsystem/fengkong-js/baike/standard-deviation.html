@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+	<div class="detail-content">
+		<h3>标准差</h3>
+		<p>标准差 (Standard Deviation)，也称均方差（Mean square error）</p>
+		<p><span class="fa fa-hand-o-right"></span><strong>标准差概述</strong></p>
+		<p>
+　　标准差是一种表示分散程度的统计观念。标准差已广泛运用在股票以及共同基金投资风险的衡量上，主要是根据基金净值于一段时间内波动的情况计算而来的。一般而言，标准差愈大，表示净值的涨跌较剧烈，风险程度也较大。实务的运作上，可进一步运用单位风险报酬率的概念，同时将报酬率的风险因素考虑在内。所谓单位风险报酬率是指衡量投资人每承担一单位的风险，所能得到的报酬，以夏普指数最常为投资人运用。<br/>
+　　标准差是一组数值自平均值分散开来的程度的一种测量观念。一个较大的标准差，代表大部分的数值和其平均值之间差异较大；一个较小的标准差，代表这些数值较接近平均值。<br/>
+　　例如，两组数的集合 {0, 5, 9, 14} 和 {5, 6, 8, 9} 其平均值都是 7 ，但第二个集合具有较小的标准差。<br/>
+　　标准差可以当作不确定性的一种测量。例如在物理科学中，做重复性测量时，测量数值集合的标准差代表这些测量的精确度。当要决定测量值是否符合预测值，测量值的标准差占有决定性重要角色：如果测量平均值与预测值相差太远（同时与标准差数值做比较），则认为测量值与预测值互相矛盾。这很容易理解，因为值都落在一定数值范围之外，可以合理推论预测值是否正确。　　
+		</p>
+		<p><span class="fa fa-hand-o-right"></span><strong>标准差的简易计算公式</strong></p>
+		<p>
+　　1.实数的标准差： 假设有一组数值 x1, ..., xN （皆为实数），其平均值为：<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_1.png"/><br/>
+　　此组数值的标准差为：<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_2.png"/><br/>
+　　一个较快求解的方式为：<br/>
+	<img src="assets/img/baike/baike_standard_deviation_3.png"/><br/>
+　　 从这组数值当中取出一样本数值组合 x1,...,xn ，常定义其样本标准差：<br/>
+	<img src="assets/img/baike/baike_standard_deviation_4.png"/><br/>
+　　 注：在统计学中样本的均差多是除以自由度（n-1），它是意思是样本能自由选择的程度。当选到只剩一个时，它不可能再有自由了，所以自由度是n-1。
+　　2.随机变量的标准差 一随机变量X 的标准差定义为：<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_5.png"/><br/>
+　　 须注意并非所有随机变量都具有标准差，因为有些随机变量不存在期望值。<br/>
+	　　</p>
+		<p><span class="fa fa-hand-o-right"></span><strong>标准差的特性</strong></p>
+		<p>
+		注：这些特性同时适用于有偏和无偏公式。<br/>
+　　1．如果在一个分布中每个分数都加上(或减去)一个常数，则标准差不变。为了演示均数的这个特性，以一场考试为例。这场考试的平均分为70分。教授决定给每个学生加10分，这使得均数从70增加到80。对于原始考试分数，标准差是15分，在给每个学生增加了10分后标准差仍然是15分。由于均数随分数而移动，而分数与分数之问的相对位置是保持不变的，只是移动了整体分布的位置而已(通过加上或减去一个常数)，因此并不改变它的形态(看图1)。一般来说，这用简单代数式来表示也是成立的。每个分数加了一个常数后，分数集的标准差是：<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_6.png"/><br/>
+　　根据均数的特性，μnew = μold + C。因此，<br/><img src="assets/img/baike/baike_standard_deviation_7.png"/><br/>
+　　对其中各项重排后，得到：<br/><img src="assets/img/baike/baike_standard_deviation_8.png"/><br/>
+　　如果你是减去一个常数，则以上证明同样适用。<br/><img src="assets/img/baike/baike_standard_deviation_9.png"/><br/>
+　　2．如果每一个分数都乘上(或除以)一个常数，则标准差也将乘上(或除以)那个常数。<br/>
+　　3．从均数计算的标准差比分布中根据任何其他点计算的标准差都要小。
+范例：标准差的计算<br/>
+　　这里示范如何计算一组数的标准差。例如一群孩童年龄的数值为 { 5, 6, 8, 9 } ：<br/>
+　　第一步，计算平均值<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_10.png"/><br/>
+	<img src="assets/img/baike/baike_standard_deviation_11.png"/><br/>
+　　<br/>
+　　n = 4 （因为集合里有 4 个数），分别设为：<img src="assets/img/baike/baike_standard_deviation_12.png"/>，<img src="assets/img/baike/baike_standard_deviation_13.png"/>，<img src="assets/img/baike/baike_standard_deviation_14.png"/>，<img src="assets/img/baike/baike_standard_deviation_15.png"/><br/>
+　　 <img src="assets/img/baike/baike_standard_deviation_16.png"/>用 4 取代 N<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_17.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_18.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_19.png"/>此为平均值。<br/>
+　　第二步，计算标准差<img src="assets/img/baike/baike_standard_deviation_31.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_20.png"/>
+　　<img src="assets/img/baike/baike_standard_deviation_21.png"/>用 4 取代 N<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_22.png"/>用 7 取代 <img src="assets/img/baike/baike_standard_deviation_32.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_23.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_24.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_25.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_26.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_27.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_28.png"/><br/>
+标准差与平均值之间的关系<br/>
+　　一组数据的平均值及标准差常常同时做为参考的依据。在直觉上，如果数值的中心以平均值来考虑，则标准差为统计分布之一"自然"的测量。较确切的叙述为：假设 x1, ..., xn 为实数，定义其公式<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_29.png"/><br/>
+使用微积分，不难算出 σ(r) 在下面情况下具有唯一最小值：<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_30.png"/><br/>
+		</p>
+		<p><span class="fa fa-hand-o-right"></span><strong>标准偏差与标准差的区别</strong></p>
+		</p>
+		标准差(Standard Deviation)各数据偏离平均数的距离（离均差）的平均数，它是离差平方和平均后的方根。用σ表示。因此，标准差也是一种平均数。标准差是方差的算术平方根。标准差能反映一个数据集的离散程度。平均数相同的，标准差未必相同。<br/>
+　　例如，A、B两组各有6位学生参加同一次语文测验，A组的分数为95、85、75、65、55、45，B组的分数为73、72、71、69、68、67。这两组的平均数都是70，但A组的总体标准差为17.08分，B组的总体标准差为2.16分，说明A组学生之间的差距要比B组学生之间的差距大得多。<br/>
+　　标准偏差(Std Dev,Standard Deviation) - 统计学名词。一种量度数据分布的分散程度之标准，用以衡量数据值偏离算术平均值的程度。标准偏差越小，这些值偏离平均值就越少，反之亦然。标准偏差的大小可通过标准偏差与平均值的倍率关系来衡量。
+		</p>
+		<p><span class="fa fa-hand-o-right"></span><strong>标准差的应用分析</strong></p>
+		<p>
+		标准差在投资决策中的应用<br/>
+　　投资是企业生产经营和发展壮大的必要手段。投资者作出投资决策时，不仅要考虑预期回报，还必须分析比较投资风险。<br/>
+　　由于投资风险的客观存在性及其对投资收益的不利性，投资者在进行投资决策时必须而且也应该对投资风险进行分析，尽可能地测定和量化风险的大小。
+　　1、用标准差衡量风险大小。此时的标准差计算公式如下：<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_33.png"/><br/>
+　　<img src="assets/img/baike/baike_standard_deviation_34.png"/><br/>
+　　其中σ为标准差，为期望投资收益率，Pi为一系列可能性事件发生的概率，ri为可能性事件发生时的投资收益。标准差值越小，说明投资风险越小。<br/>
+　　假设投资者要在A、B两个项目中选择一个或两个项目进行投资。估计第二年每个项目的收益率可能有四个结果，每个结果都有一个确定的概率与之对应。如下表所示，表中r为收益率，p为收益率实现的可能性。<br/>
+　　表1 A、B两项目的收益率分布<br/>
+　　　　<img src="assets/img/baike/baike_standard_deviation_35.png"/><br/>
+		投资项目A、B的期望收益率分别为：
+		<img src="assets/img/baike/baike_standard_deviation_36.png"/><br/>
+		<img src="assets/img/baike/baike_standard_deviation_37.png"/><br/>
+		计算结果表明，A项目的期望收益率小于B项目。但从收益率的分布看，A项目的收益率在4％～20%之间波动，变动范围小；而B项目收益率从-100％到+100％，变动范围大。收益率的变动大小反映了风险的大小，收益率变动大，风险就大。根据公式
+		<img src="assets/img/baike/baike_standard_deviation_38.png"/>计算得：σA = 5.83%，σB = 37.80%。这是不是说明B项目的风险更大呢?从数学角度看，B项目标准差大可能来源于B项目的各种可能收益都比较大。<br/>
+		2、标准差的局限性。当不同项目的期望回报率相同时，用标准差衡量风险程度是合适的，否则就不能再用标准差而必须用一个相对的风险指标。取标准差与期望值的比率
+		<img src="assets/img/baike/baike_standard_deviation_39.png"/>，称为变异系数或标准离差，该值越大反映项目的风险越大。<br/>
+		可以计算项目A的变异系数<img src="assets/img/baike/baike_standard_deviation_40.png"/>,项目B的变异系数<img src="assets/img/baike/baike_standard_deviation_41.png"/>。这个时候就可以说B项目风险更大。<br/>
+　　标准差在股市分析中的应用<br/>
+　　股票价格的波动是股票市场风险的表现，因此股票市场风险分析就是对股票市场价格波动进行分析。波动性代表了未来价格取值的不确定性，这种不确定性一般用方差或标准差来刻画(Markowitz，1952)。下表是中国和美国部分时段的股票统计指标。<br/>
+　　表2股票统计指标<br/>
+　　<img src="assets/img/baike/baike_standard_deviation_42.png"/><br/>
+　　通过计算可以得到：<br/>
+　　上证综指业绩期望值≈(110.93-0.13+8.94+17.24+43.86-15.34-20.82)/7=20.67<br/>
+　　上证波动率期望值≈0.1156<br/>
+　　标准普尔业绩期望值≈6.7214<br/>
+　　标准普尔波动率期望值≈0.0680<br/>
+　　而标准差的计算公式则根据公式(2)计算：<br/>
+　　上证综指的业绩标准差<br/>
+	<img src="assets/img/baike/baike_standard_deviation_43.png"/><br/>
+	上证波动率标准差≈0.0632<br/>
+　　标准普尔指数业绩标准差≈21.71<br/>
+　　标准普尔波动率标准差≈0.02365<br/>
+　　因为标准差是绝对值，不能通过标准差对中美直接进行对比，而变异系数可以直接比较。计算可得：<br/>
+　　上证业绩变异系数≈45.2457/20.67≈2.1889<br/>
+　　上证波动率变异系数≈0.0632/0.1156≈0.5467<br/>
+　　标准普尔业绩变异系数≈21.71/6.7214≈3.2299<br/>
+　　标准普尔波动率变异系数≈0.02365/0.0680≈0.3478<br/>
+　　通过比较可以看出上证波动率变异系数要大于标准普尔波动率变异系数，说明长期来讲中国股市稳定性相对较差，还是一个不太成熟的股票市场。
+		</p>
+		<p><span class="fa fa-hand-o-right"></span><strong>标准差在确定企业最优资本结构中的应用</strong></p>
+		<p>
+		资本结构指的是企业各种资金来源的比例关系，是企业筹资活动的结果。最优资本结构是指能使企业资本成本最低且企业价值最大的资本结构；产权比率，即借入资本与自有资本的构成比例，是反映企业资本结构的重要变量。企业的资产由债务性资金和权益性资金组成，但其风险等级和收益率各不相同。根据投资组合理论，投资的多样化可以分散掉一定的风险，因此资金提供者需要决定投资于债务性资金和权益性资金的比例。以便在权衡风险和收益的情况下保证其利益的最大化。<br/>
+　　理论探索而外部资金提供者利益的最大化也就是企业价值的最大化，这一投资比例对于企业融资而言也就是企业的最优资本结构比例。<br/>
+　　假定某企业的资金通过发行债券和股票两种方式获得，并且都属于风险性资产。σ其中债券的收益率为rD，风险通过标准差σD来衡量；股票的收益率为rE，风险为σE；股票和债券的相关系数为pDE，协方差为COV(rD,rE)；债券所占的比重为wD，股票所占比重为WE(WD + WE = 1)。根据投资组合理论，企业外部投资者对该企业投资所获的期望收益率为E(rp) = WDE(rD) + wEE(rE)，方差为<br/>
+	<img src="assets/img/baike/baike_standard_deviation_44.png"/><br/>
+　　1、企业债务性资金和权益性资金完全正相关，即相关系数pDE为1。企业外部投资者获得的期望收益率为E(rp) = wDE(rD) + wEE(rE)，风险标准差为σ = wDσD + wEσE,也就是组合的标准差等于各个部分标准差的加权平均值，通过投资组合不可能分散掉投资风险。根据投资组合理论，投资组合的不同比例对于投资者而言是无差异的。<br/>
+　　2、企业债务性资金和权益性资金完全负相关，即其相关系数为-1。投资者获得的报酬率的期望值及其方差分别为。<br/>
+	<img src="assets/img/baike/baike_standard_deviation_45.png"/><br/>
+　　根据投资组合理论，只有当投资比例大于σE / (σD + σE)时其投资组合才是有效的。对于企业筹资而言，也即企业的权益性资金的比例大于σE / (σD + σE)，企业的筹资比例才是有效的，而且当组合比例为σE / (σD + σE)时，企业的筹资组合风险为零。<br/>
+　　3、企业债务性资金和权益性资金的相关系数大于-1小于1。理论上，一个企业的两种筹资方式之间的相关程度较高，一方面两种筹资方式都承担系统风险，另一方面它们也承担相同的公司风险。因此从实践来看，企业的不同筹资方式间的相关程度不可能是完全的正相关和负相关。对于一个企业而言，债务性资金对企业有固定的要求权，权益性资金对企业只有剩余要求权，因此债务性资金的波动不可能像权益性资金的波动那么大。同时企业的风险会同时影响企业的债务性资金和权益性资金，因此企业的债务性资金和权益性资金的相关系数不可能为负数。企业不同的筹资方式间的相关系数一般在0~1之间。<br/>
+那么究竟在什么比例下企业的价值才会达到最大呢?根据投资组合理论，当E(r1) > E(r2)，且<img src="assets/img/baike/baike_standard_deviation_46.png"/>时，才能出现r1，优于r2。 可见，决定企业资本结构的直接因素主要是不同筹资方式的收益率和风险以及它们之间的相关系数。
+		</p>
+	</div>
+
+</html>

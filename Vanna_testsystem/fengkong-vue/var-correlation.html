@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+<html lang="en">
+
+	<head>
+		<!-- Site Title-->
+		<title>万纳风控管理系统-风险价值及相关</title>
+		<meta name="format-detection" content="telephone=no">
+		<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, maximum-scale=1.0, user-scalable=0">
+		<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+		<meta charset="utf-8">
+		<link rel="icon" href="assets/img/favicon.ico" type="image/x-icon">
+		<!-- Stylesheets-->
+		<link rel="stylesheet" type="text/css" href="assets/admin-tools/admin-forms/css/admin-forms.min.css">
+		<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Lato:300,400,600,700%7CMontserrat:400,700">
+		<link rel="stylesheet" type="text/css" href="assets/skin/default_skin/css/theme.css">
+	</head>
+	<style>
+		#top_nav {
+			width: auto;
+		}
+		
+		.tray290 {
+			width: 180px;
+		}
+		
+		.trat-inner {
+			margin-top: 25px;
+			background-color: white;
+		}
+		
+		.c3-legend-item {
+			display: none;
+		}
+		
+		.tray-inner {
+			background-color: white;
+		}
+		
+		body {
+			font-family: "微软雅黑";
+		}
+		
+		#top_nav li {}
+		
+		#top_nav li a {
+			width: 150px;
+			font-size: 20px;
+			text-align: center;
+			color: #FFFFFF;
+			line-height: 35px;
+		}
+		
+		.highcharts-xaxis-labels text {
+			font-size: 18px;
+			important!
+		}
+		
+		.c3 {}
+		/* tick color */
+		
+		.c3 .tick {
+			fill: #AAA;
+		}
+		/* axis color */
+		
+		.c3 line,
+		.c3 path {
+			stroke: #BBB;
+		}
+		/*axis label color*/
+		
+		.c3 .c3-axis-x-label,
+		.c3 .c3-axis-y-label {
+			fill: #AAA;
+		}
+		/*legend label text color*/
+		
+		.c3-legend-item {
+			fill: #888;
+			font-size: 14px;
+		}
+		
+		.domain {
+			display: none;
+		}
+		
+		ul.tray-nav li a {
+			width: 85%;
+			padding: 0px;
+			padding-top: 16px;
+			color: #333;
+			font-size: 16px;
+			background: #fff;
+			border-top: none;
+			border-bottom: 1px solid #DDD;
+			margin-left: 15%;
+			height: 70px;
+			line-height: 20px;
+		}
+		
+		ul.tray-nav li a.group_a {
+			padding-top: 0px;
+			line-height: 70px;
+		}
+		
+		ul.tray-nav li.active a.group_type {
+			background: #eee;
+			margin-left: 0px;
+			padding-left: 15%;
+			width: 100%;
+		}
+		
+		ul.tray-nav li a.group_type {
+			background: #eee;
+			margin-left: 0px;
+			padding-left: 15%;
+			width: 100%;
+		}
+		
+		ul.tray-nav li a span {
+			font-size: 14px;
+			color: #666;
+		}
+		
+		ul.tray-nav li.active a {
+			color: #333;
+			background: #fff;
+			transition: all 0.3s ease;
+		}
+		
+		ul.tray-nav {
+			margin: 15px -15px;
+			margin-top: 15px;
+			margin-top: 0px;
+		}
+		
+		.p5-20 {
+			padding: 5px 20px !important;
+		}
+		.accordion-toggle{
+			max-width: 250px;
+		}
+		[v-cloak]{
+			display: none;
+		}
+	</style>
+
+	<body class="dashboard-page">
+		<div id="main">
+			<header class="navbar undefined navbar-fixed-top">
+				<div class="navbar-branding dark bg-info">
+					<a href="index.html" class="navbar-brand text-uppercase"><img src="assets/img/logos/index-logo.png" /></a><span id="toggle_sidemenu_l" class="fa fa-bars"></span></div>
+				<ul class="nav navbar-nav navbar-right">
+					<li><img src="assets/img/avatars/1.jpg" alt="avatar"></li>
+					<li class="dropdown menu-merge">
+						<a href="#" data-toggle="dropdown" class="dropdown-toggle fw600 p15"><span class="fa fa-angle-down"></span> </a>
+						<ul role="menu" class="dropdown-menu list-group dropdown-persist w250">
+							<li class="list-group-item">
+								<a href="account.html" class="animated animated-short fadeInUp"><span class="fa fa-user"></span> 分配账号</a>
+							</li>
+							<li class="list-group-item">
+								<a href="data.html" class="animated animated-short fadeInUp"><span class="fa fa-th"></span> 数据管理</a>
+							</li>
+							<li class="list-group-item">
+								<a href="fund.html" class="animated animated-short fadeInUp"><span class="fa fa-th-list"></span> 基金列表</a>
+							</li>
+							<li class="list-group-item">
+								<a href="threshold.html" class="animated animated-short fadeInUp"><span class="fa fa-signal"></span> 设置风险临界值</a>
+							</li>
+
+							<li class="list-group-item">
+								<a href="export.html" class="animated animated-short fadeInUp"><span class="fa fa-share"></span> 导出报告</a>
+							</li>
+							<li class="list-group-item">
+								<a href="" class="animated animated-short fadeInUp"><span class="fa fa-paint-brush"></span> 修改头像</a>
+							</li>
+							<li class="list-group-item">
+								<a href="modify-password.html" class="animated animated-short fadeInUp"><span class="fa fa-lock" style="width: 21px;"></span> 修改密码</a>
+							</li>
+
+							<li class="dropdown-footer">
+								<a href="login.html"><span class="fa fa-power-off pr5"></span> Logout</a>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</header>
+			<aside id="sidebar_left" class="nano nano-light affix">
+				<!-- Start: Sidebar Left Content-->
+				<div class="sidebar-left-content nano-content">
+					<ul class="nav sidebar-menu">
+						<li>
+							<a href="#" class="accordion-toggle menu-open"><span class="fa fa-diamond"></span><span class="sidebar-title">风控管理</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-chain"></span>投资组合<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="future-seod.html">大宗商品期货</a>
+										</li>
+										<li>
+											<a href="stock.html">股票</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle	menu-open"><span class="fa fa-bar-chart-o"></span>收益风险报表<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="earnings-report.html">收益报表</a>
+										</li>
+										<li class="active">
+											<a href="var-correlation.html">风险价值及相关</a>
+										</li>
+										<li>
+											<a href="simulated-position.html">模拟仓位测试</a>
+										</li>
+									</ul>
+								</li>
+								<li>
+									<a href="stress-test.html"><span class="fa fa-dashboard"></span>压力环境测试</a>
+								</li>
+
+							</ul>
+						</li>
+						<li>
+							<a href="#" class="accordion-toggle"><span class="fa fa-magic"></span><span class="sidebar-title">客户定制</span><span class="caret"></span></a>
+							<ul class="nav sub-nav">
+								<li>
+									<a href="#"><span class="fa fa-bank"></span>银行</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-money"></span>基金</a>
+								</li>
+								<li>
+									<a href="#"><span class="fa fa-desktop"></span>券商</a>
+								</li>
+								<li>
+									<a href="#" class="accordion-toggle"><span class="fa fa-cubes"></span>大宗商品交易商<span class="caret"></span></a>
+									<ul class="nav sub-nav">
+										<li>
+											<a href="seasonal-seod.html">大宗商品期货季节性季风管理</a>
+										</li>
+										<li>
+											<a href="pricing-risk-hedging.html">石油和天然气存储设施定价及风险对冲</a>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<!-- sidebar bullets-->
+						<li class="sidebar-label pt35"></li>
+						<li class="sidebar-proj">
+							<a href=""><span class="fa fa-circle-o text-warning"></span><span class="sidebar-title">实时计算</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="export.html"><span class="fa fa-circle-o text-danger"></span><span class="sidebar-title">导出报告</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="data.html"><span class="fa fa-circle-o text-alert"></span><span class="sidebar-title">数据管理</span></a>
+						</li>
+						<li class="sidebar-proj">
+							<a href="baike.html"><span class="fa fa-circle-o text-info"></span><span class="sidebar-title">万纳百科</span></a>
+						</li>
+					</ul>
+					<!-- Start: Sidebar Collapse Button-->
+					<div class="sidebar-toggle-mini">
+						<a href="#"><span class="fa fa-sign-out"></span></a>
+					</div>
+				</div>
+			</aside>
+			<!-- Start: Content-Wrapper-->
+			<div id="app" v-cloak>
+				<section id="content_wrapper">
+					<!-- Start: Topbar-->
+					<header id="topbar" class="alt">
+						<div class="topbar-left" style="font-family:Microsoft YaHei">
+							<ol class="breadcrumb">
+								<li class="crumb-icon">
+									<a href="index.html"><span class="glyphicon glyphicon-home"></span></a>
+								</li>
+								<li class="crumb-link">风控管理</li>
+								<li class="crumb-trail">收益风险报表</li>
+								<li class="crumb-link">
+									<a href="#" style="font-size: 14px;">风险价值及相关</a>
+								</li>
+							</ol>
+						</div>
+					</header>
+					<!-- Begin: Content-->
+					<section id="content" class="table-layout">
+						<aside v-if="isShowTraderList" class="tray tray-left tray250" data-tray-height="match" style="height: 371px;padding-top:0;">
+							<div id="nav-spy">
+								<ul data-offset-top="200" class="nav tray-nav">
+									<li class="active">
+										<a class="group_a group_type" href="#">团队成员</span>
+										</a>
+									</li>
+									<li class="active" v-for="trader in traders" @click="switchclient" :data-clientid="trader.clientId" :data-teamid="trader.teamId" :data-teamname="trader.teamName" :data-favicon="trader.favicon">
+										<a v-if="trader.className" :class="trader.className" href="#">{{trader.teamName}}</span>
+										</a>
+										<a v-else href="#">{{trader.realName}}<br/><span>{{trader.teamName}},{{trader.clientRole.roleName}}</span></a>
+									</li>
+								</ul>
+							</div>
+						</aside>
+						<div class="tray tray-center" style="height: 541px;">
+
+							<header>
+								<div class="topbar-left mb20" style="color: #333333;">
+									<h2 class="mn">风控指标</h2>
+								</div>
+							</header>
+							<label for="filter-datepicker" class="field prepend-picker-icon">
+							<date-picker :dateshowed="curSelectedDate" @selectedhandler="datechanged"></date-picker></label>
+							<div class="tray-inner row" style="padding: 15px 25px 25px 15px;">
+								<!-- dashboard tiles-->
+								<h3 class="ib mn mr20" style="color: #333333;">流动性风控</h3>
+								<div class="mt-10 mt-sm-0 pull-sm-right">
+									<div class="topbar-right btn-group">
+										<div class="ib topbar-dropdown">
+											<label for="topbar-multiple" class="control-label pr10 fs11 text-muted"></label>
+											<select id="topbar-multiple" class="hidden">
+												<option value="1D" selected="selected">股票</option>
+												<option value="5D">期货</option>
+											</select>
+										</div>
+									</div>
+								</div>
+								<div class="panel mt20">
+									<div class="panel-heading" style="text-align: center;color:black;font-family: '微软雅黑';font-size: 16px;">股票流动性最差仓位排名</div>
+									<div class="panel-body pn">
+										<div id="high-column" style="width: 100%; height: 197px; margin: 0 auto;" data-highcharts-chart="0">
+										</div>
+									</div>
+								</div>
+							</div>
+							<div class="tray-inner row" style="margin-top: 25px;padding: 0px 25px 25px 15px;">
+								<h3>地区市场风控</h3>
+								<div class="panel-body pn of-h col-lg-6">
+									<span style="position: relative; left: 200px;font-size: 16px;color: black;">地区市场风控</span>
+									<div id="high-pie" style="width: 100%; height: 210px; margin: 0 auto" data-highcharts-chart="6">
+
+									</div>
+								</div>
+
+								<div class="panel-body pn of-h col-lg-6">
+									<span style="position: relative; left: 250px;font-size: 16px;color: black;font-family: '微软雅黑';">交易所占比</span>
+									<div id="high-pie2" style="width: 100%; height: 210px; margin: 0 auto" data-highcharts-chart="6">
+
+									</div>
+								</div>
+							</div>
+
+							<div class="tray-inner row" style="margin-top: 25px;padding: 0 25px 25px 15px;">
+								<div class="panel-heading">
+									<h3>敞口风控</h3></div>
+								<div id="pchart10 " class="panel">
+									<div class="panel-body pn">
+										<div id="high-bars" style="width: 100%; height: 500px;margin: 0 auto" data-highcharts-chart="5">
+										</div>
+									</div>
+								</div>
+							</div>
+
+							<div class="tray-inner row" style="margin-top: 25px;padding: 0 25px 25px 15px">
+								<div class="panel">
+									<div class="panel-heading">
+										<h3>单一产品持仓风控</h3></div>
+									<div class="panel-body">
+										<div id="bar-chart" style="height: 370px; width: 100%; max-height: 370px; position: relative;" class="c3">
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+						</footer>
+					</section>
+			</div>
+		</div>
+		<!-- core scripts-->
+		<script src="plugins/core.min.js"></script>
+
+		<script src="assets/js/demo/js/highcharts.src.js"></script>
+		<script src="assets/js/demo/js//highcharts-more.js"></script>
+		<script src="assets/js/demo/js/modules/exporting.js"></script>
+		<script src="assets/js/utility/vue.js"></script>
+
+		<!-- Theme Javascript-->
+		<script src="assets/js/utility/utility.js"></script>
+		<script src="assets/js/demo/demo.js"></script>
+		<script src="assets/js/main.js"></script>
+		<!-- Widget Javascript-->
+		<script src="assets/js/components.js"></script>
+		<script src="assets/js/controller/varcorrelation.js">
+		</script>
+	</body>
+
+</html>
